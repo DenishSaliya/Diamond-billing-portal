@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="Buy purchase details for OM MARUTI DIAMOND."
+    >
+
+    <title>
+        Buy Details | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/purchase.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/sale.css"
+    >
+
+
+    <!-- Always last -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="topbar-actions">
+
+                <a
+                    href="/purchases.html"
+                    class="button button-secondary"
+                >
+                    Back
+                </a>
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="printInvoiceButton"
+                    disabled
+                >
+                    Print Invoice
+                </button>
+
+                <a
+                    href="/new-purchase.html"
+                    class="button button-primary"
+                >
+                    + New Buy
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE
+             ================================================= -->
+
+        <div class="page-content sale-page">
+
+
+            <!-- =================================================
+                 LOADING
+                 ================================================= -->
+
+            <section
+                class="sale-state-card"
+                id="purchaseLoadingState"
+            >
+
+                <strong>
+                    Loading Buy...
+                </strong>
+
+                <p>
+                    Fetching the purchase and payment details.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 ERROR
+                 ================================================= -->
+
+            <section
+                class="sale-state-card"
+                id="purchaseErrorState"
+                hidden
+            >
+
+                <strong>
+                    Unable to load this Buy
+                </strong>
+
+                <p id="purchaseErrorMessage">
+                    The purchase could not be loaded.
+                </p>
+
+                <a
+                    href="/purchases.html"
+                    class="button button-secondary"
+                >
+                    Back to Purchases
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 PURCHASE CONTENT
+                 ================================================= -->
+
+            <div
+                id="purchaseContent"
+                hidden
+            >
+
+
+                <!-- =============================================
+                     HEADING
+                     ============================================= -->
+
+                <section class="sale-heading">
+
+                    <div class="sale-heading-copy">
+
+                        <a
+                            href="/purchases.html"
+                            class="sale-back"
+                        >
+                            <span aria-hidden="true">
+                                ←
+                            </span>
+
+                            Back to Purchases
+                        </a>
+
+
+                        <span class="eyebrow">
+                            BUY / PURCHASE
+                        </span>
+
+
+                        <div class="sale-title-row">
+
+                            <h1 id="purchaseNumber">
+                                —
+                            </h1>
+
+                            <span
+                                class="status-badge"
+                                id="purchaseStatus"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <p id="purchaseHeadingText">
+                            Purchase details and supplier payment history.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sale-heading-actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="headingPrintInvoiceButton"
+                        >
+                            Print Invoice
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="recordPaymentButton"
+                        >
+                            Record Payment
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="sale-summary-grid">
+
+
+                    <article class="sale-summary-card">
+
+                        <span>
+                            GRAND TOTAL
+                        </span>
+
+                        <strong id="purchaseGrandTotal">
+                            ₹0.00
+                        </strong>
+
+                    </article>
+
+
+                    <article class="sale-summary-card">
+
+                        <span>
+                            PAID
+                        </span>
+
+                        <strong id="purchasePaid">
+                            ₹0.00
+                        </strong>
+
+                    </article>
+
+
+                    <article class="sale-summary-card">
+
+                        <span>
+                            PAYABLE
+                        </span>
+
+                        <strong id="purchaseBalance">
+                            ₹0.00
+                        </strong>
+
+                    </article>
+
+
+                    <article class="sale-summary-card">
+
+                        <span>
+                            DUE DATE
+                        </span>
+
+                        <strong id="purchaseDueDateSummary">
+                            —
+                        </strong>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =============================================
+                     PURCHASE + SUPPLIER
+                     ============================================= -->
+
+                <div class="sale-detail-grid">
+
+
+                    <!-- Purchase information -->
+
+                    <section class="sale-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    01 / BUY DETAILS
+                                </span>
+
+                                <h2>
+                                    Purchase Information
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="sale-details-list">
+
+
+                            <div>
+
+                                <dt>
+                                    Purchase Number
+                                </dt>
+
+                                <dd id="purchaseNumberDetail">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Supplier Invoice
+                                </dt>
+
+                                <dd id="supplierInvoiceNumber">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Purchase Date
+                                </dt>
+
+                                <dd id="purchaseDate">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Buy Type
+                                </dt>
+
+                                <dd id="purchaseType">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div
+                                id="purchaseDueDateRow"
+                                hidden
+                            >
+
+                                <dt>
+                                    Due Date
+                                </dt>
+
+                                <dd id="purchaseDueDate">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Broker
+                                </dt>
+
+                                <dd id="purchaseBroker">
+                                    —
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+
+                    <!-- Supplier -->
+
+                    <section class="sale-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    02 / SUPPLIER
+                                </span>
+
+                                <h2>
+                                    Supplier Details
+                                </h2>
+
+                            </div>
+
+
+                            <a
+                                href="/suppliers.html"
+                                class="button button-secondary"
+                                id="viewSupplierButton"
+                            >
+                                View Supplier
+                            </a>
+
+                        </header>
+
+
+                        <div class="sale-party-name">
+
+                            <strong id="supplierName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <dl class="sale-details-list">
+
+
+                            <div>
+
+                                <dt>
+                                    Mobile
+                                </dt>
+
+                                <dd id="supplierMobile">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Email
+                                </dt>
+
+                                <dd id="supplierEmail">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    GSTIN
+                                </dt>
+
+                                <dd id="supplierGstin">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div class="sale-detail-wide">
+
+                                <dt>
+                                    Address
+                                </dt>
+
+                                <dd id="supplierAddress">
+                                    —
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     ITEMS
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                03 / DIAMOND ITEMS
+                            </span>
+
+                            <h2>
+                                Purchase Items
+                            </h2>
+
+                        </div>
+
+                    </header>
+
+
+                    <div class="sale-items-table-wrap">
+
+                        <table class="sale-items-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>#</th>
+                                    <th>Material</th>
+                                    <th>Diamond Details</th>
+                                    <th>Remarks</th>
+                                    <th>HSN</th>
+                                    <th>Pcs</th>
+                                    <th>Carat</th>
+                                    <th>Rate / Ct.</th>
+                                    <th>Disc %</th>
+                                    <th>Amount</th>
+                                    <th>Tax %</th>
+                                    <th>Tax</th>
+                                    <th>Total</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="purchaseItemsBody">
+                            </tbody>
+
+
+                            <tfoot>
+
+                                <tr>
+
+                                    <th
+                                        colspan="5"
+                                        class="sale-items-total-label"
+                                    >
+                                        Totals
+                                    </th>
+
+                                    <th id="itemsTotalPieces">
+                                        0
+                                    </th>
+
+                                    <th id="itemsTotalCarat">
+                                        0.000
+                                    </th>
+
+                                    <th></th>
+                                    <th></th>
+
+                                    <th id="itemsTotalAmount">
+                                        ₹0.00
+                                    </th>
+
+                                    <th></th>
+
+                                    <th id="itemsTotalTax">
+                                        ₹0.00
+                                    </th>
+
+                                    <th id="itemsGrandLineTotal">
+                                        ₹0.00
+                                    </th>
+
+                                </tr>
+
+                            </tfoot>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     TOTALS
+                     ============================================= -->
+
+                <div class="sale-bottom-grid">
+
+
+                    <!-- Notes -->
+
+                    <section class="sale-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    04 / NOTES
+                                </span>
+
+                                <h2>
+                                    Notes & Declaration
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div class="sale-note-block">
+
+                            <span>
+                                NOTES
+                            </span>
+
+                            <p id="purchaseNotes">
+                                —
+                            </p>
+
+                        </div>
+
+
+                        <div class="sale-note-block">
+
+                            <span>
+                                DECLARATION
+                            </span>
+
+                            <p id="purchaseDeclaration">
+                                —
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Totals -->
+
+                    <section class="sale-card sale-total-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    PURCHASE TOTAL
+                                </span>
+
+                                <h2>
+                                    Summary
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="sale-total-list">
+
+
+                            <div>
+
+                                <dt>
+                                    Taxable Amount
+                                </dt>
+
+                                <dd id="purchaseSubtotal">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Tax
+                                </dt>
+
+                                <dd id="purchaseTax">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Purchase Discount
+                                </dt>
+
+                                <dd id="purchaseDiscount">
+                                    − ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Additional Charges
+                                </dt>
+
+                                <dd id="purchaseCharges">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Round Off
+                                </dt>
+
+                                <dd id="purchaseRoundOff">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div class="sale-total-grand">
+
+                                <dt>
+                                    Grand Total
+                                </dt>
+
+                                <dd id="purchaseGrandTotalDetail">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Paid
+                                </dt>
+
+                                <dd id="purchasePaidDetail">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Payable Balance
+                                </dt>
+
+                                <dd id="purchaseBalanceDetail">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+
+                        <div class="sale-amount-words">
+
+                            <span>
+                                AMOUNT IN WORDS
+                            </span>
+
+                            <strong id="purchaseAmountWords">
+                                Zero Rupees Only
+                            </strong>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     PAYMENT HISTORY
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                05 / PAYMENTS
+                            </span>
+
+                            <h2>
+                                Payment History
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="paymentHistoryAddButton"
+                        >
+                            + Record Payment
+                        </button>
+
+                    </header>
+
+
+                    <div
+                        class="sale-payment-empty"
+                        id="purchasePaymentsEmpty"
+                        hidden
+                    >
+
+                        No payments recorded for this purchase.
+
+                    </div>
+
+
+                    <div
+                        class="sale-payments-table-wrap"
+                        id="purchasePaymentsTableWrap"
+                    >
+
+                        <table class="sale-payments-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Method</th>
+                                    <th>Reference</th>
+                                    <th>Note</th>
+                                    <th>Amount</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="purchasePaymentsBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     RECORD PAYMENT MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="paymentModal"
+    hidden
+>
+
+    <section
+        class="modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="paymentModalTitle"
+    >
+
+        <header class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    BUY PAYMENT
+                </span>
+
+                <h2 id="paymentModalTitle">
+                    Record Payment
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closePaymentModalButton"
+                aria-label="Close payment form"
+            >
+                ×
+            </button>
+
+        </header>
+
+
+        <div class="modal-body">
+
+
+            <div class="sale-payment-modal-summary">
+
+                <div>
+
+                    <span>
+                        PURCHASE
+                    </span>
+
+                    <strong id="paymentModalPurchaseNumber">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PAYABLE
+                    </span>
+
+                    <strong id="paymentModalBalance">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="paymentForm"
+                novalidate
+            >
+
+
+                <!-- Amount -->
+
+                <div class="purchase-field">
+
+                    <label for="paymentAmount">
+                        Amount
+                    </label>
+
+                    <div class="purchase-money-input">
+
+                        <span>₹</span>
+
+                        <input
+                            type="text"
+                            id="paymentAmount"
+                            inputmode="decimal"
+                            autocomplete="off"
+                            placeholder="0.00"
+                        >
+
+                    </div>
+
+                    <p
+                        class="field-error"
+                        id="paymentAmountError"
+                    ></p>
+
+                </div>
+
+
+                <!-- Date -->
+
+                <div class="purchase-field">
+
+                    <label for="paymentDate">
+                        Payment Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="paymentDate"
+                    >
+
+                    <p
+                        class="field-error"
+                        id="paymentDateError"
+                    ></p>
+
+                </div>
+
+
+                <!-- Method -->
+
+                <div class="purchase-field">
+
+                    <label for="paymentMethod">
+                        Payment Method
+                    </label>
+
+                    <select id="paymentMethod">
+
+                        <option value="cash">
+                            Cash
+                        </option>
+
+                        <option value="bank">
+                            Bank Transfer
+                        </option>
+
+                        <option value="upi">
+                            UPI
+                        </option>
+
+                        <option value="cheque">
+                            Cheque
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Reference -->
+
+                <div class="purchase-field">
+
+                    <label for="paymentReference">
+                        Payment Reference
+                        <span>(Optional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="paymentReference"
+                        maxlength="120"
+                        autocomplete="off"
+                        placeholder="UTR, cheque no., reference..."
+                    >
+
+                </div>
+
+
+                <!-- Note -->
+
+                <div class="purchase-field">
+
+                    <label for="paymentNote">
+                        Note
+                        <span>(Optional)</span>
+                    </label>
+
+                    <textarea
+                        id="paymentNote"
+                        maxlength="500"
+                        placeholder="Payment note..."
+                    ></textarea>
+
+                </div>
+
+
+                <p
+                    class="purchase-form-message"
+                    id="paymentFormMessage"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="cancelPaymentButton"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="savePaymentButton"
+                    >
+
+                        <span id="savePaymentButtonText">
+                            Record Payment
+                        </span>
+
+                        <span
+                            id="savePaymentSpinner"
+                            aria-hidden="true"
+                            hidden
+                        ></span>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+     EXACT SAME SHARED STRUCTURE
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+    </a>
+
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+    </a>
+
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="New transaction"
+    >
+        +
+    </button>
+
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+    </a>
+
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/purchase.js"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND supplier accounts and payables."
+    >
+
+    <title>
+        Suppliers | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- Supplier-specific styles -->
+
+    <link
+        rel="stylesheet"
+        href="/css/suppliers.css"
+    >
+
+
+    <!-- Always last -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GLOBAL SEARCH
+                 ================================================= -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers, Sell or Buy
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOPBAR ACTIONS
+                 ================================================= -->
+
+            <div class="topbar-actions">
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Supplier activity date range
+                </label>
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Supplier activity date range"
+                >
+
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="addSupplierButton"
+                >
+                    + Add Supplier
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom supplier activity date range"
+        >
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <div class="custom-date-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelCustomDateButton"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="applyCustomDateButton"
+                >
+                    Apply
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+                 ================================================= -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        BUY ACCOUNTS
+                    </span>
+
+                    <h1>
+                        Suppliers
+                    </h1>
+
+                    <p>
+                        Manage supplier accounts, Buy activity,
+                        payments and current payables.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUPPLIER SUMMARY
+                 ================================================= -->
+
+            <section
+                class="dashboard-summary-grid"
+                aria-label="Supplier summary"
+            >
+
+
+                <!-- Total Suppliers -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL SUPPLIERS
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="totalSuppliersValue"
+                    >
+                        0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="totalSuppliersMeta"
+                    >
+                        Supplier accounts
+                    </span>
+
+                </article>
+
+
+                <!-- Active Suppliers -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        ACTIVE SUPPLIERS
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="activeSuppliersValue"
+                    >
+                        0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="activeSuppliersMeta"
+                    >
+                        Active accounts
+                    </span>
+
+                </article>
+
+
+                <!-- Payable -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        PAYABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="supplierPayableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="supplierPayableMeta"
+                    >
+                        Current outstanding
+                    </span>
+
+                </article>
+
+
+                <!-- Overdue -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        OVERDUE PAYABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="supplierOverdueValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="supplierOverdueMeta"
+                    >
+                        0 overdue purchases
+                    </span>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUPPLIER DIRECTORY
+                 ================================================= -->
+
+            <section class="panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            SUPPLIER DIRECTORY
+                        </span>
+
+                        <h2>
+                            All Suppliers
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SUPPLIER CONTROLS
+                     ================================================= -->
+
+                <div class="supplier-toolbar">
+
+
+                    <div class="form-field supplier-search-field">
+
+                        <label
+                            class="sr-only"
+                            for="supplierSearchInput"
+                        >
+                            Search suppliers
+                        </label>
+
+                        <input
+                            type="search"
+                            id="supplierSearchInput"
+                            placeholder="Search name, mobile, email or GSTIN..."
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label
+                            class="sr-only"
+                            for="supplierStatusFilter"
+                        >
+                            Supplier status
+                        </label>
+
+                        <select
+                            id="supplierStatusFilter"
+                            aria-label="Supplier status"
+                        >
+
+                            <option value="all">
+                                All Suppliers
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+                            <option value="payable">
+                                Has Payable
+                            </option>
+
+                            <option value="overdue">
+                                Overdue
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     DESKTOP SUPPLIER TABLE
+                     ================================================= -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Supplier
+                                </th>
+
+                                <th scope="col">
+                                    Mobile
+                                </th>
+
+                                <th scope="col">
+                                    GSTIN
+                                </th>
+
+                                <th scope="col">
+                                    Total Buy
+                                </th>
+
+                                <th scope="col">
+                                    Paid
+                                </th>
+
+                                <th scope="col">
+                                    Payable
+                                </th>
+
+                                <th scope="col">
+                                    Last Buy
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                                <th scope="col">
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!--
+                            Populated safely by suppliers.js.
+
+                            Firestore values must be inserted using
+                            textContent / createElement, not innerHTML.
+                        -->
+
+                        <tbody id="suppliersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =================================================
+                     MOBILE SUPPLIER LIST
+                     ================================================= -->
+
+                <div
+                    class="supplier-mobile-list"
+                    id="suppliersMobileList"
+                >
+                </div>
+
+
+                <!-- =================================================
+                     LOADING
+                     ================================================= -->
+
+                <div
+                    class="supplier-loading-state"
+                    id="suppliersLoadingState"
+                >
+
+                    <span
+                        class="spinner"
+                        aria-hidden="true"
+                    ></span>
+
+                    <span>
+                        Loading suppliers...
+                    </span>
+
+                </div>
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                     ================================================= -->
+
+                <div
+                    class="empty-state"
+                    id="suppliersEmptyState"
+                    hidden
+                >
+
+                    <strong>
+                        No suppliers yet
+                    </strong>
+
+                    <span>
+                        Add your first supplier to start
+                        creating Buy purchases.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     ADD SUPPLIER MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="addSupplierModal"
+    hidden
+    role="presentation"
+>
+
+    <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="addSupplierModalTitle"
+    >
+
+
+        <!-- Modal header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    NEW SUPPLIER
+                </span>
+
+                <h2 id="addSupplierModalTitle">
+                    Add Supplier
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closeAddSupplierModalButton"
+                aria-label="Close add supplier"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             SUPPLIER FORM
+             ===================================================== -->
+
+        <form
+            id="addSupplierForm"
+            novalidate
+        >
+
+
+            <!-- Name -->
+
+            <div class="form-field">
+
+                <label for="supplierName">
+                    Supplier Name
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="supplierName"
+                    name="name"
+                    maxlength="160"
+                    autocomplete="organization"
+                    required
+                >
+
+                <span
+                    class="form-error"
+                    id="supplierNameError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Mobile -->
+
+            <div class="form-field">
+
+                <label for="supplierMobile">
+                    Mobile
+                </label>
+
+                <input
+                    type="tel"
+                    id="supplierMobile"
+                    name="mobile"
+                    maxlength="30"
+                    autocomplete="tel"
+                    inputmode="tel"
+                >
+
+                <span
+                    class="form-error"
+                    id="supplierMobileError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-field">
+
+                <label for="supplierEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="supplierEmail"
+                    name="email"
+                    maxlength="180"
+                    autocomplete="email"
+                >
+
+                <span
+                    class="form-error"
+                    id="supplierEmailError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- GSTIN -->
+
+            <div class="form-field">
+
+                <label for="supplierGstin">
+                    GSTIN
+                </label>
+
+                <input
+                    type="text"
+                    id="supplierGstin"
+                    name="gstin"
+                    maxlength="15"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <span
+                    class="form-error"
+                    id="supplierGstinError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- PAN -->
+
+            <div class="form-field">
+
+                <label for="supplierPan">
+                    PAN
+                </label>
+
+                <input
+                    type="text"
+                    id="supplierPan"
+                    name="pan"
+                    maxlength="10"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <span
+                    class="form-error"
+                    id="supplierPanError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Address -->
+
+            <div class="form-field">
+
+                <label for="supplierAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="supplierAddress"
+                    name="address"
+                    rows="4"
+                    maxlength="500"
+                    autocomplete="street-address"
+                ></textarea>
+
+                <span
+                    class="form-error"
+                    id="supplierAddressError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Form message -->
+
+            <div
+                class="inline-message"
+                id="addSupplierFormMessage"
+                hidden
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <!-- Actions -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelAddSupplierButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                    id="saveSupplierButton"
+                >
+
+                    <span id="saveSupplierButtonText">
+                        Add Supplier
+                    </span>
+
+                    <span
+                        class="spinner spinner-light"
+                        id="saveSupplierSpinner"
+                        hidden
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+
+     Keep this exact shared structure.
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- Customers -->
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+
+    </a>
+
+
+    <!-- Center Create -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="Create new Buy"
+    >
+        +
+    </button>
+
+
+    <!-- Suppliers -->
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+
+    </a>
+
+
+    <!-- Profile -->
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     PAGE SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/suppliers.js"
+></script>
+
+</body>
+</html>

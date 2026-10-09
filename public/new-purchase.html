@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="Create a new Buy purchase for OM MARUTI DIAMOND."
+    >
+
+    <title>
+        New Buy | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- Page-specific -->
+
+    <link
+        rel="stylesheet"
+        href="/css/new-purchase.css"
+    >
+
+
+    <!-- Always last -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="topbar-actions">
+
+                <a
+                    href="/purchases"
+                    class="button button-secondary"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="topSavePurchaseButton"
+                >
+                    Save Buy
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE
+             ================================================= -->
+
+        <div class="page-content new-purchase-page">
+
+
+            <!-- =================================================
+                 HEADING
+                 ================================================= -->
+
+            <section class="new-purchase-heading">
+
+                <div class="new-purchase-heading-copy">
+
+                    <a
+                        href="/purchases"
+                        class="new-purchase-back"
+                    >
+                        <span aria-hidden="true">←</span>
+                        Back to Purchases
+                    </a>
+
+
+                    <span class="eyebrow">
+                        BUY / NEW PURCHASE
+                    </span>
+
+
+                    <h1>
+                        New Buy
+                    </h1>
+
+
+                    <p>
+                        Create a secure Cash Buy or Credit Buy
+                        purchase for your supplier.
+                    </p>
+
+                </div>
+
+
+                <div class="new-purchase-number-preview">
+
+                    <span>
+                        PURCHASE NUMBER
+                    </span>
+
+                    <strong id="purchaseNumberPreview">
+                        Assigned securely on save
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FORM
+                 ================================================= -->
+
+            <form
+                id="newPurchaseForm"
+                novalidate
+            >
+
+
+                <!-- =============================================
+                     01 SUPPLIER & TERMS
+                     ============================================= -->
+
+                <section class="purchase-card">
+
+                    <header class="purchase-card-header">
+
+                        <div>
+
+                            <span class="purchase-section-number">
+                                01 / SUPPLIER & TERMS
+                            </span>
+
+                            <h2>
+                                Buy Information
+                            </h2>
+
+                        </div>
+
+
+                        <p>
+                            Select the supplier, purchase date
+                            and transaction terms.
+                        </p>
+
+                    </header>
+
+
+                    <div class="purchase-form-grid">
+
+
+                        <!-- Supplier -->
+
+                        <div class="purchase-field purchase-field-wide">
+
+                            <label for="purchaseSupplierId">
+                                Supplier
+                            </label>
+
+
+                            <div class="purchase-supplier-row">
+
+                                <select
+                                    id="purchaseSupplierId"
+                                    required
+                                >
+                                    <option value="">
+                                        Select supplier
+                                    </option>
+                                </select>
+
+
+                                <a
+                                    href="/suppliers.html?action=add"
+                                    class="button button-secondary purchase-add-supplier"
+                                >
+                                    + Supplier
+                                </a>
+
+                            </div>
+
+
+                            <p
+                                class="field-error"
+                                id="purchaseSupplierIdError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Purchase date -->
+
+                        <div class="purchase-field">
+
+                            <label for="purchaseDate">
+                                Purchase Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="purchaseDate"
+                                required
+                            >
+
+                            <p
+                                class="field-error"
+                                id="purchaseDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Supplier invoice number -->
+
+                        <div class="purchase-field">
+
+                            <label for="supplierInvoiceNumber">
+                                Supplier Invoice Number
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="supplierInvoiceNumber"
+                                maxlength="120"
+                                autocomplete="off"
+                                placeholder="Supplier bill / invoice no."
+                            >
+
+                            <p class="purchase-field-help">
+                                The supplier's own invoice or bill number.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Type -->
+
+                        <fieldset
+                            class="purchase-field purchase-type-field"
+                        >
+
+                            <legend>
+                                Buy Type
+                            </legend>
+
+
+                            <div class="purchase-type-options">
+
+
+                                <label class="purchase-type-option">
+
+                                    <input
+                                        type="radio"
+                                        id="purchaseTypeCash"
+                                        name="purchaseType"
+                                        value="cash"
+                                        checked
+                                    >
+
+                                    <span>
+                                        <strong>
+                                            Cash Buy
+                                        </strong>
+
+                                        <small>
+                                            Fully settled
+                                        </small>
+                                    </span>
+
+                                </label>
+
+
+                                <label class="purchase-type-option">
+
+                                    <input
+                                        type="radio"
+                                        id="purchaseTypeCredit"
+                                        name="purchaseType"
+                                        value="credit"
+                                    >
+
+                                    <span>
+                                        <strong>
+                                            Credit Buy
+                                        </strong>
+
+                                        <small>
+                                            Payment due later
+                                        </small>
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- Due date -->
+
+                        <!-- Due date -->
+
+                        <div
+                            class="purchase-field"
+                            id="purchaseDueDateField"
+                            hidden
+                        >
+
+                            <label for="purchaseDueDate">
+                                Due Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="purchaseDueDate"
+                            >
+
+                            <p class="purchase-field-help">
+                                Required for Credit Buy.
+                                Select the due date manually.
+                            </p>
+
+                            <p
+                                class="field-error"
+                                id="purchaseDueDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Broker -->
+
+                        <div class="purchase-field">
+
+                            <label for="purchaseBroker">
+                                Broker
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="purchaseBroker"
+                                maxlength="120"
+                                autocomplete="off"
+                                placeholder="Broker name"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     SUPPLIER PREVIEW
+                     ============================================= -->
+
+                <section
+                    class="purchase-card purchase-supplier-preview"
+                    id="selectedSupplierPreview"
+                    hidden
+                >
+
+                    <header class="purchase-supplier-preview-header">
+
+                        <div>
+
+                            <span class="purchase-section-number">
+                                SELECTED SUPPLIER
+                            </span>
+
+                            <h2 id="selectedSupplierName">
+                                —
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="purchase-supplier-status"
+                            id="selectedSupplierStatus"
+                        >
+                            Active
+                        </span>
+
+                    </header>
+
+
+                    <div class="purchase-supplier-details">
+
+
+                        <div>
+                            <span>Mobile</span>
+
+                            <strong id="selectedSupplierMobile">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>Email</span>
+
+                            <strong id="selectedSupplierEmail">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>GSTIN</span>
+
+                            <strong id="selectedSupplierGstin">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Current Payable
+                            </span>
+
+                            <strong id="selectedSupplierPayable">
+                                ₹0.00
+                            </strong>
+                        </div>
+
+
+                        <div class="purchase-supplier-address">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="selectedSupplierAddress">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     02 ITEMS
+                     ============================================= -->
+
+                <section class="purchase-card">
+
+                    <header class="purchase-card-header">
+
+                        <div>
+
+                            <span class="purchase-section-number">
+                                02 / DIAMOND ITEMS
+                            </span>
+
+                            <h2>
+                                Purchase Items
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="addPurchaseItemButton"
+                        >
+                            + Add Item
+                        </button>
+
+                    </header>
+
+
+                    <div class="purchase-items-table-wrap">
+
+                        <table class="purchase-items-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>#</th>
+                                    <th>Material</th>
+                                    <th>Diamond Details</th>
+                                    <th>Remarks</th>
+                                    <th>HSN</th>
+                                    <th>Pcs</th>
+                                    <th>Carat</th>
+                                    <th>Rate / Ct.</th>
+                                    <th>Disc %</th>
+                                    <th>Amount</th>
+                                    <th>Tax %</th>
+                                    <th>Tax</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="purchaseItemsBody">
+                            </tbody>
+
+
+                            <tfoot>
+
+                                <tr>
+
+                                    <th
+                                        colspan="5"
+                                        class="purchase-items-total-label"
+                                    >
+                                        Totals
+                                    </th>
+
+                                    <th id="itemsTotalPieces">
+                                        0
+                                    </th>
+
+                                    <th id="itemsTotalCarat">
+                                        0.000
+                                    </th>
+
+                                    <th></th>
+                                    <th></th>
+
+                                    <th id="itemsTotalAmount">
+                                        ₹0.00
+                                    </th>
+
+                                    <th></th>
+
+                                    <th id="itemsTotalTax">
+                                        ₹0.00
+                                    </th>
+
+                                    <th id="itemsGrandLineTotal">
+                                        ₹0.00
+                                    </th>
+
+                                    <th></th>
+
+                                </tr>
+
+                            </tfoot>
+
+                        </table>
+
+                    </div>
+
+
+                    <p
+                        class="field-error"
+                        id="purchaseItemsError"
+                    ></p>
+
+
+                    <button
+                        type="button"
+                        class="button button-secondary purchase-mobile-add-item"
+                        id="mobileAddItemButton"
+                    >
+                        + Add Diamond Item
+                    </button>
+
+                </section>
+
+
+                <!-- =============================================
+                     ADJUSTMENTS / TOTAL
+                     ============================================= -->
+
+                <div class="purchase-bottom-grid">
+
+
+                    <!-- Adjustments -->
+
+                    <section class="purchase-card">
+
+                        <header class="purchase-card-header">
+
+                            <div>
+
+                                <span class="purchase-section-number">
+                                    03 / ADJUSTMENTS
+                                </span>
+
+                                <h2>
+                                    Purchase Adjustments
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div class="purchase-form-grid">
+
+
+                            <div class="purchase-field">
+
+                                <label for="purchaseDiscount">
+                                    Purchase Discount
+                                </label>
+
+                                <div class="purchase-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="purchaseDiscount"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="purchaseDiscountError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="purchase-field">
+
+                                <label for="purchaseCharges">
+                                    Additional Charges
+                                </label>
+
+                                <div class="purchase-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="purchaseCharges"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="purchaseChargesError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="purchase-field">
+
+                                <label for="purchaseRoundOff">
+                                    Round Off
+                                </label>
+
+                                <div class="purchase-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="purchaseRoundOff"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="purchaseRoundOffError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="purchase-field">
+
+                                <label>
+                                    Previous Payable
+                                </label>
+
+                                <div class="purchase-readonly-value">
+
+                                    <strong id="previousBalanceValue">
+                                        ₹0.00
+                                    </strong>
+
+                                </div>
+
+                                <p class="purchase-field-help">
+                                    Informational only. It is not
+                                    added to this purchase total.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Total -->
+
+                    <section class="purchase-card purchase-total-card">
+
+                        <header class="purchase-card-header">
+
+                            <div>
+
+                                <span class="purchase-section-number">
+                                    PURCHASE TOTAL
+                                </span>
+
+                                <h2>
+                                    Summary
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="purchase-total-list">
+
+
+                            <div>
+                                <dt>
+                                    Taxable Amount
+                                </dt>
+
+                                <dd id="purchaseSubtotalValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Tax
+                                </dt>
+
+                                <dd id="purchaseTaxValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Purchase Discount
+                                </dt>
+
+                                <dd id="purchaseDiscountValue">
+                                    − ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Additional Charges
+                                </dt>
+
+                                <dd id="purchaseChargesValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Round Off
+                                </dt>
+
+                                <dd id="purchaseRoundOffValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div class="purchase-total-grand">
+
+                                <dt>
+                                    Grand Total
+                                </dt>
+
+                                <dd id="purchaseGrandTotalValue">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+
+                        <div class="purchase-amount-words">
+
+                            <span>
+                                AMOUNT IN WORDS
+                            </span>
+
+                            <strong id="purchaseAmountWords">
+                                Zero Rupees Only
+                            </strong>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     04 PAYMENT
+                     ============================================= -->
+
+                <section class="purchase-card">
+
+                    <header class="purchase-card-header">
+
+                        <div>
+
+                            <span class="purchase-section-number">
+                                04 / PAYMENT
+                            </span>
+
+                            <h2>
+                                Initial Payment
+                            </h2>
+
+                        </div>
+
+
+                        <p id="purchasePaymentHelp">
+                            Cash Buy must be fully settled.
+                        </p>
+
+                    </header>
+
+
+                    <div class="purchase-payment-summary">
+
+
+                        <div>
+
+                            <span>
+                                PURCHASE TOTAL
+                            </span>
+
+                            <strong id="paymentPurchaseTotal">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                PAID NOW
+                            </span>
+
+                            <strong id="paymentPaidPreview">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                BALANCE
+                            </span>
+
+                            <strong id="paymentBalancePreview">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="purchase-form-grid">
+
+
+                        <div class="purchase-field">
+
+                            <label for="purchaseInitialPayment">
+                                Initial Payment
+                            </label>
+
+                            <div class="purchase-money-input">
+
+                                <span>₹</span>
+
+                                <input
+                                    type="text"
+                                    id="purchaseInitialPayment"
+                                    inputmode="decimal"
+                                    value="0.00"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                            <p
+                                class="field-error"
+                                id="purchaseInitialPaymentError"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="purchase-field">
+
+                            <label for="purchasePaymentDate">
+                                Payment Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="purchasePaymentDate"
+                            >
+
+                            <p
+                                class="field-error"
+                                id="purchasePaymentDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="purchase-field">
+
+                            <label for="purchasePaymentMethod">
+                                Payment Method
+                            </label>
+
+                            <select id="purchasePaymentMethod">
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="bank">
+                                    Bank Transfer
+                                </option>
+
+                                <option value="upi">
+                                    UPI
+                                </option>
+
+                                <option value="cheque">
+                                    Cheque
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="purchase-field">
+
+                            <label for="purchasePaymentReference">
+                                Payment Reference
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="purchasePaymentReference"
+                                maxlength="120"
+                                autocomplete="off"
+                                placeholder="UTR, cheque no., reference..."
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     05 NOTES
+                     ============================================= -->
+
+                <section class="purchase-card">
+
+                    <header class="purchase-card-header">
+
+                        <div>
+
+                            <span class="purchase-section-number">
+                                05 / NOTES
+                            </span>
+
+                            <h2>
+                                Purchase Notes
+                            </h2>
+
+                        </div>
+
+                    </header>
+
+
+                    <div class="purchase-form-grid">
+
+
+                        <div class="purchase-field purchase-field-wide">
+
+                            <label for="purchaseNotes">
+                                Notes
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="purchaseNotes"
+                                maxlength="1000"
+                                placeholder="Additional purchase notes..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="purchase-field purchase-field-wide">
+
+                            <label for="purchaseDeclaration">
+                                Declaration
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="purchaseDeclaration"
+                                maxlength="1000"
+                                placeholder="Purchase declaration..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     MESSAGE
+                     ============================================= -->
+
+                <p
+                    id="purchaseFormMessage"
+                    class="purchase-form-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+
+
+                <!-- =============================================
+                     SAVE BAR
+                     ============================================= -->
+
+                <div class="purchase-save-bar">
+
+                    <p class="purchase-save-help">
+                        Purchase number, financial totals,
+                        payment balance and status are verified
+                        by the secure backend before saving.
+                    </p>
+
+
+                    <div class="purchase-save-actions">
+
+                        <a
+                            href="/purchases"
+                            class="button button-secondary"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="saveDraftButton"
+                        >
+                            Save Draft
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="button button-primary"
+                            id="savePurchaseButton"
+                        >
+
+                            <span id="savePurchaseButtonText">
+                                Save Buy
+                            </span>
+
+                            <span
+                                id="savePurchaseSpinner"
+                                aria-hidden="true"
+                                hidden
+                            ></span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <a
+        href="/"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+    </a>
+
+
+    <a
+        href="/customers"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+    </a>
+
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="New transaction"
+    >
+        +
+    </button>
+
+
+    <a
+        href="/suppliers"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+    </a>
+
+
+    <a
+        href="/profile"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/new-purchase.js"
+></script>
+
+</body>
+</html>

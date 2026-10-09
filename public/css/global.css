@@ -1,0 +1,1258 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   GLOBAL STYLES
+
+   Shared foundation for:
+   - Dashboard
+   - Customers
+   - Sell
+   - Suppliers
+   - Buy
+   - Profile
+   - Login
+   ============================================================ */
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    font-family: var(--font-sans);
+    background: var(--color-page);
+    color: var(--color-text);
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+
+    background: var(--color-page);
+    color: var(--color-text);
+
+    font-family: var(--font-sans);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   BASIC ELEMENT RESET
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+svg,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    border: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-text);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+h1 {
+    font-size: clamp(
+        1.75rem,
+        2.8vw,
+        var(--font-size-4xl)
+    );
+}
+
+h2 {
+    font-size: clamp(
+        1.25rem,
+        2vw,
+        var(--font-size-2xl)
+    );
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+}
+
+p {
+    color: var(--color-text-secondary);
+    line-height: var(--line-height-relaxed);
+}
+
+strong {
+    font-weight: var(--font-weight-semibold);
+}
+
+small {
+    font-size: var(--font-size-sm);
+}
+
+code,
+kbd,
+samp,
+pre {
+    font-family: var(--font-mono);
+}
+
+
+/* ============================================================
+   EYEBROW / SMALL LABEL
+   ============================================================ */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-widest);
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+   ============================================================ */
+
+.sr-only {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    padding: 0 !important;
+    margin: -1px !important;
+
+    overflow: hidden !important;
+
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+
+    border: 0 !important;
+}
+
+
+/*
+   Show skip/focus-only content when it receives keyboard focus.
+*/
+
+.sr-only:focus,
+.sr-only:active {
+    position: fixed !important;
+
+    top: var(--space-4) !important;
+    left: var(--space-4) !important;
+
+    z-index: var(--z-toast);
+
+    width: auto !important;
+    height: auto !important;
+
+    padding: var(--space-3) var(--space-4) !important;
+    margin: 0 !important;
+
+    overflow: visible !important;
+
+    clip: auto !important;
+    white-space: normal !important;
+
+    background: var(--color-black);
+    color: var(--color-white);
+
+    border-radius: var(--radius-md);
+}
+
+
+/* ============================================================
+   KEYBOARD FOCUS
+   ============================================================ */
+
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: var(--color-black);
+    box-shadow: var(--focus-ring);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   FORM CONTROLS
+   ============================================================ */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    border:
+        var(--border-width)
+        solid
+        var(--control-border);
+
+    border-radius: var(--radius-control);
+
+    background: var(--control-background);
+    color: var(--control-text);
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        background-color var(--transition-fast);
+}
+
+input,
+select {
+    min-height: var(--control-height);
+
+    padding:
+        0
+        var(--control-padding-x);
+}
+
+textarea {
+    min-height: 110px;
+
+    padding:
+        var(--space-3)
+        var(--control-padding-x);
+
+    resize: vertical;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--control-placeholder);
+    opacity: 1;
+}
+
+input:hover:not(:disabled),
+select:hover:not(:disabled),
+textarea:hover:not(:disabled) {
+    border-color: var(--color-gray-400);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+
+    background: var(--color-gray-100);
+    color: var(--color-text-muted);
+
+    opacity: 0.72;
+}
+
+
+/* ============================================================
+   DATE / NUMBER INPUT
+   ============================================================ */
+
+input[type="date"],
+input[type="number"],
+input[inputmode="decimal"],
+input[inputmode="numeric"] {
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Remove browser number arrows where appropriate. */
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+
+/* ============================================================
+   SELECT
+   ============================================================ */
+
+select {
+    cursor: pointer;
+
+    padding-right: var(--space-10);
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            currentColor 50%
+        ),
+        linear-gradient(
+            135deg,
+            currentColor 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 18px) 50%,
+        calc(100% - 13px) 50%;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+
+    appearance: none;
+}
+
+
+/* ============================================================
+   CHECKBOX / RADIO
+   ============================================================ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    min-height: 18px;
+
+    padding: 0;
+
+    accent-color: var(--color-black);
+}
+
+
+/* ============================================================
+   FORM LABELS
+   ============================================================ */
+
+label {
+    color: var(--color-text);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.form-field {
+    display: grid;
+    gap: var(--space-2);
+}
+
+.form-field label {
+    line-height: var(--line-height-snug);
+}
+
+.form-help {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+}
+
+.form-error {
+    color: var(--color-black);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-normal);
+}
+
+.form-error:not(:empty)::before {
+    content: "!";
+
+    display: inline-grid;
+    place-items: center;
+
+    width: 16px;
+    height: 16px;
+
+    margin-right: 5px;
+
+    border: 1px solid currentColor;
+    border-radius: 50%;
+
+    font-size: 10px;
+    line-height: 1;
+}
+
+
+/* ============================================================
+   INVALID FIELDS
+
+   Add .is-invalid from JavaScript when validation fails.
+   ============================================================ */
+
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+    border-color: var(--color-black);
+    box-shadow:
+        inset 0 0 0 1px var(--color-black);
+}
+
+
+/* ============================================================
+   BUTTON BASE
+   ============================================================ */
+
+button,
+.button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    min-height: var(--control-height);
+
+    padding:
+        0
+        var(--space-5);
+
+    border:
+        var(--border-width)
+        solid
+        transparent;
+
+    border-radius: var(--radius-control);
+
+    cursor: pointer;
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1;
+    white-space: nowrap;
+
+    transition:
+        transform var(--transition-fast),
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        opacity var(--transition-fast);
+
+    user-select: none;
+}
+
+.button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: 0.48;
+}
+
+
+/* ============================================================
+   PRIMARY BUTTON
+   ============================================================ */
+
+.button-primary {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+
+    border-color: var(--color-primary);
+}
+
+.button-primary:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.button-primary:active:not(:disabled) {
+    background: var(--color-primary-active);
+}
+
+
+/* ============================================================
+   SECONDARY BUTTON
+   ============================================================ */
+
+.button-secondary {
+    background: var(--color-white);
+    color: var(--color-black);
+
+    border-color: var(--color-border-strong);
+}
+
+.button-secondary:hover:not(:disabled) {
+    background: var(--color-gray-50);
+    border-color: var(--color-gray-400);
+}
+
+
+/* ============================================================
+   GHOST BUTTON
+   ============================================================ */
+
+.button-ghost {
+    background: transparent;
+    color: var(--color-text);
+
+    border-color: transparent;
+}
+
+.button-ghost:hover:not(:disabled) {
+    background: var(--color-gray-100);
+}
+
+
+/* ============================================================
+   DANGER / DESTRUCTIVE BUTTON
+
+   Still monochrome intentionally.
+   ============================================================ */
+
+.button-danger {
+    background: var(--color-white);
+    color: var(--color-black);
+
+    border-color: var(--color-black);
+}
+
+.button-danger:hover:not(:disabled) {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+
+/* ============================================================
+   BUTTON SIZES
+   ============================================================ */
+
+.button-small {
+    min-height: var(--control-height-sm);
+
+    padding:
+        0
+        var(--space-4);
+
+    font-size: var(--font-size-xs);
+}
+
+.button-large {
+    min-height: var(--control-height-lg);
+
+    padding:
+        0
+        var(--space-6);
+
+    font-size: var(--font-size-base);
+}
+
+.button-block {
+    width: 100%;
+}
+
+
+/* ============================================================
+   ICON BUTTON
+   ============================================================ */
+
+.icon-button {
+    display: inline-grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    width: var(--control-height);
+    height: var(--control-height);
+
+    padding: 0;
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--radius-control);
+
+    background: var(--color-white);
+    color: var(--color-black);
+
+    cursor: pointer;
+
+    font-size: var(--font-size-lg);
+    line-height: 1;
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.icon-button:hover {
+    background: var(--color-gray-100);
+    border-color: var(--color-gray-300);
+}
+
+.icon-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+.text-link {
+    color: var(--color-text);
+
+    font-weight: var(--font-weight-semibold);
+
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.text-link:hover {
+    text-decoration-thickness: 2px;
+}
+
+
+/* ============================================================
+   PANEL / SURFACE
+   ============================================================ */
+
+.panel {
+    min-width: 0;
+
+    background: var(--color-surface);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-xs);
+}
+
+
+/* ============================================================
+   DIVIDER
+   ============================================================ */
+
+.divider {
+    width: 100%;
+    height: 1px;
+
+    border: 0;
+
+    background: var(--color-divider);
+}
+
+
+/* ============================================================
+   MONEY / NUMERIC VALUES
+   ============================================================ */
+
+.money-value,
+.numeric-value {
+    font-variant-numeric: tabular-nums;
+}
+
+.money-value {
+    white-space: nowrap;
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* ============================================================
+   TRANSACTION TYPE BADGES
+   ============================================================ */
+
+.transaction-type {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 26px;
+
+    padding:
+        0
+        var(--space-3);
+
+    border:
+        var(--border-width)
+        solid
+        transparent;
+
+    border-radius: var(--radius-pill);
+
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wider);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.transaction-type-sell {
+    background: var(--sell-bg);
+    color: var(--sell-text);
+    border-color: var(--sell-border);
+}
+
+.transaction-type-buy {
+    background: var(--buy-bg);
+    color: var(--buy-text);
+    border-color: var(--buy-border);
+}
+
+
+/* ============================================================
+   CASH / CREDIT BADGES
+   ============================================================ */
+
+.payment-term-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 25px;
+
+    padding:
+        0
+        var(--space-3);
+
+    border:
+        var(--border-width)
+        solid;
+
+    border-radius: var(--radius-pill);
+
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wide);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.payment-term-cash {
+    background: var(--cash-bg);
+    color: var(--cash-text);
+    border-color: var(--cash-border);
+}
+
+.payment-term-credit {
+    background: var(--credit-bg);
+    color: var(--credit-text);
+    border-color: var(--credit-border);
+}
+
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 26px;
+
+    padding:
+        0
+        var(--space-3);
+
+    border:
+        var(--border-width)
+        solid
+        var(--status-pending-border);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--status-pending-bg);
+    color: var(--status-pending-text);
+
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wide);
+    line-height: 1;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.status-draft {
+    background: var(--status-draft-bg);
+    color: var(--status-draft-text);
+    border-color: var(--status-draft-border);
+}
+
+.status-pending {
+    background: var(--status-pending-bg);
+    color: var(--status-pending-text);
+    border-color: var(--status-pending-border);
+}
+
+.status-partially-paid,
+.status-partial {
+    background: var(--status-partial-bg);
+    color: var(--status-partial-text);
+    border-color: var(--status-partial-border);
+}
+
+.status-paid {
+    background: var(--status-paid-bg);
+    color: var(--status-paid-text);
+    border-color: var(--status-paid-border);
+}
+
+.status-overdue {
+    background: var(--status-overdue-bg);
+    color: var(--status-overdue-text);
+    border-color: var(--status-overdue-border);
+}
+
+.status-cancelled,
+.status-canceled {
+    background: var(--status-cancelled-bg);
+    color: var(--status-cancelled-text);
+    border-color: var(--status-cancelled-border);
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 150px;
+
+    padding: var(--space-8);
+
+    text-align: center;
+}
+
+.empty-state strong {
+    color: var(--color-text);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.empty-state span,
+.empty-state p {
+    max-width: 420px;
+
+    margin-top: var(--space-2);
+
+    color: var(--color-text-muted);
+    font-size: var(--font-size-sm);
+}
+
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+
+.spinner {
+    display: inline-block;
+
+    width: 18px;
+    height: 18px;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation:
+        global-spin
+        650ms
+        linear
+        infinite;
+}
+
+@keyframes global-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   SKELETON / SHIMMER
+   ============================================================ */
+
+.skeleton {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--color-gray-100);
+
+    border-radius: var(--radius-sm);
+}
+
+.skeleton::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    transform: translateX(-100%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.75),
+            transparent
+        );
+
+    animation:
+        global-shimmer
+        1.4s
+        infinite;
+}
+
+@keyframes global-shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+/* ============================================================
+   HIDDEN
+   ============================================================ */
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   SCROLLBAR
+
+   Subtle desktop enhancement. Native scrolling remains intact.
+   ============================================================ */
+
+@media (pointer: fine) {
+
+    * {
+        scrollbar-width: thin;
+        scrollbar-color:
+            var(--color-gray-300)
+            transparent;
+    }
+
+    *::-webkit-scrollbar {
+        width: 9px;
+        height: 9px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: var(--color-gray-300);
+
+        border:
+            2px
+            solid
+            transparent;
+
+        border-radius: var(--radius-pill);
+
+        background-clip: padding-box;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+        background: var(--color-gray-400);
+
+        border:
+            2px
+            solid
+            transparent;
+
+        background-clip: padding-box;
+    }
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (pointer: coarse) {
+
+    button,
+    .button,
+    a,
+    select,
+    input[type="checkbox"],
+    input[type="radio"] {
+        touch-action: manipulation;
+    }
+
+    .button,
+    .icon-button {
+        min-height: 44px;
+    }
+}
+
+
+/* ============================================================
+   MOBILE TYPOGRAPHY
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    body {
+        font-size: var(--font-size-sm);
+    }
+
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .empty-state {
+        min-height: 130px;
+
+        padding:
+            var(--space-6)
+            var(--space-4);
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
+
+/* ============================================================
+   HIGH CONTRAST / FORCED COLORS
+   ============================================================ */
+
+@media (forced-colors: active) {
+
+    .button,
+    .icon-button,
+    input,
+    select,
+    textarea,
+    .status-badge,
+    .transaction-type,
+    .payment-term-badge,
+    .panel {
+        border:
+            1px
+            solid
+            CanvasText;
+    }
+
+    :focus-visible {
+        outline:
+            2px
+            solid
+            Highlight;
+    }
+}
+
+
+/* ============================================================
+   PRINT FOUNDATION
+
+   Detailed invoice printing will later live in the dedicated
+   Sell / Buy print stylesheet.
+   ============================================================ */
+
+@media print {
+
+    html,
+    body {
+        min-width: 0;
+
+        background: #ffffff;
+        color: #000000;
+
+        font-size: 10pt;
+    }
+
+    body {
+        min-height: auto;
+    }
+
+    .no-print,
+    button,
+    .button {
+        display: none !important;
+    }
+
+    .panel {
+        box-shadow: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

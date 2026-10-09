@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND customer accounts and receivables."
+    >
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <title>
+        Customers | OM MARUTI DIAMOND
+    </title>
+
+    <!-- Shared design system -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/customers.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="topbar-actions">
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Customer activity date range
+                </label>
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Customer activity date range"
+                >
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+                </select>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="addCustomerButton"
+                >
+                    + Add Customer
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom customer activity date range"
+        >
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="applyCustomDateButton"
+            >
+                Apply
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <div class="page-content">
+
+
+            <!-- Page heading -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SELL ACCOUNTS
+                    </span>
+
+                    <h1>
+                        Customers
+                    </h1>
+
+                    <p>
+                        Manage customers, Sell activity,
+                        outstanding balances and receivables.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER SUMMARY
+                 ================================================= -->
+
+            <section
+                class="dashboard-summary-grid"
+                aria-label="Customer summary"
+            >
+
+
+                <!-- Total Customers -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL CUSTOMERS
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="totalCustomersValue"
+                    >
+                        0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="totalCustomersMeta"
+                    >
+                        Customer accounts
+                    </span>
+
+                </article>
+
+
+                <!-- Active Customers -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        ACTIVE CUSTOMERS
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="activeCustomersValue"
+                    >
+                        0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="activeCustomersMeta"
+                    >
+                        Active accounts
+                    </span>
+
+                </article>
+
+
+                <!-- Receivable -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        RECEIVABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="customerReceivableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="customerReceivableMeta"
+                    >
+                        Current outstanding
+                    </span>
+
+                </article>
+
+
+                <!-- Overdue -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        OVERDUE RECEIVABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="customerOverdueValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="customerOverdueMeta"
+                    >
+                        0 overdue sales
+                    </span>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER LIST
+                 ================================================= -->
+
+            <section class="panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CUSTOMER DIRECTORY
+                        </span>
+
+                        <h2>
+                            All Customers
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Customer-specific controls -->
+
+                <div class="customer-toolbar">
+
+                    <div class="form-field customer-search-field">
+
+                        <label
+                            class="sr-only"
+                            for="customerSearchInput"
+                        >
+                            Search customers
+                        </label>
+
+                        <input
+                            type="search"
+                            id="customerSearchInput"
+                            placeholder="Search name, mobile, email or GSTIN..."
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+
+                    </div>
+
+
+                    <div class="form-field">
+
+                        <label
+                            class="sr-only"
+                            for="customerStatusFilter"
+                        >
+                            Customer status
+                        </label>
+
+                        <select
+                            id="customerStatusFilter"
+                            aria-label="Customer status"
+                        >
+                            <option value="all">
+                                All Customers
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="inactive">
+                                Inactive
+                            </option>
+
+                            <option value="receivable">
+                                Has Receivable
+                            </option>
+
+                            <option value="overdue">
+                                Overdue
+                            </option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Customer table -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Customer
+                                </th>
+
+                                <th scope="col">
+                                    Mobile
+                                </th>
+
+                                <th scope="col">
+                                    GSTIN
+                                </th>
+
+                                <th scope="col">
+                                    Total Sell
+                                </th>
+
+                                <th scope="col">
+                                    Received
+                                </th>
+
+                                <th scope="col">
+                                    Receivable
+                                </th>
+
+                                <th scope="col">
+                                    Last Sell
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                                <th scope="col">
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!--
+                            Populated safely by customers.js.
+
+                            Do not insert Firestore values with
+                            innerHTML.
+                        -->
+
+                        <tbody id="customersTableBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- Empty state -->
+
+                <div
+                    class="empty-state"
+                    id="customersEmptyState"
+                    hidden
+                >
+
+                    <strong>
+                        No customers yet
+                    </strong>
+
+                    <span>
+                        Add your first customer to start
+                        creating Sell invoices.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+    </a>
+
+
+    <!-- Customers -->
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+    </a>
+
+
+    <!-- Create -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileAddCustomerButton"
+        aria-label="Add customer"
+    >
+        +
+    </button>
+
+
+    <!-- Suppliers -->
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+    </a>
+
+
+    <!-- Profile -->
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     ADD CUSTOMER MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="addCustomerModal"
+    hidden
+>
+
+    <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="addCustomerModalTitle"
+    >
+
+
+        <!-- Modal header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    CUSTOMER
+                </span>
+
+                <h2 id="addCustomerModalTitle">
+                    Add Customer
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closeAddCustomerModal"
+                aria-label="Close Add Customer"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CUSTOMER FORM
+
+             customers.js will submit this through the trusted
+             createCustomer callable Cloud Function.
+
+             NO direct Firestore write.
+             ================================================= -->
+
+        <form
+            id="addCustomerForm"
+            novalidate
+        >
+
+
+            <!-- Name -->
+
+            <div class="form-field">
+
+                <label for="customerName">
+                    Customer Name
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    name="name"
+                    maxlength="120"
+                    autocomplete="organization"
+                    required
+                >
+
+                <span
+                    class="field-error"
+                    id="customerNameError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Mobile -->
+
+            <div class="form-field">
+
+                <label for="customerMobile">
+                    Mobile
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerMobile"
+                    name="mobile"
+                    maxlength="20"
+                    inputmode="tel"
+                    autocomplete="tel"
+                >
+
+                <span
+                    class="field-error"
+                    id="customerMobileError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-field">
+
+                <label for="customerEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    name="email"
+                    maxlength="160"
+                    autocomplete="email"
+                >
+
+                <span
+                    class="field-error"
+                    id="customerEmailError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- GSTIN -->
+
+            <div class="form-field">
+
+                <label for="customerGstin">
+                    GSTIN
+                </label>
+
+                <input
+                    type="text"
+                    id="customerGstin"
+                    name="gstin"
+                    maxlength="15"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <span
+                    class="field-error"
+                    id="customerGstinError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Address -->
+
+            <div class="form-field">
+
+                <label for="customerAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    name="address"
+                    rows="4"
+                    maxlength="500"
+                    autocomplete="street-address"
+                ></textarea>
+
+                <span
+                    class="field-error"
+                    id="customerAddressError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Form message -->
+
+            <div
+                class="form-message"
+                id="customerFormMessage"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></div>
+
+
+            <!-- Actions -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelAddCustomerButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                    id="saveCustomerButton"
+                >
+                    <span id="saveCustomerButtonText">
+                        Save Customer
+                    </span>
+
+                    <span
+                        id="saveCustomerSpinner"
+                        class="button-spinner"
+                        aria-hidden="true"
+                        hidden
+                    ></span>
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     CUSTOMERS JAVASCRIPT
+
+     We create this in the upcoming JS step.
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/customers.js"
+></script>
+
+</body>
+
+</html>

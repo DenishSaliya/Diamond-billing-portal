@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 — Page Not Found | OM MARUTI DIAMOND</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #f8f8f8;
+      color: #111;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #050505;
+      color: white;
+      padding: 22px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+
+    .portal {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #bbb;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .content {
+      text-align: center;
+      max-width: 550px;
+    }
+
+    .error-code {
+      font-size: clamp(110px, 22vw, 200px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -12px;
+      margin: 0;
+    }
+
+    .line {
+      width: 65px;
+      height: 4px;
+      background: #111;
+      margin: 30px auto;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin: 0 0 16px;
+      letter-spacing: -1px;
+    }
+
+    p {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.8;
+      margin: 0 auto 32px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 7px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .primary {
+      background: #050505;
+      color: white;
+      border: 1px solid #050505;
+    }
+
+    .primary:hover {
+      background: #333;
+    }
+
+    .secondary {
+      background: white;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    .secondary:hover {
+      border-color: #111;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 20px;
+      }
+
+      .portal {
+        display: none;
+      }
+
+      .error-code {
+        letter-spacing: -6px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      OM MARUTI
+      <span>DIAMOND</span>
+    </div>
+
+    <div class="portal">SECURE BILLING PORTAL</div>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="error-code">404</div>
+      <div class="line"></div>
+
+      <h1>Page Not Found</h1>
+
+      <p>
+        The page you're looking for doesn't exist,
+        has been moved, or the link may be incorrect.
+        Please return to the dashboard or sign in.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="/">
+          Go to Dashboard
+        </a>
+
+        <a class="button secondary" href="/login">
+          Sign In
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> OM MARUTI DIAMOND.
+    ALL RIGHTS RESERVED.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>

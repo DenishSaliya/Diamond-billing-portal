@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND customer account, Sell history, receipts and receivables."
+    >
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <title>
+        Customer Account | OM MARUTI DIAMOND
+    </title>
+
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!--
+        We create this file in the NEXT step.
+    -->
+
+    <link
+        rel="stylesheet"
+        href="/css/customer.css"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    Sell or Buy
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Date filter -->
+
+            <div class="topbar-actions">
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Customer account date range
+                </label>
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Customer account date range"
+                >
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+                </select>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="newSaleButton"
+                >
+                    + New Sell
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE PANEL
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom customer account date range"
+        >
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="applyCustomDateButton"
+            >
+                Apply
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content customer-account-page">
+
+
+            <!-- =================================================
+                 BACK NAVIGATION
+                 ================================================= -->
+
+            <div class="customer-back-row">
+
+                <a
+                    href="/customers.html"
+                    class="customer-back-link"
+                >
+                    <span aria-hidden="true">←</span>
+                    <span>Customers</span>
+                </a>
+
+            </div>
+
+
+            <!-- =================================================
+                 CUSTOMER HEADER
+                 ================================================= -->
+
+            <section class="customer-profile-header">
+
+
+                <div class="customer-profile-main">
+
+                    <div
+                        class="customer-profile-avatar"
+                        id="customerAvatar"
+                        aria-hidden="true"
+                    >
+                        —
+                    </div>
+
+
+                    <div class="customer-profile-title">
+
+                        <span class="eyebrow">
+                            CUSTOMER ACCOUNT
+                        </span>
+
+                        <h1 id="customerName">
+                            Loading customer...
+                        </h1>
+
+
+                        <div class="customer-profile-contact">
+
+                            <span id="customerMobile">
+                                —
+                            </span>
+
+                            <span
+                                class="customer-contact-separator"
+                                aria-hidden="true"
+                            >
+                                •
+                            </span>
+
+                            <span id="customerEmail">
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="customer-profile-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="recordReceiptButton"
+                    >
+                        Record Receipt
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="button button-primary"
+                        id="customerNewSaleButton"
+                    >
+                        + New Sell
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER DETAILS
+                 ================================================= -->
+
+            <section
+                class="customer-details-strip"
+                aria-label="Customer details"
+            >
+
+                <div class="customer-detail">
+
+                    <span class="customer-detail-label">
+                        GSTIN
+                    </span>
+
+                    <strong id="customerGstin">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="customer-detail">
+
+                    <span class="customer-detail-label">
+                        STATUS
+                    </span>
+
+                    <span
+                        class="status-badge"
+                        id="customerStatus"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <div class="customer-detail customer-address-detail">
+
+                    <span class="customer-detail-label">
+                        ADDRESS
+                    </span>
+
+                    <strong id="customerAddress">
+                        —
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FINANCIAL SUMMARY
+                 ================================================= -->
+
+            <section
+                class="customer-account-summary"
+                aria-label="Customer financial summary"
+            >
+
+
+                <!-- Total Sell -->
+
+                <article class="customer-account-card">
+
+                    <span class="customer-account-label">
+                        TOTAL SELL
+                    </span>
+
+                    <strong
+                        class="customer-account-value"
+                        id="customerTotalSellValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="customer-account-meta"
+                        id="customerTotalSellMeta"
+                    >
+                        Today
+                    </span>
+
+                </article>
+
+
+                <!-- Received -->
+
+                <article class="customer-account-card">
+
+                    <span class="customer-account-label">
+                        RECEIVED
+                    </span>
+
+                    <strong
+                        class="customer-account-value"
+                        id="customerReceivedValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="customer-account-meta"
+                        id="customerReceivedMeta"
+                    >
+                        Today
+                    </span>
+
+                </article>
+
+
+                <!-- Receivable -->
+
+                <article
+                    class="customer-account-card customer-account-card-primary"
+                >
+
+                    <span class="customer-account-label">
+                        RECEIVABLE
+                    </span>
+
+                    <strong
+                        class="customer-account-value"
+                        id="customerReceivableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="customer-account-meta"
+                        id="customerReceivableMeta"
+                    >
+                        Current outstanding
+                    </span>
+
+                </article>
+
+
+                <!-- Overdue -->
+
+                <article class="customer-account-card">
+
+                    <span class="customer-account-label">
+                        OVERDUE
+                    </span>
+
+                    <strong
+                        class="customer-account-value"
+                        id="customerOverdueValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="customer-account-meta"
+                        id="customerOverdueMeta"
+                    >
+                        0 overdue sales
+                    </span>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+                 ================================================= -->
+
+            <section class="customer-quick-actions">
+
+                <button
+                    type="button"
+                    class="customer-quick-action"
+                    id="quickNewSaleButton"
+                >
+
+                    <span
+                        class="customer-quick-action-icon"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </span>
+
+                    <span>
+                        <strong>
+                            New Sell
+                        </strong>
+
+                        <small>
+                            Create invoice
+                        </small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="customer-quick-action"
+                    id="quickRecordReceiptButton"
+                >
+
+                    <span
+                        class="customer-quick-action-icon"
+                        aria-hidden="true"
+                    >
+                        ₹
+                    </span>
+
+                    <span>
+                        <strong>
+                            Record Receipt
+                        </strong>
+
+                        <small>
+                            Receive payment
+                        </small>
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="customer-quick-action"
+                    id="printStatementButton"
+                >
+
+                    <span
+                        class="customer-quick-action-icon"
+                        aria-hidden="true"
+                    >
+                        ↓
+                    </span>
+
+                    <span>
+                        <strong>
+                            Statement
+                        </strong>
+
+                        <small>
+                            Print / PDF
+                        </small>
+                    </span>
+
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 ACCOUNT TABS
+                 ================================================= -->
+
+            <section class="customer-account-section">
+
+
+                <div
+                    class="customer-tabs"
+                    role="tablist"
+                    aria-label="Customer account information"
+                >
+
+                    <button
+                        type="button"
+                        class="customer-tab active"
+                        id="salesTabButton"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="salesTabPanel"
+                        data-customer-tab="sales"
+                    >
+                        Sell History
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="customer-tab"
+                        id="receiptsTabButton"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="receiptsTabPanel"
+                        data-customer-tab="receipts"
+                    >
+                        Receipts
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="customer-tab"
+                        id="statementTabButton"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="statementTabPanel"
+                        data-customer-tab="statement"
+                    >
+                        Statement
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     SELL HISTORY
+                     ================================================= -->
+
+                <div
+                    class="customer-tab-panel"
+                    id="salesTabPanel"
+                    role="tabpanel"
+                    aria-labelledby="salesTabButton"
+                >
+
+
+                    <div class="customer-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                SELL
+                            </span>
+
+                            <h2>
+                                Sell History
+                            </h2>
+
+                        </div>
+
+
+                        <div
+                            class="customer-section-count"
+                            id="salesCount"
+                        >
+                            0 invoices
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="customer-account-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        Invoice
+                                    </th>
+
+                                    <th scope="col">
+                                        Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Type
+                                    </th>
+
+                                    <th scope="col">
+                                        Due Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Total
+                                    </th>
+
+                                    <th scope="col">
+                                        Received
+                                    </th>
+
+                                    <th scope="col">
+                                        Balance
+                                    </th>
+
+                                    <th scope="col">
+                                        Status
+                                    </th>
+
+                                    <th scope="col">
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerSalesTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div
+                        class="empty-state"
+                        id="customerSalesEmpty"
+                        hidden
+                    >
+
+                        <strong>
+                            No Sell invoices
+                        </strong>
+
+                        <span>
+                            No Sell invoices match the selected date range.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     RECEIPTS
+                     ================================================= -->
+
+                <div
+                    class="customer-tab-panel"
+                    id="receiptsTabPanel"
+                    role="tabpanel"
+                    aria-labelledby="receiptsTabButton"
+                    hidden
+                >
+
+
+                    <div class="customer-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PAYMENTS
+                            </span>
+
+                            <h2>
+                                Receipt History
+                            </h2>
+
+                        </div>
+
+
+                        <div
+                            class="customer-section-count"
+                            id="receiptsCount"
+                        >
+                            0 receipts
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="customer-account-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Invoice
+                                    </th>
+
+                                    <th scope="col">
+                                        Amount
+                                    </th>
+
+                                    <th scope="col">
+                                        Method
+                                    </th>
+
+                                    <th scope="col">
+                                        Reference
+                                    </th>
+
+                                    <th scope="col">
+                                        Note
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerReceiptsTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div
+                        class="empty-state"
+                        id="customerReceiptsEmpty"
+                        hidden
+                    >
+
+                        <strong>
+                            No receipts
+                        </strong>
+
+                        <span>
+                            No customer receipts match the selected date range.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     STATEMENT / LEDGER
+                     ================================================= -->
+
+                <div
+                    class="customer-tab-panel"
+                    id="statementTabPanel"
+                    role="tabpanel"
+                    aria-labelledby="statementTabButton"
+                    hidden
+                >
+
+
+                    <div class="customer-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                LEDGER
+                            </span>
+
+                            <h2>
+                                Customer Statement
+                            </h2>
+
+                        </div>
+
+
+                        <div
+                            class="customer-section-count"
+                            id="statementCount"
+                        >
+                            0 entries
+                        </div>
+
+                    </div>
+
+
+                    <div class="customer-statement-summary">
+
+                        <div>
+
+                            <span>
+                                Opening Balance
+                            </span>
+
+                            <strong id="statementOpeningBalance">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Sell
+                            </span>
+
+                            <strong id="statementSellTotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Received
+                            </span>
+
+                            <strong id="statementReceivedTotal">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Closing Balance
+                            </span>
+
+                            <strong id="statementClosingBalance">
+                                ₹0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table class="customer-account-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Particular
+                                    </th>
+
+                                    <th scope="col">
+                                        Reference
+                                    </th>
+
+                                    <th scope="col">
+                                        Debit
+                                    </th>
+
+                                    <th scope="col">
+                                        Credit
+                                    </th>
+
+                                    <th scope="col">
+                                        Balance
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerStatementTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <div
+                        class="empty-state"
+                        id="customerStatementEmpty"
+                        hidden
+                    >
+
+                        <strong>
+                            No statement entries
+                        </strong>
+
+                        <span>
+                            No Sell or receipt activity matches this date range.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMER NOT FOUND
+                 ================================================= -->
+
+            <section
+                class="customer-error-state"
+                id="customerNotFound"
+                hidden
+            >
+
+                <span
+                    class="customer-error-icon"
+                    aria-hidden="true"
+                >
+                    !
+                </span>
+
+                <h2>
+                    Customer not found
+                </h2>
+
+                <p>
+                    This customer may not exist or the link may be invalid.
+                </p>
+
+                <a
+                    href="/customers.html"
+                    class="button button-primary"
+                >
+                    Back to Customers
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     RECORD RECEIPT MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="recordReceiptModal"
+    hidden
+>
+
+    <section
+        class="modal customer-receipt-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="recordReceiptModalTitle"
+    >
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    PAYMENT
+                </span>
+
+                <h2 id="recordReceiptModalTitle">
+                    Record Receipt
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closeRecordReceiptModal"
+                aria-label="Close Record Receipt"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!--
+            Later customer.js will submit this through our
+            trusted receipt/payment callable function.
+
+            No direct browser Firestore writes.
+        -->
+
+        <form
+            id="recordReceiptForm"
+            novalidate
+        >
+
+
+            <!-- Customer -->
+
+            <div class="receipt-customer-summary">
+
+                <span>
+                    Customer
+                </span>
+
+                <strong id="receiptCustomerName">
+                    —
+                </strong>
+
+                <small>
+                    Current receivable:
+                    <strong id="receiptCurrentReceivable">
+                        ₹0
+                    </strong>
+                </small>
+
+            </div>
+
+
+            <!-- Invoice -->
+
+            <div class="form-field">
+
+                <label for="receiptSaleId">
+                    Sell Invoice
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <select
+                    id="receiptSaleId"
+                    name="saleId"
+                    required
+                >
+                    <option value="">
+                        Select invoice
+                    </option>
+                </select>
+
+                <span
+                    class="field-error"
+                    id="receiptSaleIdError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Outstanding -->
+
+            <div class="receipt-balance-preview">
+
+                <span>
+                    Invoice Outstanding
+                </span>
+
+                <strong id="receiptInvoiceBalance">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <!-- Amount -->
+
+            <div class="form-field">
+
+                <label for="receiptAmount">
+                    Amount Received
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="number"
+                    id="receiptAmount"
+                    name="amount"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    autocomplete="off"
+                    required
+                >
+
+                <span
+                    class="field-error"
+                    id="receiptAmountError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Date -->
+
+            <div class="form-field">
+
+                <label for="receiptDate">
+                    Receipt Date
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="date"
+                    id="receiptDate"
+                    name="receiptDate"
+                    required
+                >
+
+                <span
+                    class="field-error"
+                    id="receiptDateError"
+                    aria-live="polite"
+                ></span>
+
+            </div>
+
+
+            <!-- Method -->
+
+            <div class="form-field">
+
+                <label for="receiptMethod">
+                    Payment Method
+                </label>
+
+                <select
+                    id="receiptMethod"
+                    name="method"
+                >
+                    <option value="cash">
+                        Cash
+                    </option>
+
+                    <option value="bank">
+                        Bank Transfer
+                    </option>
+
+                    <option value="upi">
+                        UPI
+                    </option>
+
+                    <option value="cheque">
+                        Cheque
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+                </select>
+
+            </div>
+
+
+            <!-- Reference -->
+
+            <div class="form-field">
+
+                <label for="receiptReference">
+                    Reference
+                </label>
+
+                <input
+                    type="text"
+                    id="receiptReference"
+                    name="reference"
+                    maxlength="120"
+                    autocomplete="off"
+                    placeholder="UPI / bank / cheque reference"
+                >
+
+            </div>
+
+
+            <!-- Note -->
+
+            <div class="form-field">
+
+                <label for="receiptNote">
+                    Note
+                </label>
+
+                <textarea
+                    id="receiptNote"
+                    name="note"
+                    rows="3"
+                    maxlength="500"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Message -->
+
+            <div
+                class="form-message"
+                id="receiptFormMessage"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></div>
+
+
+            <!-- Actions -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelReceiptButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                    id="saveReceiptButton"
+                >
+
+                    <span id="saveReceiptButtonText">
+                        Save Receipt
+                    </span>
+
+                    <span
+                        class="button-spinner"
+                        id="saveReceiptSpinner"
+                        aria-hidden="true"
+                        hidden
+                    ></span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+    </a>
+
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+    </a>
+
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewSaleButton"
+        aria-label="Create new Sell invoice"
+    >
+        +
+    </button>
+
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+    </a>
+
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     CUSTOMER PAGE JAVASCRIPT
+
+     We create this after customer.css.
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/customer.js"
+></script>
+
+</body>
+
+</html>

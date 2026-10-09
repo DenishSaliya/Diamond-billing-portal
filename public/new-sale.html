@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="Create a new Sell invoice for OM MARUTI DIAMOND."
+    >
+
+    <title>
+        New Sell | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- Page-specific -->
+
+    <link
+        rel="stylesheet"
+        href="/css/new-sale.css"
+    >
+
+
+    <!-- Always last -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="topbar-actions">
+
+                <a
+                    href="/sales.html"
+                    class="button button-secondary"
+                >
+                    Cancel
+                </a>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="topSaveSaleButton"
+                >
+                    Save Sell
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE
+             ================================================= -->
+
+        <div class="page-content new-sale-page">
+
+
+            <!-- =================================================
+                 HEADING
+                 ================================================= -->
+
+            <section class="new-sale-heading">
+
+                <div class="new-sale-heading-copy">
+
+                    <a
+                        href="/sales.html"
+                        class="new-sale-back"
+                    >
+                        <span aria-hidden="true">←</span>
+                        Back to Sales
+                    </a>
+
+
+                    <span class="eyebrow">
+                        SELL / NEW INVOICE
+                    </span>
+
+
+                    <h1>
+                        New Sell
+                    </h1>
+
+
+                    <p>
+                        Create a secure Cash Sell or Credit Sell
+                        invoice for your customer.
+                    </p>
+
+                </div>
+
+
+                <div class="new-sale-number-preview">
+
+                    <span>
+                        INVOICE NUMBER
+                    </span>
+
+                    <strong id="invoiceNumberPreview">
+                        Assigned securely on save
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FORM
+                 ================================================= -->
+
+            <form
+                id="newSaleForm"
+                novalidate
+            >
+
+
+                <!-- =============================================
+                     01 CUSTOMER & TERMS
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                01 / CUSTOMER & TERMS
+                            </span>
+
+                            <h2>
+                                Sell Information
+                            </h2>
+
+                        </div>
+
+
+                        <p>
+                            Select the customer, invoice date
+                            and transaction terms.
+                        </p>
+
+                    </header>
+
+
+                    <div class="sale-form-grid">
+
+
+                        <!-- Customer -->
+
+                        <div class="sale-field sale-field-wide">
+
+                            <label for="saleCustomerId">
+                                Customer
+                            </label>
+
+
+                            <div class="sale-customer-row">
+
+                                <select
+                                    id="saleCustomerId"
+                                    required
+                                >
+                                    <option value="">
+                                        Select customer
+                                    </option>
+                                </select>
+
+
+                                <a
+                                    href="/customers.html?action=add"
+                                    class="button button-secondary sale-add-customer"
+                                >
+                                    + Customer
+                                </a>
+
+                            </div>
+
+
+                            <p
+                                class="field-error"
+                                id="saleCustomerIdError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Invoice date -->
+
+                        <div class="sale-field">
+
+                            <label for="saleInvoiceDate">
+                                Invoice Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="saleInvoiceDate"
+                                required
+                            >
+
+                            <p
+                                class="field-error"
+                                id="saleInvoiceDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Type -->
+
+                        <fieldset
+                            class="sale-field sale-type-field"
+                        >
+
+                            <legend>
+                                Sell Type
+                            </legend>
+
+
+                            <div class="sale-type-options">
+
+
+                                <label class="sale-type-option">
+
+                                    <input
+                                        type="radio"
+                                        id="saleTypeCash"
+                                        name="saleType"
+                                        value="cash"
+                                        checked
+                                    >
+
+                                    <span>
+                                        <strong>
+                                            Cash Sell
+                                        </strong>
+
+                                        <small>
+                                            Fully settled
+                                        </small>
+                                    </span>
+
+                                </label>
+
+
+                                <label class="sale-type-option">
+
+                                    <input
+                                        type="radio"
+                                        id="saleTypeCredit"
+                                        name="saleType"
+                                        value="credit"
+                                    >
+
+                                    <span>
+                                        <strong>
+                                            Credit Sell
+                                        </strong>
+
+                                        <small>
+                                            Payment due later
+                                        </small>
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </fieldset>
+
+
+                        <!-- Due date -->
+
+                        <div
+                            class="sale-field"
+                            id="saleDueDateField"
+                            hidden
+                        >
+
+                            <label for="saleDueDate">
+                                Due Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="saleDueDate"
+                            >
+
+                            <p class="sale-field-help">
+                                Required for Credit Sell.
+                                Select the due date manually.
+                            </p>
+
+                            <p
+                                class="field-error"
+                                id="saleDueDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <!-- Broker -->
+
+                        <div class="sale-field">
+
+                            <label for="saleBroker">
+                                Broker
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="saleBroker"
+                                maxlength="120"
+                                autocomplete="off"
+                                placeholder="Broker name"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     CUSTOMER PREVIEW
+                     ============================================= -->
+
+                <section
+                    class="sale-card sale-customer-preview"
+                    id="selectedCustomerPreview"
+                    hidden
+                >
+
+                    <header class="sale-customer-preview-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                SELECTED CUSTOMER
+                            </span>
+
+                            <h2 id="selectedCustomerName">
+                                —
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="sale-customer-status"
+                            id="selectedCustomerStatus"
+                        >
+                            Active
+                        </span>
+
+                    </header>
+
+
+                    <div class="sale-customer-details">
+
+
+                        <div>
+                            <span>Mobile</span>
+
+                            <strong id="selectedCustomerMobile">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>Email</span>
+
+                            <strong id="selectedCustomerEmail">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>GSTIN</span>
+
+                            <strong id="selectedCustomerGstin">
+                                —
+                            </strong>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                Current Receivable
+                            </span>
+
+                            <strong id="selectedCustomerReceivable">
+                                ₹0.00
+                            </strong>
+                        </div>
+
+
+                        <div class="sale-customer-address">
+
+                            <span>
+                                Address
+                            </span>
+
+                            <strong id="selectedCustomerAddress">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     02 ITEMS
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                02 / DIAMOND ITEMS
+                            </span>
+
+                            <h2>
+                                Invoice Items
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="addSaleItemButton"
+                        >
+                            + Add Item
+                        </button>
+
+                    </header>
+
+
+                    <div class="sale-items-table-wrap">
+
+                        <table class="sale-items-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>#</th>
+                                    <th>Material</th>
+                                    <th>Diamond Details</th>
+                                    <th>Remarks</th>
+                                    <th>HSN</th>
+                                    <th>Pcs</th>
+                                    <th>Carat</th>
+                                    <th>Rate / Ct.</th>
+                                    <th>Disc %</th>
+                                    <th>Amount</th>
+                                    <th>Tax %</th>
+                                    <th>Tax</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="saleItemsBody">
+                            </tbody>
+
+
+                            <tfoot>
+
+                                <tr>
+
+                                    <th
+                                        colspan="5"
+                                        class="sale-items-total-label"
+                                    >
+                                        Totals
+                                    </th>
+
+                                    <th id="itemsTotalPieces">
+                                        0
+                                    </th>
+
+                                    <th id="itemsTotalCarat">
+                                        0.000
+                                    </th>
+
+                                    <th></th>
+                                    <th></th>
+
+                                    <th id="itemsTotalAmount">
+                                        ₹0.00
+                                    </th>
+
+                                    <th></th>
+
+                                    <th id="itemsTotalTax">
+                                        ₹0.00
+                                    </th>
+
+                                    <th id="itemsGrandLineTotal">
+                                        ₹0.00
+                                    </th>
+
+                                    <th></th>
+
+                                </tr>
+
+                            </tfoot>
+
+                        </table>
+
+                    </div>
+
+
+                    <p
+                        class="field-error"
+                        id="saleItemsError"
+                    ></p>
+
+
+                    <button
+                        type="button"
+                        class="button button-secondary sale-mobile-add-item"
+                        id="mobileAddItemButton"
+                    >
+                        + Add Diamond Item
+                    </button>
+
+                </section>
+
+
+                <!-- =============================================
+                     ADJUSTMENTS / TOTAL
+                     ============================================= -->
+
+                <div class="sale-bottom-grid">
+
+
+                    <!-- Adjustments -->
+
+                    <section class="sale-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    03 / ADJUSTMENTS
+                                </span>
+
+                                <h2>
+                                    Invoice Adjustments
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div class="sale-form-grid">
+
+
+                            <div class="sale-field">
+
+                                <label for="saleDiscount">
+                                    Invoice Discount
+                                </label>
+
+                                <div class="sale-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="saleDiscount"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="saleDiscountError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="sale-field">
+
+                                <label for="saleCharges">
+                                    Additional Charges
+                                </label>
+
+                                <div class="sale-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="saleCharges"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="saleChargesError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="sale-field">
+
+                                <label for="saleRoundOff">
+                                    Round Off
+                                </label>
+
+                                <div class="sale-money-input">
+
+                                    <span>₹</span>
+
+                                    <input
+                                        type="text"
+                                        id="saleRoundOff"
+                                        inputmode="decimal"
+                                        value="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <p
+                                    class="field-error"
+                                    id="saleRoundOffError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="sale-field">
+
+                                <label>
+                                    Previous Receivable
+                                </label>
+
+                                <div class="sale-readonly-value">
+
+                                    <strong id="previousBalanceValue">
+                                        ₹0.00
+                                    </strong>
+
+                                </div>
+
+                                <p class="sale-field-help">
+                                    Informational only. It is not
+                                    added to this invoice total.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Total -->
+
+                    <section class="sale-card sale-total-card">
+
+                        <header class="sale-card-header">
+
+                            <div>
+
+                                <span class="sale-section-number">
+                                    INVOICE TOTAL
+                                </span>
+
+                                <h2>
+                                    Summary
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="sale-total-list">
+
+
+                            <div>
+                                <dt>
+                                    Taxable Amount
+                                </dt>
+
+                                <dd id="saleSubtotalValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Tax
+                                </dt>
+
+                                <dd id="saleTaxValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Invoice Discount
+                                </dt>
+
+                                <dd id="saleDiscountValue">
+                                    − ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Additional Charges
+                                </dt>
+
+                                <dd id="saleChargesValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Round Off
+                                </dt>
+
+                                <dd id="saleRoundOffValue">
+                                    ₹0.00
+                                </dd>
+                            </div>
+
+
+                            <div class="sale-total-grand">
+
+                                <dt>
+                                    Grand Total
+                                </dt>
+
+                                <dd id="saleGrandTotalValue">
+                                    ₹0.00
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+
+                        <div class="sale-amount-words">
+
+                            <span>
+                                AMOUNT IN WORDS
+                            </span>
+
+                            <strong id="saleAmountWords">
+                                Zero Rupees Only
+                            </strong>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+
+                <!-- =============================================
+                     04 PAYMENT
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                04 / PAYMENT
+                            </span>
+
+                            <h2>
+                                Initial Receipt
+                            </h2>
+
+                        </div>
+
+
+                        <p id="salePaymentHelp">
+                            Cash Sell must be fully settled.
+                        </p>
+
+                    </header>
+
+
+                    <div class="sale-payment-summary">
+
+
+                        <div>
+
+                            <span>
+                                INVOICE TOTAL
+                            </span>
+
+                            <strong id="paymentInvoiceTotal">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                RECEIVED NOW
+                            </span>
+
+                            <strong id="paymentReceivedPreview">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                BALANCE
+                            </span>
+
+                            <strong id="paymentBalancePreview">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="sale-form-grid">
+
+
+                        <div class="sale-field">
+
+                            <label for="saleInitialPayment">
+                                Initial Receipt
+                            </label>
+
+                            <div class="sale-money-input">
+
+                                <span>₹</span>
+
+                                <input
+                                    type="text"
+                                    id="saleInitialPayment"
+                                    inputmode="decimal"
+                                    value="0.00"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+                            <p
+                                class="field-error"
+                                id="saleInitialPaymentError"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="sale-field">
+
+                            <label for="salePaymentDate">
+                                Receipt Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="salePaymentDate"
+                            >
+
+                            <p
+                                class="field-error"
+                                id="salePaymentDateError"
+                            ></p>
+
+                        </div>
+
+
+                        <div class="sale-field">
+
+                            <label for="salePaymentMethod">
+                                Payment Method
+                            </label>
+
+                            <select id="salePaymentMethod">
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="bank">
+                                    Bank Transfer
+                                </option>
+
+                                <option value="upi">
+                                    UPI
+                                </option>
+
+                                <option value="cheque">
+                                    Cheque
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="sale-field">
+
+                            <label for="salePaymentReference">
+                                Payment Reference
+                                <span>(Optional)</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="salePaymentReference"
+                                maxlength="120"
+                                autocomplete="off"
+                                placeholder="UTR, cheque no., reference..."
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     05 NOTES
+                     ============================================= -->
+
+                <section class="sale-card">
+
+                    <header class="sale-card-header">
+
+                        <div>
+
+                            <span class="sale-section-number">
+                                05 / NOTES
+                            </span>
+
+                            <h2>
+                                Invoice Notes
+                            </h2>
+
+                        </div>
+
+                    </header>
+
+
+                    <div class="sale-form-grid">
+
+
+                        <div class="sale-field sale-field-wide">
+
+                            <label for="saleNotes">
+                                Notes
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="saleNotes"
+                                maxlength="1000"
+                                placeholder="Additional invoice notes..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="sale-field sale-field-wide">
+
+                            <label for="saleDeclaration">
+                                Declaration
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="saleDeclaration"
+                                maxlength="1000"
+                                placeholder="Invoice declaration..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     MESSAGE
+                     ============================================= -->
+
+                <p
+                    id="saleFormMessage"
+                    class="sale-form-message"
+                    role="status"
+                    aria-live="polite"
+                    hidden
+                ></p>
+
+
+                <!-- =============================================
+                     SAVE BAR
+                     ============================================= -->
+
+                <div class="sale-save-bar">
+
+                    <p class="sale-save-help">
+                        Invoice number, financial totals,
+                        payment balance and status are verified
+                        by the secure backend before saving.
+                    </p>
+
+
+                    <div class="sale-save-actions">
+
+                        <a
+                            href="/sales.html"
+                            class="button button-secondary"
+                        >
+                            Cancel
+                        </a>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="saveDraftButton"
+                        >
+                            Save Draft
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="button button-primary"
+                            id="saveSaleButton"
+                        >
+
+                            <span id="saveSaleButtonText">
+                                Save Sell
+                            </span>
+
+                            <span
+                                id="saveSaleSpinner"
+                                aria-hidden="true"
+                                hidden
+                            ></span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+    </a>
+
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+    </a>
+
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="New transaction"
+    >
+        +
+    </button>
+
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+    </a>
+
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/new-sale.js"
+></script>
+
+</body>
+</html>

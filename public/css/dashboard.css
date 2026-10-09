@@ -1,0 +1,1179 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   DASHBOARD
+
+   Dashboard hierarchy:
+   - Total Sell
+   - Total Buy
+   - Receivable
+   - Payable
+   - Received / Paid
+   - Overdue
+   - Sell vs Buy activity
+   - Quick actions
+   - Recent business activity
+   - Credit Sell / Buy dues
+   ============================================================ */
+
+
+/* ============================================================
+   DASHBOARD ENTRY ANIMATION
+   ============================================================ */
+
+.page-content {
+    animation:
+        dashboard-page-in
+        var(--duration-slow)
+        var(--ease-emphasized);
+}
+
+@keyframes dashboard-page-in {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ============================================================
+   PAGE HEADING
+   ============================================================ */
+
+.page-heading {
+    position: relative;
+}
+
+.page-heading h1 {
+    max-width: 760px;
+}
+
+.page-heading p {
+    max-width: 620px;
+}
+
+
+/* ============================================================
+   PRIMARY SUMMARY GRID
+   ============================================================ */
+
+.dashboard-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                var(--dashboard-card-min-width),
+                1fr
+            )
+        );
+
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-5);
+}
+
+
+/* ============================================================
+   SUMMARY CARD
+   ============================================================ */
+
+.summary-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 174px;
+
+    padding: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: var(--radius-card);
+
+    box-shadow: var(--shadow-xs);
+
+    transition:
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+.summary-card:hover {
+    border-color: var(--color-gray-300);
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateY(-2px);
+}
+
+
+/*
+   Small top marker gives the cards a stronger accounting /
+   ledger feel without adding unrelated colors.
+*/
+
+.summary-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 3px;
+
+    background: var(--color-black);
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    transition:
+        transform
+        var(--transition-normal);
+}
+
+.summary-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* ============================================================
+   SUMMARY LABEL
+   ============================================================ */
+
+.summary-label {
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-2xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-widest);
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   SUMMARY VALUE
+   ============================================================ */
+
+.summary-value {
+    display: block;
+
+    margin-top: auto;
+    padding-top: var(--space-6);
+
+    overflow: hidden;
+
+    color: var(--color-black);
+
+    font-size:
+        clamp(
+            1.7rem,
+            2.4vw,
+            2.35rem
+        );
+
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-tight);
+
+    font-variant-numeric: tabular-nums;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.summary-value-small {
+    font-size:
+        clamp(
+            1.4rem,
+            2vw,
+            1.85rem
+        );
+}
+
+
+/* ============================================================
+   SUMMARY META
+   ============================================================ */
+
+.summary-meta {
+    display: block;
+
+    margin-top: var(--space-3);
+
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PRIMARY CARD EMPHASIS
+
+   Cards remain black & white.
+
+   Total Sell + Receivable:
+   stronger dark treatment.
+
+   Total Buy + Payable:
+   clean white ledger treatment.
+   ============================================================ */
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1),
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3) {
+    background: var(--color-black);
+    border-color: var(--color-black);
+}
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1)
+.summary-label,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3)
+.summary-label {
+    color: var(--color-gray-400);
+}
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1)
+.summary-value,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3)
+.summary-value {
+    color: var(--color-white);
+}
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1)
+.summary-meta,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3)
+.summary-meta {
+    color: var(--color-gray-300);
+}
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1)::before,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3)::before {
+    background: var(--color-white);
+}
+
+
+/* ============================================================
+   SECONDARY SUMMARY
+   ============================================================ */
+
+.dashboard-secondary-summary {
+    margin-top: calc(var(--space-2) * -1);
+    margin-bottom: var(--space-6);
+}
+
+.dashboard-secondary-summary .summary-card {
+    min-height: 140px;
+
+    background: var(--color-gray-50);
+
+    box-shadow: none;
+}
+
+.dashboard-secondary-summary .summary-value {
+    padding-top: var(--space-5);
+}
+
+
+/* Overdue cards receive a stronger border. */
+
+.dashboard-secondary-summary
+.summary-card:nth-child(3),
+.dashboard-secondary-summary
+.summary-card:nth-child(4) {
+    border-color: var(--color-gray-400);
+}
+
+
+/* ============================================================
+   DASHBOARD PANEL SPACING
+   ============================================================ */
+
+.page-content > .panel {
+    margin-bottom: var(--space-5);
+}
+
+
+/* ============================================================
+   CHART PANEL
+   ============================================================ */
+
+.dashboard-chart-panel {
+    overflow: hidden;
+}
+
+.dashboard-chart-panel .panel-header {
+    background: var(--color-white);
+}
+
+
+/* ============================================================
+   CHART
+   ============================================================ */
+
+.billing-chart {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-3);
+
+    width: 100%;
+    height: var(--dashboard-chart-height);
+
+    padding:
+        var(--space-7)
+        var(--space-5)
+        var(--space-4);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(25% - 1px),
+            var(--color-gray-100) calc(25% - 1px),
+            var(--color-gray-100) 25%
+        );
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================================================
+   CHART COLUMN
+   ============================================================ */
+
+.chart-column {
+    display: grid;
+
+    grid-template-rows:
+        minmax(0, 1fr)
+        auto;
+
+    gap: var(--space-2);
+
+    flex:
+        1
+        0
+        42px;
+
+    min-width: 42px;
+    height: 100%;
+}
+
+
+/* ============================================================
+   CHART BARS
+   ============================================================ */
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+
+    min-height: 0;
+    height: 100%;
+}
+
+.chart-bar {
+    position: relative;
+
+    width: min(14px, 42%);
+
+    min-height: 3px;
+
+    border-radius:
+        3px
+        3px
+        1px
+        1px;
+
+    cursor: default;
+
+    transform-origin: bottom center;
+
+    animation:
+        dashboard-bar-in
+        var(--duration-slow)
+        var(--ease-emphasized);
+
+    transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.chart-bar:hover {
+    opacity: 0.7;
+
+    transform: scaleX(1.12);
+}
+
+.chart-bar-sell {
+    background: var(--color-black);
+}
+
+.chart-bar-buy {
+    background: var(--color-gray-400);
+
+    border:
+        1px
+        solid
+        var(--color-gray-500);
+}
+
+@keyframes dashboard-bar-in {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+
+/* ============================================================
+   CHART LABEL
+   ============================================================ */
+
+.chart-label {
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1;
+
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   CHART LEGEND
+
+   Ready for optional markup later.
+   ============================================================ */
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+
+    flex-wrap: wrap;
+}
+
+.chart-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.chart-legend-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 2px;
+}
+
+.chart-legend-dot-sell {
+    background: var(--color-black);
+}
+
+.chart-legend-dot-buy {
+    background: var(--color-gray-400);
+
+    border:
+        1px
+        solid
+        var(--color-gray-500);
+}
+
+
+/* ============================================================
+   QUICK ACTION SECTION
+
+   components.css owns the individual action card.
+   Dashboard controls the layout.
+   ============================================================ */
+
+.page-content > .panel .quick-actions-grid {
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0, 1fr)
+        );
+}
+
+
+/* Give Sell / Buy actions stronger visual hierarchy. */
+
+.page-content > .panel
+.quick-action-card:nth-child(1)
+.quick-action-icon {
+    background: var(--color-black);
+    color: var(--color-white);
+}
+
+.page-content > .panel
+.quick-action-card:nth-child(2)
+.quick-action-icon {
+    background: var(--color-white);
+    color: var(--color-black);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-black);
+}
+
+
+/* ============================================================
+   RECENT SELL & BUY TABLE
+   ============================================================ */
+
+#recentTransactionsBody tr {
+    cursor: default;
+}
+
+#recentTransactionsBody td:nth-child(1) {
+    color: var(--color-text);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wide);
+
+    text-transform: uppercase;
+}
+
+#recentTransactionsBody td:nth-child(5),
+#recentTransactionsBody td:nth-child(6) {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+#recentTransactionsBody td:nth-child(5) {
+    color: var(--color-text);
+    font-weight: var(--font-weight-semibold);
+}
+
+#recentTransactionsBody td:nth-child(6) {
+    color: var(--color-text-secondary);
+}
+
+
+/* ============================================================
+   LOWER GRID
+   ============================================================ */
+
+.dashboard-lower-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-5);
+}
+
+.dashboard-lower-grid > .panel {
+    min-width: 0;
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   RECEIVABLE / PAYABLE HEADERS
+   ============================================================ */
+
+.dashboard-lower-grid
+> .panel:first-child
+.panel-header {
+    background: var(--color-black);
+
+    border-bottom-color: var(--color-gray-800);
+}
+
+.dashboard-lower-grid
+> .panel:first-child
+.panel-header .eyebrow {
+    color: var(--color-gray-400);
+}
+
+.dashboard-lower-grid
+> .panel:first-child
+.panel-header h2 {
+    color: var(--color-white);
+}
+
+
+/*
+   Payable remains white so Receivable and Payable are visually
+   distinct without introducing unrelated colors.
+*/
+
+.dashboard-lower-grid
+> .panel:last-child
+.panel-header {
+    background: var(--color-white);
+}
+
+
+/* ============================================================
+   DUE LISTS
+   ============================================================ */
+
+#salesDueList,
+#purchasesDueList {
+    min-height: 180px;
+}
+
+#salesDueList .compact-list-item,
+#purchasesDueList .compact-list-item {
+    min-height: 72px;
+}
+
+
+/* ============================================================
+   DUE AMOUNT
+   ============================================================ */
+
+#salesDueList .compact-list-value strong,
+#purchasesDueList .compact-list-value strong {
+    font-size: var(--font-size-base);
+}
+
+
+/* ============================================================
+   DASHBOARD EMPTY STATES
+   ============================================================ */
+
+.dashboard-chart-panel .empty-state {
+    min-height: 220px;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-border);
+}
+
+.dashboard-lower-grid .empty-state {
+    min-height: 180px;
+}
+
+
+/* ============================================================
+   LOADING STATE
+
+   Can be applied to .summary-card later while initial snapshots
+   are loading.
+   ============================================================ */
+
+.summary-card.is-loading .summary-value,
+.summary-card.is-loading .summary-meta {
+    color: transparent;
+
+    background:
+        var(--color-gray-100);
+
+    border-radius: var(--radius-sm);
+
+    user-select: none;
+}
+
+.summary-card.is-loading .summary-value {
+    width: 72%;
+    height: 34px;
+}
+
+.summary-card.is-loading .summary-meta {
+    width: 48%;
+    height: 13px;
+}
+
+
+/* Dark cards need a dark-mode skeleton. */
+
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1).is-loading
+.summary-value,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(1).is-loading
+.summary-meta,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3).is-loading
+.summary-value,
+.dashboard-summary-grid:first-of-type
+.summary-card:nth-child(3).is-loading
+.summary-meta {
+    background: var(--color-gray-800);
+}
+
+
+/* ============================================================
+   LARGE DESKTOP
+   ============================================================ */
+
+@media (min-width: 1500px) {
+
+    .dashboard-summary-grid {
+        gap: var(--space-5);
+    }
+
+    .summary-card {
+        min-height: 186px;
+
+        padding: var(--space-6);
+    }
+
+    .dashboard-secondary-summary
+    .summary-card {
+        min-height: 150px;
+    }
+
+    .billing-chart {
+        gap: var(--space-4);
+
+        padding-right: var(--space-6);
+        padding-left: var(--space-6);
+    }
+}
+
+
+/* ============================================================
+   MEDIUM DESKTOP
+   ============================================================ */
+
+@media (max-width: 1280px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .summary-card {
+        min-height: 150px;
+    }
+
+    .page-content > .panel
+    .quick-actions-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .dashboard-summary-grid {
+        gap: var(--space-3);
+    }
+
+    .summary-card {
+        min-height: 146px;
+
+        padding: var(--space-4);
+    }
+
+    .summary-value {
+        padding-top: var(--space-5);
+    }
+
+    .dashboard-lower-grid {
+        gap: var(--space-4);
+    }
+
+    .billing-chart {
+        min-width: 100%;
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: var(--space-3);
+
+        margin-bottom: var(--space-4);
+    }
+
+    .summary-card {
+        min-height: 136px;
+
+        padding: var(--space-4);
+
+        border-radius: var(--radius-lg);
+    }
+
+    .summary-label {
+        font-size: 9px;
+        letter-spacing: var(--letter-spacing-wider);
+    }
+
+    .summary-value {
+        padding-top: var(--space-4);
+
+        font-size:
+            clamp(
+                1.3rem,
+                6vw,
+                1.75rem
+            );
+    }
+
+    .summary-value-small {
+        font-size:
+            clamp(
+                1.15rem,
+                5vw,
+                1.5rem
+            );
+    }
+
+    .summary-meta {
+        margin-top: var(--space-2);
+
+        font-size: 10px;
+    }
+
+
+    /* --------------------------------------------------------
+       Secondary cards
+       -------------------------------------------------------- */
+
+    .dashboard-secondary-summary {
+        margin-top: 0;
+        margin-bottom: var(--space-5);
+    }
+
+    .dashboard-secondary-summary
+    .summary-card {
+        min-height: 122px;
+    }
+
+
+    /* --------------------------------------------------------
+       Chart
+       -------------------------------------------------------- */
+
+    .billing-chart {
+        gap: var(--space-2);
+
+        padding:
+            var(--space-5)
+            var(--space-4)
+            var(--space-3);
+    }
+
+    .chart-column {
+        flex-basis: 38px;
+        min-width: 38px;
+    }
+
+    .chart-bar {
+        width: 11px;
+    }
+
+
+    /* --------------------------------------------------------
+       Quick actions
+       -------------------------------------------------------- */
+
+    .page-content > .panel
+    .quick-actions-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+
+    /* --------------------------------------------------------
+       Lower grid
+       -------------------------------------------------------- */
+
+    .dashboard-lower-grid {
+        grid-template-columns: 1fr;
+
+        gap: var(--space-4);
+    }
+
+
+    /* --------------------------------------------------------
+       Recent table
+       -------------------------------------------------------- */
+
+    .page-content > .panel
+    .table-wrapper table {
+        min-width: 760px;
+    }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: var(--space-2);
+    }
+
+    .summary-card {
+        min-height: 128px;
+
+        padding: var(--space-3);
+    }
+
+    .summary-value {
+        font-size:
+            clamp(
+                1.18rem,
+                6.5vw,
+                1.55rem
+            );
+    }
+
+    .summary-value-small {
+        font-size:
+            clamp(
+                1.05rem,
+                5.8vw,
+                1.35rem
+            );
+    }
+
+    .summary-meta {
+        white-space: normal;
+    }
+
+
+    /*
+       Keep the four important numbers in a compact 2×2 grid.
+       This gives the dashboard an app-like financial overview.
+    */
+
+    .page-content > .panel
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card,
+    .dashboard-secondary-summary
+    .summary-card {
+        min-height: 116px;
+    }
+
+    .summary-value {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page-content,
+    .chart-bar {
+        animation: none;
+    }
+
+    .summary-card,
+    .chart-bar {
+        transition: none;
+    }
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+
+    .page-content {
+        animation: none;
+    }
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
+        gap: 8px;
+    }
+
+    .summary-card {
+        min-height: auto;
+
+        padding: 12px;
+
+        background: #ffffff !important;
+        color: #000000 !important;
+
+        border:
+            1px
+            solid
+            #cccccc !important;
+
+        box-shadow: none !important;
+    }
+
+    .summary-label,
+    .summary-value,
+    .summary-meta {
+        color: #000000 !important;
+    }
+
+    .summary-value {
+        margin-top: 16px;
+    }
+
+    .billing-chart {
+        height: 220px;
+
+        overflow: visible;
+    }
+
+    .dashboard-lower-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .dashboard-lower-grid
+    .panel-header {
+        background: #ffffff !important;
+    }
+
+    .dashboard-lower-grid
+    .panel-header h2,
+    .dashboard-lower-grid
+    .panel-header .eyebrow {
+        color: #000000 !important;
+    }
+}
+
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

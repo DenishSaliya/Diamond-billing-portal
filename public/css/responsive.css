@@ -1,0 +1,987 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   RESPONSIVE / DEVICE OVERRIDES
+
+   Final responsive layer for:
+   - Desktop
+   - Laptop
+   - Tablet
+   - Mobile
+   - Small mobile
+   - Landscape phones
+   - Touch devices
+   - Safe areas
+   - Reduced motion
+   - Print
+
+   IMPORTANT:
+   This file loads after the other application stylesheets,
+   so rules here should be deliberate overrides only.
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL OVERFLOW SAFETY
+   ============================================================ */
+
+html,
+body {
+    max-width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.app-shell,
+.app-main,
+.page-content,
+.panel,
+.panel-body,
+.panel-header,
+.page-heading,
+.topbar,
+.global-search,
+.dashboard-summary-grid,
+.dashboard-lower-grid {
+    min-width: 0;
+}
+
+
+/* ============================================================
+   MEDIA / CONTENT SAFETY
+   ============================================================ */
+
+img,
+svg,
+video,
+canvas {
+    max-width: 100%;
+}
+
+p,
+td,
+dd,
+.form-help,
+.inline-message {
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   DESKTOP — LARGE
+   ============================================================ */
+
+@media (min-width: 1600px) {
+
+    .page-content {
+        max-width: var(--page-max-width);
+    }
+
+    .dashboard-summary-grid {
+        gap: var(--space-5);
+    }
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1280px) {
+
+    .page-content {
+        padding-top: var(--space-7);
+    }
+
+    .panel-header {
+        gap: var(--space-4);
+    }
+
+    .summary-value {
+        font-size:
+            clamp(
+                1.55rem,
+                2.3vw,
+                2rem
+            );
+    }
+}
+
+
+/* ============================================================
+   TABLET LANDSCAPE / SMALL LAPTOP
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    .page-content {
+        padding-right:
+            var(--page-padding-tablet);
+
+        padding-left:
+            var(--page-padding-tablet);
+    }
+
+    .page-heading {
+        gap: var(--space-4);
+    }
+
+    .table-wrapper {
+        max-width: 100%;
+    }
+
+    .form-grid-3 {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+}
+
+
+/* ============================================================
+   TABLET / COLLAPSED SIDEBAR
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    /*
+       Sidebar is off-canvas at this size.
+       Prevent the hidden sidebar from causing horizontal scroll.
+    */
+
+    .sidebar {
+        max-width:
+            calc(
+                100vw -
+                48px
+            );
+    }
+
+    .app-main {
+        width: 100%;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+    }
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .dashboard-lower-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .statement-list,
+    .table-wrapper,
+    .line-items-wrapper {
+        overscroll-behavior-inline: contain;
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    /* --------------------------------------------------------
+       APP
+       -------------------------------------------------------- */
+
+    body {
+        min-width: 0;
+    }
+
+    .app-shell,
+    .app-main {
+        width: 100%;
+    }
+
+
+    /* --------------------------------------------------------
+       PAGE CONTENT
+       -------------------------------------------------------- */
+
+    .page-content {
+        width: 100%;
+
+        padding-right:
+            max(
+                var(--page-padding-mobile),
+                var(--safe-right)
+            );
+
+        padding-left:
+            max(
+                var(--page-padding-mobile),
+                var(--safe-left)
+            );
+    }
+
+
+    /* --------------------------------------------------------
+       PAGE HEADING
+       -------------------------------------------------------- */
+
+    .page-heading {
+        align-items: stretch;
+    }
+
+    .page-heading p {
+        max-width: 100%;
+    }
+
+    .page-heading-actions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        width: 100%;
+    }
+
+    .page-heading-actions > * {
+        min-width: 0;
+    }
+
+
+    /* --------------------------------------------------------
+       PANELS
+       -------------------------------------------------------- */
+
+    .panel {
+        max-width: 100%;
+
+        border-radius: var(--radius-lg);
+    }
+
+    .panel-header {
+        min-width: 0;
+    }
+
+    .panel-header > div:first-child {
+        min-width: 0;
+    }
+
+    .panel-header h2,
+    .panel-header h3 {
+        overflow-wrap: anywhere;
+    }
+
+
+    /* --------------------------------------------------------
+       DASHBOARD CARDS
+       -------------------------------------------------------- */
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+    }
+
+    .summary-card {
+        min-width: 0;
+    }
+
+    .summary-value {
+        max-width: 100%;
+    }
+
+
+    /* --------------------------------------------------------
+       LOWER DASHBOARD
+       -------------------------------------------------------- */
+
+    .dashboard-lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* --------------------------------------------------------
+       TABLES
+
+       Financial tables should scroll horizontally rather than
+       squeezing columns until values become unreadable.
+       -------------------------------------------------------- */
+
+    .table-wrapper {
+        width: 100%;
+
+        overflow-x: auto;
+
+        scrollbar-width: thin;
+
+        overscroll-behavior-x: contain;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .table-wrapper table {
+        width: max-content;
+        min-width: 100%;
+    }
+
+    th,
+    td {
+        white-space: nowrap;
+    }
+
+    td .party-cell,
+    td .customer-cell,
+    td .supplier-cell {
+        white-space: normal;
+    }
+
+
+    /* --------------------------------------------------------
+       DIAMOND LINE ITEMS
+
+       Never compress:
+       Description / Pieces / Carat / Rate / Amount / Remarks
+       into unusably narrow columns.
+       -------------------------------------------------------- */
+
+    .line-items-wrapper {
+        position: relative;
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        overscroll-behavior-x: contain;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .line-items-table {
+        width: max-content;
+        min-width: var(--line-item-min-width);
+    }
+
+
+    /* --------------------------------------------------------
+       FORMS
+       -------------------------------------------------------- */
+
+    .form-grid,
+    .form-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .form-field,
+    .form-field-full {
+        min-width: 0;
+    }
+
+    input,
+    select,
+    textarea {
+        /*
+           16px prevents automatic zoom on many mobile Safari
+           versions when a form control receives focus.
+        */
+
+        font-size: 16px;
+    }
+
+
+    /* --------------------------------------------------------
+       DATE INPUTS
+       -------------------------------------------------------- */
+
+    input[type="date"] {
+        min-width: 0;
+    }
+
+
+    /* --------------------------------------------------------
+       CASH / CREDIT SELECTOR
+       -------------------------------------------------------- */
+
+    .transaction-term-selector {
+        width: 100%;
+    }
+
+    .transaction-term-option,
+    .transaction-term-option label {
+        min-width: 0;
+    }
+
+
+    /* --------------------------------------------------------
+       BILLING TOTALS
+       -------------------------------------------------------- */
+
+    .billing-totals {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+
+    /* --------------------------------------------------------
+       FILTER BAR
+       -------------------------------------------------------- */
+
+    .filter-bar {
+        width: 100%;
+    }
+
+    .filter-bar-search,
+    .filter-bar-control {
+        min-width: 0;
+    }
+
+
+    /* --------------------------------------------------------
+       SEARCH DROPDOWN
+       -------------------------------------------------------- */
+
+    .search-results {
+        right: 0;
+        left: 0;
+
+        width: auto;
+        max-width: none;
+    }
+
+
+    /* --------------------------------------------------------
+       MODALS
+       -------------------------------------------------------- */
+
+    .modal {
+        max-width: 100%;
+    }
+
+
+    /* --------------------------------------------------------
+       TOAST
+       -------------------------------------------------------- */
+
+    .toast-region {
+        max-width:
+            calc(
+                100vw -
+                var(--space-6)
+            );
+    }
+
+
+    /* --------------------------------------------------------
+       TOUCH TARGETS
+       -------------------------------------------------------- */
+
+    .sidebar-nav-link,
+    .mobile-nav-item,
+    .action-menu-item {
+        min-height: 44px;
+    }
+}
+
+
+/* ============================================================
+   PHONE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    /* --------------------------------------------------------
+       HEADING ACTIONS
+       -------------------------------------------------------- */
+
+    .page-heading-actions {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* --------------------------------------------------------
+       SUMMARY
+       -------------------------------------------------------- */
+
+    .summary-card {
+        min-height: 128px;
+    }
+
+
+    /* --------------------------------------------------------
+       FILTERS
+       -------------------------------------------------------- */
+
+    .filter-bar {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar-search {
+        grid-column: auto;
+    }
+
+
+    /* --------------------------------------------------------
+       PARTY CELLS
+       -------------------------------------------------------- */
+
+    .party-cell,
+    .customer-cell,
+    .supplier-cell {
+        min-width: 160px;
+    }
+
+
+    /* --------------------------------------------------------
+       MODAL
+       -------------------------------------------------------- */
+
+    .modal-header {
+        gap: var(--space-3);
+    }
+
+    .modal-header h2 {
+        font-size: var(--font-size-xl);
+    }
+
+
+    /* --------------------------------------------------------
+       STATEMENT
+       -------------------------------------------------------- */
+
+    .statement-row {
+        min-width: 700px;
+    }
+}
+
+
+/* ============================================================
+   SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    /* --------------------------------------------------------
+       PAGE
+       -------------------------------------------------------- */
+
+    .page-content {
+        padding-top: var(--space-5);
+    }
+
+
+    /* --------------------------------------------------------
+       DASHBOARD
+
+       Preserve the important 2 × 2 accounting overview.
+       -------------------------------------------------------- */
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: var(--space-2);
+    }
+
+    .summary-card {
+        min-height: 124px;
+    }
+
+    .summary-label {
+        max-width: 100%;
+    }
+
+
+    /* --------------------------------------------------------
+       COMPACT LIST
+       -------------------------------------------------------- */
+
+    .compact-list-item {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+
+        gap: var(--space-3);
+    }
+
+
+    /* --------------------------------------------------------
+       QUICK ACTIONS
+       -------------------------------------------------------- */
+
+    .quick-actions-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* --------------------------------------------------------
+       SEGMENTED CONTROL
+       -------------------------------------------------------- */
+
+    .segmented-control {
+        width: 100%;
+
+        grid-auto-columns:
+            minmax(0, 1fr);
+    }
+
+
+    /* --------------------------------------------------------
+       CASH / CREDIT
+       -------------------------------------------------------- */
+
+    .transaction-term-selector {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* --------------------------------------------------------
+       MODAL ACTIONS
+       -------------------------------------------------------- */
+
+    .modal-footer {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* --------------------------------------------------------
+       BILLING TOTAL
+       -------------------------------------------------------- */
+
+    .billing-total-row-grand strong {
+        font-size: var(--font-size-lg);
+    }
+}
+
+
+/* ============================================================
+   VERY SMALL PHONE
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    /*
+       At this width, a 2-column financial summary becomes too
+       narrow to safely display Indian currency amounts.
+    */
+
+    .dashboard-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-card {
+        min-height: 112px;
+    }
+
+    .page-content {
+        padding-right:
+            max(
+                var(--page-padding-mobile),
+                var(--safe-right)
+            );
+
+        padding-left:
+            max(
+                var(--page-padding-mobile),
+                var(--safe-left)
+            );
+    }
+
+    .compact-list-item {
+        grid-template-columns: 1fr;
+    }
+
+    .compact-list-value {
+        justify-items: start;
+
+        text-align: left;
+    }
+}
+
+
+/* ============================================================
+   SHORT MOBILE / LANDSCAPE PHONE
+   ============================================================ */
+
+@media (
+    max-width: 900px
+) and (
+    max-height: 520px
+) and (
+    orientation: landscape
+) {
+
+    /*
+       Keep the bottom navigation compact when a phone is used
+       horizontally so it does not consume excessive screen
+       height.
+    */
+
+    :root {
+        --mobile-nav-height: 58px;
+        --mobile-create-size: 50px;
+    }
+
+    .mobile-bottom-nav {
+        padding-top: 3px;
+    }
+
+    .mobile-nav-item {
+        min-height: 44px;
+
+        gap: 1px;
+    }
+
+    .mobile-nav-create {
+        margin-top: -12px;
+    }
+
+    .modal {
+        max-height: 92dvh;
+    }
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /*
+       Hover transforms can feel sticky on touch browsers.
+    */
+
+    .summary-card:hover,
+    .quick-action-card:hover,
+    .transaction-term-option label:hover {
+        transform: none;
+    }
+
+    .chart-bar:hover {
+        opacity: 1;
+        transform: none;
+    }
+
+
+    /*
+       Financial actions need comfortable touch targets.
+    */
+
+    button,
+    .button,
+    .icon-button,
+    .sidebar-nav-link,
+    .action-menu-item {
+        min-height: 44px;
+    }
+
+
+    /*
+       Remove delayed/tinted browser tap feedback where our
+       components already provide pressed states.
+    */
+
+    a,
+    button,
+    label {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+
+/* ============================================================
+   MOUSE / PRECISE POINTER
+   ============================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .table-wrapper,
+    .line-items-wrapper {
+        scrollbar-gutter: stable;
+    }
+}
+
+
+/* ============================================================
+   STANDALONE / INSTALLED WEB APP
+   ============================================================ */
+
+@media (display-mode: standalone) {
+
+    body {
+        min-height: 100dvh;
+    }
+
+    .sidebar {
+        padding-top:
+            max(
+                var(--space-5),
+                var(--safe-top)
+            );
+    }
+
+    .mobile-bottom-nav {
+        padding-bottom:
+            calc(
+                6px +
+                var(--safe-bottom)
+            );
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .page-content,
+    .summary-card,
+    .quick-action-card,
+    .chart-bar,
+    .modal,
+    .sidebar,
+    .search-results {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+
+/* ============================================================
+   HIGH CONTRAST
+   ============================================================ */
+
+@media (forced-colors: active) {
+
+    .sidebar,
+    .mobile-bottom-nav,
+    .topbar,
+    .panel,
+    .summary-card,
+    .quick-action-card,
+    .modal {
+        border-color: CanvasText;
+    }
+
+    .chart-bar-sell,
+    .chart-bar-buy {
+        background: CanvasText;
+    }
+
+    .mobile-nav-create {
+        border-color: Canvas;
+    }
+}
+
+
+/* ============================================================
+   PRINT
+
+   General application print safety.
+   Dedicated invoice formatting will be added later.
+   ============================================================ */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    html,
+    body {
+        width: auto;
+        min-width: 0;
+        max-width: none;
+
+        overflow: visible;
+
+        background: #ffffff;
+    }
+
+    .app-shell,
+    .app-main,
+    .page-content {
+        width: auto;
+        max-width: none;
+
+        overflow: visible;
+    }
+
+    .page-content {
+        padding: 0;
+    }
+
+    .sidebar,
+    .sidebar-overlay,
+    .topbar,
+    .custom-date-panel,
+    .mobile-bottom-nav,
+    .modal-backdrop,
+    .toast-region,
+    .filter-bar,
+    .page-heading-actions,
+    .no-print {
+        display: none !important;
+    }
+
+    .page-heading {
+        margin-bottom: 16px;
+    }
+
+    .panel,
+    .summary-card {
+        break-inside: avoid;
+
+        box-shadow: none;
+    }
+
+    .table-wrapper,
+    .line-items-wrapper,
+    .statement-list {
+        overflow: visible;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

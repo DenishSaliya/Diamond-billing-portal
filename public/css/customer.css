@@ -1,0 +1,1919 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   CUSTOMER ACCOUNT PAGE
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.customer-account-page {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* ============================================================
+   BACK LINK
+   ============================================================ */
+
+.customer-back-row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: var(--space-4);
+}
+
+.customer-back-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    min-height: 38px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color var(--motion-fast),
+        transform var(--motion-fast);
+}
+
+.customer-back-link:hover {
+    color: var(--text-primary);
+
+    transform: translateX(-2px);
+}
+
+
+/* ============================================================
+   CUSTOMER PROFILE HEADER
+   ============================================================ */
+
+.customer-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+}
+
+
+/* ============================================================
+   CUSTOMER PROFILE MAIN
+   ============================================================ */
+
+.customer-profile-main {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-4);
+
+    min-width: 0;
+}
+
+.customer-profile-avatar {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 68px;
+
+    width: 68px;
+    height: 68px;
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: 0.02em;
+
+    user-select: none;
+}
+
+.customer-profile-title {
+    min-width: 0;
+}
+
+.customer-profile-title .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+.customer-profile-title h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.customer-profile-contact {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin-top: var(--space-3);
+
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.customer-contact-separator {
+    color: var(--text-tertiary);
+}
+
+
+/* ============================================================
+   PROFILE ACTIONS
+   ============================================================ */
+
+.customer-profile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    flex: 0 0 auto;
+}
+
+
+/* ============================================================
+   CUSTOMER DETAILS STRIP
+   ============================================================ */
+
+.customer-details-strip {
+    display: grid;
+
+    grid-template-columns:
+        minmax(150px, 0.8fr)
+        minmax(120px, 0.6fr)
+        minmax(260px, 2fr);
+
+    gap: 0;
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.customer-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    min-width: 0;
+    min-height: 88px;
+
+    padding:
+        var(--space-4)
+        var(--space-5);
+
+    border-right:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.customer-detail:last-child {
+    border-right: 0;
+}
+
+.customer-detail-label {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.08em;
+}
+
+.customer-detail strong {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    text-overflow: ellipsis;
+}
+
+.customer-address-detail strong {
+    white-space: normal;
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+#customerStatus {
+    width: fit-content;
+}
+
+
+/* ============================================================
+   FINANCIAL SUMMARY
+   ============================================================ */
+
+.customer-account-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-4);
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+}
+
+.customer-account-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 150px;
+
+    padding: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+}
+
+.customer-account-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+.customer-account-label {
+    display: block;
+
+    margin-bottom: auto;
+    padding-bottom: var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.68rem;
+    font-weight: 750;
+    line-height: 1.25;
+
+    letter-spacing: 0.085em;
+}
+
+.customer-account-value {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.customer-account-meta {
+    display: block;
+
+    margin-top: var(--space-3);
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.76rem;
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   RECEIVABLE EMPHASIS
+   ============================================================ */
+
+.customer-account-card-primary {
+    background: var(--gray-950);
+    border-color: var(--gray-950);
+}
+
+.customer-account-card-primary:hover {
+    border-color: var(--gray-950);
+}
+
+.customer-account-card-primary
+.customer-account-label {
+    color: var(--gray-300);
+}
+
+.customer-account-card-primary
+.customer-account-value {
+    color: var(--white);
+}
+
+.customer-account-card-primary
+.customer-account-meta {
+    color: var(--gray-400);
+}
+
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+
+.customer-quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-5);
+}
+
+.customer-quick-action {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-width: 0;
+    min-height: 74px;
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    color: var(--text-primary);
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+}
+
+.customer-quick-action:hover {
+    transform: translateY(-2px);
+
+    background: var(--surface-secondary);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+.customer-quick-action-icon {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.customer-quick-action > span:last-child {
+    min-width: 0;
+}
+
+.customer-quick-action strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    font-size: 0.8rem;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.customer-quick-action small {
+    display: block;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.7rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   ACCOUNT SECTION
+   ============================================================ */
+
+.customer-account-section {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ============================================================
+   TABS
+   ============================================================ */
+
+.customer-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-1);
+
+    min-width: 0;
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    overflow-x: auto;
+
+    background: var(--surface-secondary);
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    scrollbar-width: none;
+}
+
+.customer-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.customer-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-height: 38px;
+
+    padding:
+        8px
+        14px;
+
+    color: var(--text-secondary);
+    background: transparent;
+
+    border: 0;
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast),
+        background-color var(--motion-fast);
+}
+
+.customer-tab:hover {
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+}
+
+.customer-tab.active,
+.customer-tab[aria-selected="true"] {
+    color: var(--white);
+    background: var(--gray-950);
+}
+
+
+/* ============================================================
+   TAB PANELS
+   ============================================================ */
+
+.customer-tab-panel {
+    min-width: 0;
+}
+
+.customer-tab-panel[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+
+.customer-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-5)
+        var(--space-5)
+        var(--space-4);
+}
+
+.customer-section-header .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+.customer-section-header h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+.customer-section-count {
+    flex: 0 0 auto;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.74rem;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE WRAPPER
+   ============================================================ */
+
+.customer-account-section .table-wrapper {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    overscroll-behavior-inline: contain;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================================================
+   ACCOUNT TABLE
+   ============================================================ */
+
+.customer-account-table {
+    width: 100%;
+    min-width: 1000px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    background: var(--surface-primary);
+}
+
+.customer-account-table thead {
+    background: var(--surface-secondary);
+}
+
+.customer-account-table th {
+    height: 48px;
+
+    padding:
+        0
+        var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.66rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.075em;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.customer-account-table td {
+    min-height: 62px;
+
+    padding:
+        var(--space-4)
+        var(--space-4);
+
+    color: var(--text-primary);
+
+    font-size: 0.78rem;
+    line-height: 1.45;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.customer-account-table tbody tr {
+    transition:
+        background-color
+        var(--motion-fast);
+}
+
+.customer-account-table tbody tr:hover {
+    background: var(--surface-secondary);
+}
+
+.customer-account-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================================================
+   FINANCIAL TABLE CELLS
+   ============================================================ */
+
+.customer-money-cell {
+    font-weight: 650;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+.customer-balance-cell {
+    font-weight: 800;
+}
+
+.customer-reference-cell {
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE ACTION
+   ============================================================ */
+
+.customer-table-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding:
+        6px
+        12px;
+
+    color: var(--text-primary);
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast);
+}
+
+.customer-table-action:hover {
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+/* ============================================================
+   INVOICE STATUS
+   ============================================================ */
+
+.customer-invoice-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+
+    padding:
+        5px
+        9px;
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.64rem;
+    font-weight: 750;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.customer-invoice-status-paid {
+    color: var(--text-primary);
+
+    background: var(--surface-secondary);
+}
+
+.customer-invoice-status-pending,
+.customer-invoice-status-partially-paid {
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border-color: var(--gray-400);
+}
+
+.customer-invoice-status-overdue {
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+.customer-invoice-status-draft {
+    color: var(--text-tertiary);
+
+    background: var(--surface-secondary);
+}
+
+
+/* ============================================================
+   EMPTY STATES
+   ============================================================ */
+
+.customer-account-section .empty-state {
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.customer-account-section .empty-state strong {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.9rem;
+}
+
+.customer-account-section .empty-state span {
+    display: block;
+
+    max-width: 520px;
+
+    margin-inline: auto;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   STATEMENT SUMMARY
+   ============================================================ */
+
+.customer-statement-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    margin:
+        0
+        var(--space-5)
+        var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    border-radius: var(--radius-lg);
+}
+
+.customer-statement-summary > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+    min-width: 0;
+
+    padding: var(--space-4);
+
+    border-right:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.customer-statement-summary > div:last-child {
+    border-right: 0;
+}
+
+.customer-statement-summary span {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+.customer-statement-summary strong {
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   CUSTOMER NOT FOUND
+   ============================================================ */
+
+.customer-error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 620px;
+
+    margin:
+        var(--space-8)
+        auto;
+
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.customer-error-state[hidden] {
+    display: none !important;
+}
+
+.customer-error-icon {
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: var(--space-4);
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: 50%;
+
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.customer-error-state h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.customer-error-state p {
+    max-width: 440px;
+
+    margin:
+        var(--space-3)
+        0
+        var(--space-5);
+
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   RECORD RECEIPT MODAL
+   ============================================================ */
+
+#recordReceiptModal {
+    padding:
+        max(
+            var(--space-4),
+            env(safe-area-inset-top)
+        )
+        var(--space-4)
+        max(
+            var(--space-4),
+            env(safe-area-inset-bottom)
+        );
+}
+
+.customer-receipt-modal {
+    width: min(100%, 580px);
+
+    max-height: min(90vh, 850px);
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* ============================================================
+   RECEIPT FORM
+   ============================================================ */
+
+#recordReceiptForm {
+    display: grid;
+
+    gap: var(--space-4);
+
+    padding: var(--space-5);
+}
+
+#recordReceiptForm .form-field {
+    margin: 0;
+}
+
+#recordReceiptForm label {
+    display: inline-block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+#recordReceiptForm input,
+#recordReceiptForm select,
+#recordReceiptForm textarea {
+    width: 100%;
+}
+
+#recordReceiptForm textarea {
+    min-height: 92px;
+
+    resize: vertical;
+}
+
+
+/* ============================================================
+   RECEIPT CUSTOMER SUMMARY
+   ============================================================ */
+
+.receipt-customer-summary {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-1);
+
+    padding: var(--space-4);
+
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    border-radius: var(--radius-md);
+}
+
+.receipt-customer-summary > span {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+}
+
+.receipt-customer-summary > strong {
+    color: var(--text-primary);
+
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.receipt-customer-summary small {
+    margin-top: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-size: 0.72rem;
+}
+
+.receipt-customer-summary small strong {
+    color: var(--text-primary);
+
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   RECEIPT BALANCE PREVIEW
+   ============================================================ */
+
+.receipt-balance-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    background: var(--gray-950);
+
+    border-radius: var(--radius-md);
+}
+
+.receipt-balance-preview span {
+    color: var(--gray-300);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.receipt-balance-preview strong {
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   RECEIPT ERRORS / MESSAGE
+   ============================================================ */
+
+#recordReceiptForm .field-error {
+    display: block;
+
+    margin-top: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+#recordReceiptForm .field-error:empty {
+    display: none;
+}
+
+#receiptFormMessage {
+    padding: var(--space-3);
+
+    color: var(--text-primary);
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   RECEIPT MODAL ACTIONS
+   ============================================================ */
+
+#recordReceiptModal .modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    padding-top: var(--space-2);
+}
+
+#recordReceiptModal .modal-actions .button {
+    min-width: 120px;
+}
+
+
+/* ============================================================
+   RECEIPT SPINNER
+   ============================================================ */
+
+#saveReceiptButton {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--space-2);
+}
+
+#saveReceiptSpinner {
+    flex: 0 0 auto;
+
+    width: 15px;
+    height: 15px;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation:
+        customer-account-spin
+        650ms
+        linear
+        infinite;
+}
+
+@keyframes customer-account-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   LOADING ROW
+   ============================================================ */
+
+.customer-account-loading td {
+    padding: var(--space-7) !important;
+
+    color: var(--text-tertiary);
+
+    text-align: center;
+}
+
+.customer-account-loading-content {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    font-size: 0.76rem;
+}
+
+.customer-account-loading-content::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    border:
+        2px
+        solid
+        var(--border-primary);
+
+    border-top-color: var(--gray-950);
+
+    border-radius: 50%;
+
+    animation:
+        customer-account-spin
+        650ms
+        linear
+        infinite;
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+    .customer-account-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .customer-profile-header {
+        align-items: flex-start;
+    }
+
+    .customer-profile-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .customer-profile-actions .button {
+        width: 100%;
+    }
+
+    .customer-details-strip {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .customer-address-detail {
+        grid-column: 1 / -1;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .customer-detail:nth-child(2) {
+        border-right: 0;
+    }
+
+    .customer-address-detail {
+        border-right: 0;
+    }
+
+    .customer-quick-actions {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    .customer-back-row {
+        margin-bottom: var(--space-3);
+    }
+
+
+    /* Profile */
+
+    .customer-profile-header {
+        align-items: stretch;
+        flex-direction: column;
+
+        gap: var(--space-4);
+    }
+
+    .customer-profile-main {
+        align-items: flex-start;
+    }
+
+    .customer-profile-avatar {
+        flex-basis: 54px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 0.82rem;
+    }
+
+    .customer-profile-title h1 {
+        max-width: 100%;
+
+        font-size: 1.8rem;
+
+        white-space: normal;
+    }
+
+    .customer-profile-contact {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .customer-contact-separator {
+        display: none;
+    }
+
+
+    /* Profile actions */
+
+    .customer-profile-actions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-2);
+    }
+
+
+    /* Details */
+
+    .customer-details-strip {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .customer-detail,
+    .customer-detail:nth-child(2),
+    .customer-address-detail {
+        min-height: 74px;
+
+        padding: var(--space-4);
+
+        border-right: 0;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .customer-detail:first-child {
+        border-top: 0;
+    }
+
+
+    /* Financial cards */
+
+    .customer-account-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-3);
+    }
+
+    .customer-account-card {
+        min-height: 130px;
+
+        padding: var(--space-4);
+    }
+
+    .customer-account-label {
+        padding-bottom: var(--space-3);
+
+        font-size: 0.61rem;
+    }
+
+    .customer-account-value {
+        font-size:
+            clamp(
+                1.25rem,
+                6.5vw,
+                1.7rem
+            );
+    }
+
+    .customer-account-meta {
+        margin-top: var(--space-2);
+
+        font-size: 0.66rem;
+    }
+
+
+    /* Quick actions */
+
+    .customer-quick-actions {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .customer-quick-action {
+        min-height: 66px;
+    }
+
+
+    /* Section */
+
+    .customer-section-header {
+        align-items: flex-start;
+
+        padding:
+            var(--space-4)
+            var(--space-4)
+            var(--space-3);
+    }
+
+
+    /* Tables */
+
+    .customer-account-table {
+        min-width: 900px;
+    }
+
+
+    /* Statement */
+
+    .customer-statement-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        margin:
+            0
+            var(--space-4)
+            var(--space-4);
+    }
+
+    .customer-statement-summary > div:nth-child(2) {
+        border-right: 0;
+    }
+
+    .customer-statement-summary > div:nth-child(n + 3) {
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+
+    /* Receipt modal */
+
+    #recordReceiptModal {
+        padding:
+            max(
+                8px,
+                env(safe-area-inset-top)
+            )
+            8px
+            max(
+                8px,
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    .customer-receipt-modal {
+        width: 100%;
+
+        max-height:
+            calc(
+                100dvh -
+                16px -
+                env(safe-area-inset-top) -
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    #recordReceiptForm {
+        padding: var(--space-4);
+    }
+
+    #recordReceiptForm input,
+    #recordReceiptForm select,
+    #recordReceiptForm textarea {
+        font-size: 16px;
+    }
+
+    #recordReceiptModal .modal-actions {
+        position: sticky;
+
+        bottom:
+            calc(
+                -1 *
+                var(--space-4)
+            );
+
+        z-index: 2;
+
+        margin:
+            var(--space-2)
+            calc(
+                -1 *
+                var(--space-4)
+            )
+            calc(
+                -1 *
+                var(--space-4)
+            );
+
+        padding:
+            var(--space-4)
+            var(--space-4)
+            calc(
+                var(--space-4) +
+                env(safe-area-inset-bottom)
+            );
+
+        background: var(--surface-primary);
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    #recordReceiptModal .modal-actions .button {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    .customer-account-summary {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .customer-profile-actions {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .customer-statement-summary {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .customer-statement-summary > div {
+        border-right: 0;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .customer-statement-summary > div:first-child {
+        border-top: 0;
+    }
+
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .customer-tab,
+    .customer-table-action,
+    .customer-back-link {
+        min-height: 44px;
+    }
+
+    .customer-quick-action {
+        min-height: 72px;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .customer-back-link,
+    .customer-account-card,
+    .customer-quick-action,
+    .customer-tab,
+    .customer-table-action {
+        transition: none;
+    }
+
+    #saveReceiptSpinner,
+    .customer-account-loading-content::before {
+        animation-duration: 1.5s;
+    }
+
+}
+
+
+/* ============================================================
+   PRINT / CUSTOMER STATEMENT
+   ============================================================ */
+
+@media print {
+
+    .customer-back-row,
+    .customer-profile-actions,
+    .customer-quick-actions,
+    .customer-tabs,
+    #recordReceiptModal {
+        display: none !important;
+    }
+
+    .customer-profile-header {
+        margin-bottom: 16px;
+    }
+
+    .customer-profile-avatar {
+        color: #000;
+        background: #fff;
+
+        border: 1px solid #000;
+    }
+
+    .customer-details-strip,
+    .customer-account-card,
+    .customer-account-section,
+    .customer-statement-summary {
+        box-shadow: none;
+    }
+
+    .customer-account-summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .customer-account-card-primary {
+        color: #000;
+        background: #fff;
+
+        border-color: #000;
+    }
+
+    .customer-account-card-primary
+    .customer-account-label,
+    .customer-account-card-primary
+    .customer-account-value,
+    .customer-account-card-primary
+    .customer-account-meta {
+        color: #000;
+    }
+
+    .customer-account-section .table-wrapper {
+        overflow: visible;
+    }
+
+    .customer-account-table {
+        min-width: 0;
+    }
+
+    .customer-table-action {
+        display: none;
+    }
+
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

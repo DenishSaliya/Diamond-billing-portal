@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND purchases, supplier payments and payables."
+    >
+
+    <title>
+        Buy | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- =====================================================
+         PURCHASES PAGE
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/purchases.css"
+    >
+
+
+    <!--
+        IMPORTANT:
+        responsive.css must remain last.
+    -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="/"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Customers -->
+
+            <a
+                href="/customers"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ○
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- Sell -->
+
+            <a
+                href="/sales"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+                <span>
+                    Sell
+                </span>
+
+            </a>
+
+
+            <!-- Suppliers -->
+
+            <a
+                href="/suppliers"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <span>
+                    Suppliers
+                </span>
+
+            </a>
+
+
+            <!-- Buy -->
+
+            <a
+                href="/purchases"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+
+                <span aria-hidden="true">
+                    ↙
+                </span>
+
+                <span>
+                    Buy
+                </span>
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a
+                href="/profile"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    □
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar footer -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+
+                <span aria-hidden="true">
+                    ↪
+                </span>
+
+                <span>
+                    Sign out
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <!-- Left -->
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GLOBAL SEARCH
+                 ================================================= -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOPBAR ACTIONS
+                 ================================================= -->
+
+            <div class="topbar-actions">
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Billing date range
+                </label>
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Billing date range"
+                >
+
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+
+                </select>
+
+
+                <a
+                    href="/purchases/new"
+                    class="button button-primary"
+                >
+                    + New Buy
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE PANEL
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom billing date range"
+        >
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="applyCustomDateButton"
+            >
+                Apply
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content purchases-page">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+                 ================================================= -->
+
+            <section class="page-heading purchases-page-heading">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        BUY
+                    </span>
+
+                    <h1>
+                        Purchases
+                    </h1>
+
+                    <p>
+                        Manage purchase bills, supplier payments
+                        and outstanding payables.
+                    </p>
+
+                </div>
+
+
+                <div class="page-heading-actions">
+
+                    <a
+                        href="/purchases/new"
+                        class="button button-primary"
+                    >
+                        + New Buy
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY
+                 ================================================= -->
+
+            <section
+                class="purchases-summary-grid"
+                aria-label="Purchases summary"
+            >
+
+
+                <!-- Total Buy -->
+
+                <article class="purchases-summary-card">
+
+                    <span class="summary-label">
+                        Total Buy
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryTotalBuy"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Selected period
+                    </small>
+
+                </article>
+
+
+                <!-- Paid -->
+
+                <article class="purchases-summary-card">
+
+                    <span class="summary-label">
+                        Paid
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryPaid"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Selected period
+                    </small>
+
+                </article>
+
+
+                <!-- Payable -->
+
+                <article class="purchases-summary-card">
+
+                    <span class="summary-label">
+                        Payable
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryPayable"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Current outstanding
+                    </small>
+
+                </article>
+
+
+                <!-- Overdue -->
+
+                <article class="purchases-summary-card">
+
+                    <span class="summary-label">
+                        Overdue
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryOverdue"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Current overdue
+                    </small>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 PURCHASES PANEL
+                 ================================================= -->
+
+            <section class="panel purchases-panel">
+
+
+                <!-- =============================================
+                     PANEL HEADER
+                     ============================================= -->
+
+                <div class="panel-header purchases-panel-header">
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            BILLS
+                        </span>
+
+                        <h2>
+                            Buy Bills
+                        </h2>
+
+                        <p
+                            class="purchases-result-count"
+                            id="purchasesResultCount"
+                        >
+                            Loading purchases...
+                        </p>
+
+                    </div>
+
+
+                    <!-- Filters -->
+
+                    <div class="purchases-filters">
+
+
+                        <!-- Search -->
+
+                        <div class="purchases-search-field">
+
+                            <label
+                                class="sr-only"
+                                for="purchasesSearchInput"
+                            >
+                                Search purchases
+                            </label>
+
+                            <input
+                                type="search"
+                                id="purchasesSearchInput"
+                                placeholder="Search bill or supplier..."
+                                autocomplete="off"
+                                spellcheck="false"
+                            >
+
+                        </div>
+
+
+                        <!-- Type -->
+
+                        <div class="purchases-filter-field">
+
+                            <label
+                                class="sr-only"
+                                for="purchasesTypeFilter"
+                            >
+                                Purchase type
+                            </label>
+
+                            <select
+                                id="purchasesTypeFilter"
+                                aria-label="Purchase type"
+                            >
+
+                                <option value="all">
+                                    All Types
+                                </option>
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="credit">
+                                    Credit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="purchases-filter-field">
+
+                            <label
+                                class="sr-only"
+                                for="purchasesStatusFilter"
+                            >
+                                Payment status
+                            </label>
+
+                            <select
+                                id="purchasesStatusFilter"
+                                aria-label="Payment status"
+                            >
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="unpaid">
+                                    Unpaid
+                                </option>
+
+                                <option value="partially_paid">
+                                    Partially Paid
+                                </option>
+
+                                <option value="paid">
+                                    Paid
+                                </option>
+
+                                <option value="overdue">
+                                    Overdue
+                                </option>
+
+                                <option value="draft">
+                                    Draft
+                                </option>
+
+                                <option value="cancelled">
+                                    Cancelled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     LOADING
+                     ============================================= -->
+
+                <div
+                    class="purchases-state purchases-loading-state"
+                    id="purchasesLoadingState"
+                >
+
+                    <div
+                        class="spinner"
+                        aria-hidden="true"
+                    ></div>
+
+                    <strong>
+                        Loading Buy transactions
+                    </strong>
+
+                    <span>
+                        Please wait while your purchase records are loaded.
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     ERROR
+                     ============================================= -->
+
+                <div
+                    class="purchases-state purchases-error-state"
+                    id="purchasesErrorState"
+                    hidden
+                >
+
+                    <div
+                        class="purchases-state-icon"
+                        aria-hidden="true"
+                    >
+                        !
+                    </div>
+
+                    <strong>
+                        Unable to load purchases
+                    </strong>
+
+                    <span id="purchasesErrorMessage">
+                        Please try again.
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     EMPTY
+                     ============================================= -->
+
+                <div
+                    class="purchases-state purchases-empty-state"
+                    id="purchasesEmptyState"
+                    hidden
+                >
+
+                    <div
+                        class="purchases-state-icon"
+                        aria-hidden="true"
+                    >
+                        ↙
+                    </div>
+
+                    <strong>
+                        No Buy bills found
+                    </strong>
+
+                    <span>
+                        Create your first Buy bill to get started.
+                    </span>
+
+                    <a
+                        href="/purchases/new"
+                        class="button button-primary"
+                    >
+                        + New Buy
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     DESKTOP / TABLET TABLE
+                     ============================================= -->
+
+                <div
+                    class="table-wrapper purchases-table-wrapper"
+                    id="purchasesTableWrapper"
+                    hidden
+                >
+
+                    <table class="purchases-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Bill
+                                </th>
+
+                                <th>
+                                    Supplier
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th class="table-money">
+                                    Total
+                                </th>
+
+                                <th class="table-money">
+                                    Paid
+                                </th>
+
+                                <th class="table-money">
+                                    Balance
+                                </th>
+
+                                <th>
+                                    Due Date
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th
+                                    class="table-actions"
+                                    aria-label="Actions"
+                                >
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="purchasesTableBody">
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+
+                <!-- =============================================
+                     MOBILE LIST
+                     ============================================= -->
+
+                <div
+                    class="purchases-mobile-list"
+                    id="purchasesMobileList"
+                    hidden
+                >
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+
+     SAME STRUCTURE AS SALE / SALES.
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="/"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- Customers -->
+
+    <a
+        href="/customers"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+
+    </a>
+
+
+    <!-- Center create -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="Create new"
+    >
+        +
+    </button>
+
+
+    <!-- Suppliers -->
+
+    <a
+        href="/suppliers"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+
+    </a>
+
+
+    <!-- Profile -->
+
+    <a
+        href="/profile"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     PAGE JAVASCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/purchases.js"
+></script>
+
+
+</body>
+
+</html>

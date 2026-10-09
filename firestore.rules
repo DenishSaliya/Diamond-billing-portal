@@ -1,0 +1,330 @@
+rules_version = '2';
+
+service cloud.firestore {
+
+  match /databases/{database}/documents {
+
+    /* ========================================================
+       AUTHORIZATION HELPERS
+       ======================================================== */
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+
+    function businessPath(businessId) {
+      return /databases/$(database)/documents/businesses/$(businessId);
+    }
+
+
+    function memberPath(businessId) {
+      return /databases/$(database)/documents/businesses/$(businessId)
+        /members/$(request.auth.uid);
+    }
+
+
+    function isActiveOwner(businessId) {
+      return isSignedIn()
+        && exists(businessPath(businessId))
+        && exists(memberPath(businessId))
+        && get(memberPath(businessId)).data.active == true
+        && get(memberPath(businessId)).data.role == "owner";
+    }
+
+
+    /* ========================================================
+       UNUSED ROOT USERS
+       ======================================================== */
+
+    match /users/{userId} {
+      allow read, write: if false;
+    }
+
+
+    /* ========================================================
+       BUSINESS
+       ======================================================== */
+
+    match /businesses/{businessId} {
+
+      /*
+       * Only the authenticated active owner can read the
+       * business document.
+       *
+       * Direct browser writes remain blocked.
+       */
+
+      allow read: if isActiveOwner(businessId);
+      allow write: if false;
+
+
+      /* ======================================================
+         MEMBERS
+         ====================================================== */
+
+      match /members/{memberId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        /*
+         * Browser JavaScript must never be able to give itself
+         * owner access or modify authorization.
+         */
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         CUSTOMERS — SELL SIDE
+         ======================================================
+
+         Customers belong to the Sell workflow.
+
+         Examples:
+         - Cash Sell
+         - Credit Sell
+         - Customer statement
+         - Receivable
+         ====================================================== */
+
+      match /customers/{customerId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        /*
+         * We will add customers through a validated trusted
+         * backend operation.
+         */
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         SUPPLIERS — BUY SIDE
+         ======================================================
+
+         Suppliers belong to the Buy workflow.
+
+         Examples:
+         - Cash Buy
+         - Credit Buy
+         - Supplier statement
+         - Payable
+         ====================================================== */
+
+      match /suppliers/{supplierId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         SALES — SELL SIDE
+         ======================================================
+
+         Each document represents a Sell invoice.
+
+         Expected concepts:
+
+         saleType:
+           cash | credit
+
+         Credit Sell:
+           manual due date
+           received amount
+           remaining balance
+           partial receipts
+           overdue tracking
+
+         Cash Sell:
+           no due date
+           fully settled
+
+         Financial writes remain backend-only.
+         ====================================================== */
+
+      match /sales/{saleId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         SALE PAYMENTS / RECEIPTS
+         ======================================================
+
+         Money received from customers.
+
+         These records will later be created transactionally
+         together with the related Sell balance update.
+         ====================================================== */
+
+      match /salePayments/{paymentId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         PURCHASES — BUY SIDE
+         ======================================================
+
+         Each document represents a Buy / Purchase bill.
+
+         purchaseType:
+           cash | credit
+
+         Credit Buy:
+           manual due date
+           paid amount
+           remaining balance
+           partial payments
+           overdue tracking
+
+         Cash Buy:
+           no due date
+           fully settled
+         ====================================================== */
+
+      match /purchases/{purchaseId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         PURCHASE PAYMENTS
+         ======================================================
+
+         Money paid to suppliers.
+
+         These records will later be written through a trusted
+         backend transaction together with the Purchase balance.
+         ====================================================== */
+
+      match /purchasePayments/{paymentId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         SETTINGS
+         ====================================================== */
+
+      match /settings/{settingId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        /*
+         * Important settings such as invoice numbering are
+         * not directly editable from arbitrary browser code.
+         */
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         AUDIT LOG
+         ======================================================
+
+         Audit history is readable by the owner but immutable
+         from browser JavaScript.
+
+         Trusted backend functions will write audit events.
+         ====================================================== */
+
+      match /auditLogs/{logId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         FUTURE CREDIT / DEBIT NOTES
+         ======================================================
+
+         We reserve separate collections for actual accounting
+         adjustment documents.
+
+         IMPORTANT:
+         A "Credit Sell" is NOT a Credit Note.
+         ====================================================== */
+
+      match /creditNotes/{creditNoteId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      match /debitNotes/{debitNoteId} {
+
+        allow read:
+          if isActiveOwner(businessId);
+
+        allow create, update, delete:
+          if false;
+      }
+
+
+      /* ======================================================
+         UNKNOWN BUSINESS DATA
+         ======================================================
+
+         Anything we forgot to explicitly authorize stays
+         completely inaccessible from client applications.
+         ====================================================== */
+
+      match /{document=**} {
+        allow read, write: if false;
+      }
+    }
+
+
+    /* ========================================================
+       GLOBAL DENY
+       ======================================================== */
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND secure business dashboard"
+    >
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <title>
+        Dashboard | OM MARUTI DIAMOND
+    </title>
+
+
+    <!-- =====================================================
+         DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         DESKTOP / TABLET SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <!-- =================================================
+             BRAND
+             ================================================= -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NAVIGATION
+             ================================================= -->
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <!-- Dashboard -->
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <!-- Customers -->
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ○
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <!-- Sell -->
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+                <span>
+                    Sell
+                </span>
+            </a>
+
+
+            <!-- Suppliers -->
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <span>
+                    Suppliers
+                </span>
+            </a>
+
+
+            <!-- Buy -->
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ↙
+                </span>
+
+                <span>
+                    Buy
+                </span>
+            </a>
+
+
+            <!-- Profile -->
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    □
+                </span>
+
+                <span>
+                    Profile
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR FOOTER
+             ================================================= -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">
+                    ↪
+                </span>
+
+                <span>
+                    Sign out
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOP BAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <!-- =============================================
+                 LEFT
+                 ============================================= -->
+
+            <div class="topbar-left">
+
+
+                <!-- Mobile menu -->
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <!-- Current date -->
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 GLOBAL SEARCH
+                 ============================================= -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                    aria-autocomplete="list"
+                    aria-controls="globalSearchResults"
+                >
+
+
+                <!-- Search dropdown -->
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- =============================================
+                 TOP BAR ACTIONS
+                 ============================================= -->
+
+            <div class="topbar-actions">
+
+
+                <!-- =========================================
+                     DASHBOARD DATE FILTER
+
+                     TODAY IS THE DEFAULT
+                     ========================================= -->
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Dashboard date range
+                </label>
+
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Dashboard date range"
+                >
+
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+
+                </select>
+
+
+                <!-- New transaction -->
+
+                <button
+                    type="button"
+                    class="button button-primary desktop-new-button"
+                    id="newTransactionButton"
+                >
+                    + New
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE FILTER
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom dashboard date range"
+        >
+
+
+            <!-- From -->
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <!-- To -->
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <!-- Apply -->
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="applyCustomDateButton"
+            >
+                Apply
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+             ================================================= -->
+
+        <div class="page-content">
+
+
+            <!-- =============================================
+                 PAGE HEADING
+                 ============================================= -->
+
+            <section class="page-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        OVERVIEW
+                    </span>
+
+                    <h1>
+                        Dashboard
+                    </h1>
+
+                    <p>
+                        Track Sell, Buy, receivables and payables.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRIMARY SUMMARY
+                 ================================================= -->
+
+            <section
+                class="dashboard-summary-grid"
+                aria-label="Business summary"
+            >
+
+
+                <!-- =============================================
+                     TOTAL SELL
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL SELL
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="totalSalesValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="totalSalesMeta"
+                    >
+                        0 sales
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     TOTAL BUY
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        TOTAL BUY
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="totalPurchasesValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="totalPurchasesMeta"
+                    >
+                        0 purchases
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     RECEIVABLE
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        RECEIVABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="receivableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="receivableMeta"
+                    >
+                        Customer outstanding
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     PAYABLE
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        PAYABLE
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="payableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="payableMeta"
+                    >
+                        Supplier outstanding
+                    </span>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECONDARY SUMMARY
+                 ================================================= -->
+
+            <section
+                class="dashboard-summary-grid dashboard-secondary-summary"
+                aria-label="Payment summary"
+            >
+
+
+                <!-- =============================================
+                     RECEIVED
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        RECEIVED
+                    </span>
+
+                    <strong
+                        class="summary-value summary-value-small"
+                        id="receivedValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="receivedMeta"
+                    >
+                        Customer payments
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     PAID
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        PAID
+                    </span>
+
+                    <strong
+                        class="summary-value summary-value-small"
+                        id="paidValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="paidMeta"
+                    >
+                        Supplier payments
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     OVERDUE RECEIVABLE
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        OVERDUE RECEIVABLE
+                    </span>
+
+                    <strong
+                        class="summary-value summary-value-small"
+                        id="overdueReceivableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="overdueReceivableMeta"
+                    >
+                        0 overdue sales
+                    </span>
+
+                </article>
+
+
+                <!-- =============================================
+                     OVERDUE PAYABLE
+                     ============================================= -->
+
+                <article class="summary-card">
+
+                    <span class="summary-label">
+                        OVERDUE PAYABLE
+                    </span>
+
+                    <strong
+                        class="summary-value summary-value-small"
+                        id="overduePayableValue"
+                    >
+                        ₹0
+                    </strong>
+
+                    <span
+                        class="summary-meta"
+                        id="overduePayableMeta"
+                    >
+                        0 overdue purchases
+                    </span>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 CHART
+                 ================================================= -->
+
+            <section class="panel dashboard-chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ACTIVITY
+                        </span>
+
+                        <h2>
+                            Sell vs Buy
+                        </h2>
+
+                    </div>
+
+
+                    <span
+                        class="panel-header-meta"
+                        id="chartPeriodLabel"
+                    >
+                        Today
+                    </span>
+
+                </div>
+
+
+                <!-- =========================================
+                     CHART LEGEND
+                     ========================================= -->
+
+                <div
+                    class="chart-legend"
+                    aria-label="Chart legend"
+                >
+
+                    <span class="chart-legend-item">
+
+                        <span
+                            class="chart-legend-dot chart-legend-dot-sell"
+                            aria-hidden="true"
+                        ></span>
+
+                        Sell
+
+                    </span>
+
+
+                    <span class="chart-legend-item">
+
+                        <span
+                            class="chart-legend-dot chart-legend-dot-buy"
+                            aria-hidden="true"
+                        ></span>
+
+                        Buy
+
+                    </span>
+
+                </div>
+
+
+                <!-- =========================================
+                     CHART
+                     ========================================= -->
+
+                <div
+                    class="billing-chart"
+                    id="billingChart"
+                    aria-label="Sell and Buy chart"
+                ></div>
+
+
+                <!-- =========================================
+                     CHART EMPTY STATE
+                     ========================================= -->
+
+                <div
+                    class="empty-state"
+                    id="billingChartEmpty"
+                    hidden
+                >
+
+                    <strong>
+                        No activity today
+                    </strong>
+
+                    <span>
+                        Sell and Buy activity for the selected
+                        period will appear here.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+                 ================================================= -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            ACTIONS
+                        </span>
+
+                        <h2>
+                            Quick actions
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions-grid">
+
+
+                    <!-- =========================================
+                         NEW SELL
+                         ========================================= -->
+
+                    <a
+                        href="/new-sale.html"
+                        class="quick-action-card"
+                    >
+
+                        <span class="quick-action-icon">
+                            ↗
+                        </span>
+
+                        <strong>
+                            New Sell
+                        </strong>
+
+                        <span>
+                            Create a Cash or Credit Sell invoice.
+                        </span>
+
+                    </a>
+
+
+                    <!-- =========================================
+                         NEW BUY
+                         ========================================= -->
+
+                    <a
+                        href="/new-purchase.html"
+                        class="quick-action-card"
+                    >
+
+                        <span class="quick-action-icon">
+                            ↙
+                        </span>
+
+                        <strong>
+                            New Buy
+                        </strong>
+
+                        <span>
+                            Record a Cash or Credit purchase.
+                        </span>
+
+                    </a>
+
+
+                    <!-- =========================================
+                         CUSTOMERS
+                         ========================================= -->
+
+                    <a
+                        href="/customers.html"
+                        class="quick-action-card"
+                    >
+
+                        <span class="quick-action-icon">
+                            +
+                        </span>
+
+                        <strong>
+                            Add Customer
+                        </strong>
+
+                        <span>
+                            Create a customer for Sell billing.
+                        </span>
+
+                    </a>
+
+
+                    <!-- =========================================
+                         SUPPLIERS
+                         ========================================= -->
+
+                    <a
+                        href="/suppliers.html"
+                        class="quick-action-card"
+                    >
+
+                        <span class="quick-action-icon">
+                            +
+                        </span>
+
+                        <strong>
+                            Add Supplier
+                        </strong>
+
+                        <span>
+                            Create a supplier for Buy billing.
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RECENT SELL / BUY
+                 ================================================= -->
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            RECENT
+                        </span>
+
+                        <h2>
+                            Sell &amp; Buy
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================================
+                     TABLE
+                     ========================================= -->
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Type
+                                </th>
+
+                                <th scope="col">
+                                    No.
+                                </th>
+
+                                <th scope="col">
+                                    Customer / Supplier
+                                </th>
+
+                                <th scope="col">
+                                    Date
+                                </th>
+
+                                <th scope="col">
+                                    Total
+                                </th>
+
+                                <th scope="col">
+                                    Balance
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="recentTransactionsBody"
+                        >
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- =========================================
+                     EMPTY STATE
+                     ========================================= -->
+
+                <div
+                    class="empty-state"
+                    id="recentTransactionsEmpty"
+                    hidden
+                >
+
+                    <strong>
+                        No Sell or Buy records yet
+                    </strong>
+
+                    <span>
+                        Your latest business activity
+                        will appear here automatically.
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOWER DASHBOARD
+                 ================================================= -->
+
+            <div class="dashboard-lower-grid">
+
+
+                <!-- =============================================
+                     CREDIT SELL DUE
+                     ============================================= -->
+
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                RECEIVABLE
+                            </span>
+
+                            <h2>
+                                Credit Sell Due
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="/sales.html"
+                            class="panel-header-link"
+                        >
+                            View Sell
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="compact-list"
+                        id="salesDueList"
+                    >
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     CREDIT BUY DUE
+                     ============================================= -->
+
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PAYABLE
+                            </span>
+
+                            <h2>
+                                Credit Buy Due
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="/purchases.html"
+                            class="panel-header-link"
+                        >
+                            View Buy
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="compact-list"
+                        id="purchasesDueList"
+                    >
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+
+     Home · Customers · + · Suppliers · Profile
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- =====================================================
+         HOME
+         ===================================================== -->
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- =====================================================
+         CUSTOMERS
+         ===================================================== -->
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+
+    </a>
+
+
+    <!-- =====================================================
+         CENTER CREATE BUTTON
+         ===================================================== -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="Create new Sell or Buy"
+    >
+        +
+    </button>
+
+
+    <!-- =====================================================
+         SUPPLIERS
+         ===================================================== -->
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+
+    </a>
+
+
+    <!-- =====================================================
+         PROFILE
+         ===================================================== -->
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     NEW TRANSACTION MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="newTransactionModal"
+    hidden
+>
+
+    <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="newTransactionModalTitle"
+    >
+
+
+        <!-- =================================================
+             MODAL HEADER
+             ================================================= -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    CREATE
+                </span>
+
+                <h2 id="newTransactionModalTitle">
+                    What do you want to create?
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closeNewTransactionModal"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CREATE OPTIONS
+             ================================================= -->
+
+        <div class="quick-actions-grid">
+
+
+            <!-- =============================================
+                 SELL
+                 ============================================= -->
+
+            <a
+                href="/new-sale.html"
+                class="quick-action-card"
+            >
+
+                <span class="quick-action-icon">
+                    ↗
+                </span>
+
+                <strong>
+                    New Sell
+                </strong>
+
+                <span>
+                    Cash or Credit Sell
+                </span>
+
+            </a>
+
+
+            <!-- =============================================
+                 BUY
+                 ============================================= -->
+
+            <a
+                href="/new-purchase.html"
+                class="quick-action-card"
+            >
+
+                <span class="quick-action-icon">
+                    ↙
+                </span>
+
+                <strong>
+                    New Buy
+                </strong>
+
+                <span>
+                    Cash or Credit Buy
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/dashboard.js"
+></script>
+
+</body>
+
+</html>

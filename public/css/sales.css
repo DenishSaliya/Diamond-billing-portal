@@ -1,0 +1,1143 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   SALES / SELL LIST
+   COMPACT PROFESSIONAL VERSION
+
+   IMPORTANT:
+   - Shared shell remains in layout.css
+   - Shared tables/components remain in components.css
+   - Mobile bottom navigation remains shared
+   - responsive.css loads after this file
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.sales-page {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.sales-page [hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   PAGE HEADING
+   ============================================================ */
+
+.sales-page-heading {
+    margin-bottom: 18px;
+}
+
+
+.sales-page-heading h1 {
+    margin-top: 6px;
+}
+
+
+.sales-page-heading p {
+    margin-top: 7px;
+
+    max-width: 520px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   SUMMARY
+   ============================================================ */
+
+.sales-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+
+.sales-summary-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 120px;
+
+    padding: 15px 16px;
+
+    background: var(--color-white);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 12px;
+}
+
+
+.sales-summary-card .summary-label {
+    color: var(--color-text-muted);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.sales-summary-card .summary-value {
+    display: block;
+
+    margin-top: auto;
+    padding-top: 17px;
+
+    overflow: hidden;
+
+    color: var(--color-black);
+
+    font-size:
+        clamp(
+            21px,
+            2vw,
+            28px
+        );
+
+    font-weight: 750;
+
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+
+    font-variant-numeric: tabular-nums;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.sales-summary-card .summary-meta {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--color-text-subtle);
+
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+
+.sales-panel {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   PANEL HEADER
+   ============================================================ */
+
+.sales-panel-header {
+    align-items: center;
+}
+
+
+.sales-panel-header h2 {
+    margin-top: 5px;
+
+    font-size: var(--font-size-lg);
+}
+
+
+.sales-result-count {
+    margin-top: 5px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+
+.sales-filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.sales-search-field {
+    width: 250px;
+}
+
+
+.sales-filter-field {
+    width: 128px;
+}
+
+
+.sales-search-field input,
+.sales-filter-field select {
+    min-height: 38px;
+
+    font-size: var(--font-size-xs);
+}
+
+
+.sales-search-field input {
+    padding-left: 13px;
+
+    background: var(--color-gray-50);
+}
+
+
+.sales-search-field input::placeholder {
+    color: var(--color-text-subtle);
+}
+
+
+/* ============================================================
+   PAGE STATES
+   ============================================================ */
+
+.sales-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    min-height: 320px;
+
+    padding: 32px 24px;
+
+    color: var(--color-text-muted);
+
+    text-align: center;
+}
+
+
+.sales-state strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-black);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+.sales-state > span {
+    max-width: 390px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+}
+
+
+.sales-state .button {
+    margin-top: 13px;
+}
+
+
+/* ============================================================
+   SPINNER
+   ============================================================ */
+
+.sales-state .spinner {
+    width: 26px;
+    height: 26px;
+
+    margin-bottom: 7px;
+
+    border: 2px solid var(--color-gray-200);
+    border-top-color: var(--color-black);
+    border-radius: 50%;
+
+    animation:
+        sales-spin
+        700ms
+        linear
+        infinite;
+}
+
+
+@keyframes sales-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   STATE ICON
+   ============================================================ */
+
+.sales-state-icon {
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 8px;
+
+    background: var(--color-gray-100);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-gray-300);
+
+    border-radius: 50%;
+
+    color: var(--color-black);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.sales-table-wrapper {
+    width: 100%;
+}
+
+
+.sales-table {
+    min-width: 1060px;
+}
+
+
+.sales-table th,
+.sales-table td {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+
+.sales-table tbody tr {
+    cursor: pointer;
+}
+
+
+.sales-table tbody tr:focus-visible {
+    outline:
+        2px
+        solid
+        var(--color-black);
+
+    outline-offset: -2px;
+}
+
+
+/* ============================================================
+   INVOICE NUMBER
+   ============================================================ */
+
+.sales-table .invoice-number {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+/* ============================================================
+   CUSTOMER
+   ============================================================ */
+
+.sales-table .customer-cell {
+    min-width: 190px;
+}
+
+
+.sales-table .customer-avatar {
+    width: 34px;
+    height: 34px;
+}
+
+
+.sales-table .customer-cell-content strong {
+    max-width: 180px;
+}
+
+
+.sales-table .customer-cell-content span {
+    max-width: 180px;
+}
+
+
+/* ============================================================
+   SALE TYPE
+   ============================================================ */
+
+.sale-type-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 24px;
+
+    padding:
+        4px
+        8px;
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border-strong);
+
+    border-radius: var(--radius-pill);
+
+    color: var(--color-text-secondary);
+
+    background: var(--color-white);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.sale-type-badge[data-type="cash"] {
+    background: var(--cash-bg);
+    border-color: var(--cash-border);
+    color: var(--cash-text);
+}
+
+
+.sale-type-badge[data-type="credit"] {
+    background: var(--credit-bg);
+    border-color: var(--credit-border);
+    color: var(--credit-text);
+}
+
+
+/* ============================================================
+   SALES STATUS
+   ============================================================ */
+
+.sales-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 25px;
+
+    padding:
+        4px
+        9px;
+
+    background: var(--status-pending-bg);
+
+    border:
+        var(--border-width)
+        solid
+        var(--status-pending-border);
+
+    border-radius: var(--radius-pill);
+
+    color: var(--status-pending-text);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.055em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* Paid */
+
+.sales-status-badge[data-status="paid"] {
+    background: var(--status-paid-bg);
+    border-color: var(--status-paid-border);
+    color: var(--status-paid-text);
+}
+
+
+/* Partial */
+
+.sales-status-badge[data-status="partially_paid"] {
+    background: var(--status-partial-bg);
+    border-color: var(--status-partial-border);
+    color: var(--status-partial-text);
+}
+
+
+/* Pending */
+
+.sales-status-badge[data-status="pending"],
+.sales-status-badge[data-status="unpaid"] {
+    background: var(--status-pending-bg);
+    border-color: var(--status-pending-border);
+    color: var(--status-pending-text);
+}
+
+
+/* Overdue */
+
+.sales-status-badge[data-status="overdue"] {
+    background: var(--status-overdue-bg);
+    border-color: var(--status-overdue-border);
+    color: var(--status-overdue-text);
+}
+
+
+/* Cancelled */
+
+.sales-status-badge[data-status="cancelled"] {
+    background: var(--status-cancelled-bg);
+    border-color: var(--status-cancelled-border);
+    color: var(--status-cancelled-text);
+}
+
+
+/* ============================================================
+   DATES
+   ============================================================ */
+
+.sales-date,
+.sales-due-date {
+    color: var(--color-text-secondary);
+
+    font-size: var(--font-size-xs);
+
+    white-space: nowrap;
+}
+
+
+.sales-due-date.is-overdue {
+    color: var(--color-black);
+
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   MONEY
+   ============================================================ */
+
+.sales-table .table-money {
+    color: var(--color-text);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.sales-table .sales-balance {
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   ROW ACTION
+   ============================================================ */
+
+.sales-open-button {
+    display: grid;
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    margin-left: auto;
+    padding: 0;
+
+    border-radius: var(--radius-sm);
+
+    background: transparent;
+    color: var(--color-text-muted);
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+
+.sales-open-button:hover {
+    background: var(--color-gray-100);
+    color: var(--color-black);
+}
+
+
+/* ============================================================
+   MOBILE LIST
+   ============================================================ */
+
+.sales-mobile-list {
+    display: none;
+
+    padding: 12px;
+
+    background: var(--color-gray-50);
+}
+
+
+/* ============================================================
+   MOBILE SALE CARD
+   ============================================================ */
+
+.sales-mobile-card {
+    display: block;
+
+    padding: 14px;
+
+    background: var(--color-white);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 12px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition:
+        border-color var(--transition-fast),
+        background-color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.sales-mobile-card + .sales-mobile-card {
+    margin-top: 9px;
+}
+
+
+.sales-mobile-card:hover {
+    border-color: var(--color-border-strong);
+}
+
+
+.sales-mobile-card:active {
+    background: var(--color-gray-50);
+
+    transform: scale(0.995);
+}
+
+
+/* ============================================================
+   MOBILE CARD HEADER
+   ============================================================ */
+
+.sales-mobile-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.sales-mobile-card-title {
+    min-width: 0;
+}
+
+
+.sales-mobile-card-title .invoice-number {
+    display: block;
+
+    overflow: hidden;
+
+    max-width: 190px;
+
+    color: var(--color-black);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.sales-mobile-date {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   MOBILE CUSTOMER
+   ============================================================ */
+
+.sales-mobile-customer {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 13px;
+}
+
+
+.sales-mobile-customer-avatar {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    width: 32px;
+    height: 32px;
+
+    background: var(--color-gray-100);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 50%;
+
+    color: var(--color-black);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    text-transform: uppercase;
+}
+
+
+.sales-mobile-customer-content {
+    min-width: 0;
+}
+
+
+.sales-mobile-customer-content strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-xs);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.sales-mobile-customer-content span {
+    display: block;
+
+    overflow: hidden;
+
+    margin-top: 2px;
+
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE VALUES
+   ============================================================ */
+
+.sales-mobile-values {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 13px;
+    padding-top: 12px;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-divider);
+}
+
+
+.sales-mobile-value {
+    min-width: 0;
+}
+
+
+.sales-mobile-value span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--color-text-muted);
+
+    font-size: 8px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+.sales-mobile-value strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--color-text);
+
+    font-size: 11px;
+    font-weight: var(--font-weight-semibold);
+
+    font-variant-numeric: tabular-nums;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE FOOTER
+   ============================================================ */
+
+.sales-mobile-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 13px;
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .sales-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .sales-filters {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .sales-search-field {
+        flex: 1;
+
+        width: auto;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .sales-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .sales-filters {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            135px
+            145px;
+    }
+
+
+    .sales-search-field,
+    .sales-filter-field {
+        width: auto;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+
+   Do not redefine mobile-bottom-nav here.
+   responsive.css owns the shared navigation.
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    .sales-page-heading {
+        margin-bottom: 14px;
+    }
+
+
+    /*
+     * Mobile already has the center + create button.
+     * Avoid duplicating the large New Sell action.
+     */
+
+    .sales-page-heading .page-heading-actions {
+        display: none;
+    }
+
+
+    /* Summary */
+
+    .sales-summary-grid {
+        gap: 8px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .sales-summary-card {
+        min-height: 100px;
+
+        padding: 12px;
+    }
+
+
+    .sales-summary-card .summary-value {
+        padding-top: 13px;
+
+        font-size: 18px;
+    }
+
+
+    .sales-summary-card .summary-meta {
+        margin-top: 5px;
+
+        font-size: 8px;
+    }
+
+
+    /* Panel */
+
+    .sales-panel-header {
+        gap: 14px;
+
+        padding:
+            15px
+            14px;
+    }
+
+
+    .sales-panel-header h2 {
+        font-size: var(--font-size-base);
+    }
+
+
+    /* Filters */
+
+    .sales-filters {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .sales-search-field {
+        grid-column:
+            1 / -1;
+    }
+
+
+    .sales-search-field input,
+    .sales-filter-field select {
+        min-height: 40px;
+    }
+
+
+    /*
+     * Mobile uses cards rather than squeezing the financial
+     * invoice table.
+     */
+
+    .sales-table-wrapper {
+        display: none !important;
+    }
+
+
+    .sales-mobile-list:not([hidden]) {
+        display: block;
+    }
+
+
+    /* State */
+
+    .sales-state {
+        min-height: 280px;
+
+        padding:
+            34px
+            20px;
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .sales-summary-card {
+        min-height: 94px;
+    }
+
+
+    .sales-summary-card .summary-value {
+        font-size: 16px;
+    }
+
+
+    .sales-mobile-list {
+        padding: 9px;
+    }
+
+
+    .sales-mobile-card {
+        padding: 13px;
+    }
+
+
+    .sales-mobile-values {
+        gap: 5px;
+    }
+
+
+    .sales-mobile-value strong {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .sales-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sales-filters {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sales-search-field {
+        grid-column: auto;
+    }
+
+
+    .sales-mobile-values {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

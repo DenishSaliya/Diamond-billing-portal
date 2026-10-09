@@ -1,0 +1,1417 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   DEDICATED INVOICE
+   invoice.css
+
+   Standalone A4 portrait invoice.
+   Do NOT load sale.css / responsive.css on invoice.html.
+   ============================================================ */
+
+
+/* ============================================================
+   1. RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+
+    background: #ececec;
+
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-width: 320px;
+
+    background: #ececec;
+
+    color: #111111;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   2. APP
+   ============================================================ */
+
+.invoice-app {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   3. TOOLBAR
+   ============================================================ */
+
+.invoice-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid #dddddd;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.invoice-toolbar-inner {
+    display: grid;
+
+    grid-template-columns:
+        minmax(120px, 1fr)
+        auto
+        minmax(120px, 1fr);
+
+    align-items: center;
+
+    gap: 20px;
+
+    width: min(100% - 32px, 1120px);
+
+    min-height: 64px;
+
+    margin: 0 auto;
+}
+
+.invoice-toolbar-title {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    min-width: 0;
+
+    text-align: center;
+}
+
+.invoice-toolbar-title strong {
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: #111111;
+
+    font-size: 13px;
+    font-weight: 750;
+
+    line-height: 1.25;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.invoice-toolbar-title span {
+    margin-top: 2px;
+
+    color: #777777;
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.invoice-toolbar-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        background-color 140ms ease,
+        border-color 140ms ease,
+        color 140ms ease,
+        transform 140ms ease;
+}
+
+.invoice-toolbar-button:active {
+    transform: translateY(1px);
+}
+
+.invoice-toolbar-button-secondary {
+    justify-self: start;
+
+    background: #ffffff;
+
+    border: 1px solid #d5d5d5;
+
+    color: #222222;
+}
+
+.invoice-toolbar-button-secondary:hover {
+    background: #f5f5f5;
+
+    border-color: #bdbdbd;
+}
+
+.invoice-toolbar-button-primary {
+    justify-self: end;
+
+    background: #111111;
+
+    border: 1px solid #111111;
+
+    color: #ffffff;
+}
+
+.invoice-toolbar-button-primary:hover {
+    background: #292929;
+
+    border-color: #292929;
+}
+
+
+/* ============================================================
+   4. LOADING / ERROR
+   ============================================================ */
+
+.invoice-state {
+    width: min(calc(100% - 32px), 460px);
+
+    margin: 80px auto;
+
+    padding: 32px 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.05);
+
+    text-align: center;
+}
+
+.invoice-state strong {
+    display: block;
+
+    margin-top: 14px;
+
+    color: #111111;
+
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.invoice-state > span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777777;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+.invoice-loader {
+    width: 30px;
+    height: 30px;
+
+    margin: 0 auto;
+
+    border: 2px solid #dddddd;
+    border-top-color: #111111;
+    border-radius: 50%;
+
+    animation: invoice-spin 700ms linear infinite;
+}
+
+@keyframes invoice-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.invoice-error-icon {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin: 0 auto;
+
+    background: #111111;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.invoice-state-button {
+    min-height: 38px;
+
+    margin-top: 18px;
+
+    padding: 0 16px;
+
+    background: #111111;
+
+    border: 1px solid #111111;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   5. PREVIEW
+   ============================================================ */
+
+.invoice-preview {
+    width: 100%;
+
+    padding: 32px 20px 60px;
+}
+
+
+/* ============================================================
+   6. TRUE A4 PAGE
+
+   210mm × 297mm
+   ============================================================ */
+
+.invoice-page {
+    position: relative;
+
+    width: 210mm;
+    min-height: 297mm;
+
+    margin: 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid #d5d5d5;
+
+    box-shadow:
+        0 18px 55px rgba(0, 0, 0, 0.11);
+
+    overflow: hidden;
+
+    color: #111111;
+}
+
+
+/* ============================================================
+   7. DOCUMENT TITLE
+   ============================================================ */
+
+.invoice-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 13mm;
+
+    padding: 3mm 6mm;
+
+    background: #f5f5f5;
+
+    border-bottom: 0.3mm solid #bdbdbd;
+
+    text-align: center;
+}
+
+.invoice-title h1 {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 15pt;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   8. BUSINESS HEADER
+   ============================================================ */
+
+.invoice-business {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        29mm;
+
+    align-items: center;
+
+    min-height: 27mm;
+
+    padding: 4mm 6mm;
+
+    border-bottom: 0.25mm solid #d8d8d8;
+}
+
+.invoice-business-information {
+    min-width: 0;
+}
+
+.invoice-eyebrow {
+    display: block;
+
+    margin: 0 0 1.2mm;
+
+    color: #666666;
+
+    font-size: 6.5pt;
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+.invoice-business-information h2 {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 16pt;
+    font-weight: 800;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+}
+
+.invoice-business-address {
+    max-width: 135mm;
+
+    margin: 1.4mm 0 0;
+
+    color: #444444;
+
+    font-size: 7pt;
+
+    line-height: 1.4;
+
+    white-space: pre-line;
+}
+
+.invoice-business-contact {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 0.8mm 4mm;
+
+    margin-top: 1.2mm;
+
+    color: #444444;
+
+    font-size: 7pt;
+
+    line-height: 1.35;
+}
+
+.invoice-business-contact span:empty {
+    display: none;
+}
+
+.invoice-business-gstin {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 2mm;
+
+    margin-top: 1mm;
+
+    font-size: 7pt;
+}
+
+.invoice-business-gstin span {
+    color: #666666;
+
+    font-size: 6.3pt;
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+.invoice-business-gstin strong {
+    color: #111111;
+
+    font-weight: 750;
+}
+
+
+/* ============================================================
+   9. LOGO
+   ============================================================ */
+
+.invoice-logo {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    min-width: 0;
+}
+
+.invoice-logo-image {
+    width: auto;
+    height: auto;
+
+    max-width: 24mm;
+    max-height: 21mm;
+
+    object-fit: contain;
+}
+
+.invoice-logo-placeholder {
+    display: grid;
+    place-items: center;
+
+    width: 17mm;
+    height: 17mm;
+
+    border: 0.3mm solid #bdbdbd;
+    border-radius: 50%;
+
+    color: #111111;
+
+    font-size: 11pt;
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   10. DOCUMENT TYPE
+   ============================================================ */
+
+.invoice-document-type {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 8mm;
+
+    padding: 1.8mm 5mm;
+
+    border-bottom: 0.25mm solid #d8d8d8;
+
+    text-align: center;
+}
+
+.invoice-document-type span {
+    color: #444444;
+
+    font-size: 6.7pt;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   11. CUSTOMER / METADATA
+   ============================================================ */
+
+.invoice-party-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.18fr)
+        minmax(52mm, 0.82fr);
+
+    gap: 8mm;
+
+    min-height: 31mm;
+
+    padding: 4mm 6mm;
+
+    border-bottom: 0.25mm solid #d8d8d8;
+}
+
+.invoice-customer,
+.invoice-metadata {
+    min-width: 0;
+}
+
+.invoice-customer h3 {
+    margin: 0 0 1mm;
+
+    color: #111111;
+
+    font-size: 10pt;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.invoice-customer-address {
+    margin: 0;
+
+    color: #444444;
+
+    font-size: 7pt;
+
+    line-height: 1.4;
+
+    white-space: pre-line;
+}
+
+.invoice-customer-details,
+.invoice-metadata-list {
+    margin: 1.5mm 0 0;
+}
+
+.invoice-customer-details > div,
+.invoice-metadata-list > div {
+    display: grid;
+
+    grid-template-columns:
+        18mm
+        minmax(0, 1fr);
+
+    gap: 2mm;
+
+    margin-top: 0.8mm;
+}
+
+.invoice-customer-details dt,
+.invoice-metadata-list dt {
+    color: #666666;
+
+    font-size: 6.6pt;
+
+    line-height: 1.35;
+}
+
+.invoice-customer-details dd,
+.invoice-metadata-list dd {
+    min-width: 0;
+
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 6.8pt;
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.invoice-metadata-list {
+    margin-top: 0;
+}
+
+.invoice-metadata-list > div {
+    grid-template-columns:
+        23mm
+        minmax(0, 1fr);
+}
+
+.invoice-metadata-list dd {
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   12. ITEMS
+   ============================================================ */
+
+.invoice-items-section {
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.invoice-items-table {
+    width: 100%;
+
+    margin: 0;
+
+    border: 0;
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.invoice-items-table th {
+    padding: 1.7mm 0.7mm;
+
+    background: #f3f3f3;
+
+    border: 0;
+    border-bottom: 0.3mm solid #aaaaaa;
+
+    color: #333333;
+
+    font-size: 5.2pt;
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    vertical-align: middle;
+
+    overflow-wrap: normal;
+}
+
+.invoice-items-table tbody td {
+    padding: 1.9mm 0.7mm;
+
+    border: 0;
+    border-bottom: 0.2mm solid #e2e2e2;
+
+    color: #222222;
+
+    font-size: 5.8pt;
+
+    line-height: 1.25;
+
+    vertical-align: middle;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* Light column guides only */
+
+.invoice-items-table thead th:not(:last-child),
+.invoice-items-table tbody td:not(:last-child) {
+    border-right: 0.15mm solid #eeeeee;
+}
+
+.invoice-number {
+    text-align: right !important;
+}
+
+
+/* ============================================================
+   13. TABLE FOOTER
+   ============================================================ */
+
+.invoice-items-table tfoot th,
+.invoice-items-table tfoot td {
+    padding: 1.6mm 0.7mm;
+
+    background: #fafafa;
+
+    border: 0;
+    border-top: 0.3mm solid #aaaaaa;
+    border-bottom: 0.25mm solid #d5d5d5;
+
+    color: #222222;
+
+    font-size: 5.7pt;
+    font-weight: 750;
+
+    line-height: 1.2;
+
+    vertical-align: middle;
+}
+
+.invoice-table-total-label {
+    text-align: right;
+
+    letter-spacing: 0.03em;
+}
+
+
+/* ============================================================
+   14. COLUMN WIDTHS
+   Total = 100%
+   ============================================================ */
+
+.invoice-col-sr {
+    width: 3.5%;
+}
+
+.invoice-col-material {
+    width: 8%;
+}
+
+.invoice-col-description {
+    width: 10%;
+}
+
+.invoice-col-remarks {
+    width: 8%;
+}
+
+.invoice-col-hsn {
+    width: 6%;
+}
+
+.invoice-col-pcs {
+    width: 5%;
+}
+
+.invoice-col-carat {
+    width: 7%;
+}
+
+.invoice-col-rate {
+    width: 9%;
+}
+
+.invoice-col-discount {
+    width: 6%;
+}
+
+.invoice-col-amount {
+    width: 10%;
+}
+
+.invoice-col-tax {
+    width: 5%;
+}
+
+.invoice-col-tax-amount {
+    width: 9%;
+}
+
+.invoice-col-total {
+    width: 13.5%;
+}
+
+
+/* ============================================================
+   15. FINANCIAL SECTION
+   ============================================================ */
+
+.invoice-financial-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        57mm;
+
+    border-bottom: 0.25mm solid #d8d8d8;
+}
+
+.invoice-financial-information {
+    min-width: 0;
+
+    padding: 3.5mm 6mm;
+}
+
+.invoice-amount-words {
+    min-height: 13mm;
+}
+
+.invoice-amount-words p {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 7.5pt;
+    font-weight: 650;
+
+    line-height: 1.4;
+}
+
+.invoice-notes,
+.invoice-declaration {
+    margin-top: 2.5mm;
+}
+
+.invoice-notes p,
+.invoice-declaration p {
+    margin: 0;
+
+    color: #555555;
+
+    font-size: 6.3pt;
+
+    line-height: 1.4;
+
+    white-space: pre-line;
+}
+
+
+/* ============================================================
+   16. TOTALS
+   ============================================================ */
+
+.invoice-totals {
+    padding: 2mm 0 2mm 2.5mm;
+
+    border-left: 0.25mm solid #d8d8d8;
+}
+
+.invoice-total-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: center;
+
+    gap: 3mm;
+
+    min-height: 7mm;
+
+    padding: 1mm 3mm;
+}
+
+.invoice-total-row span {
+    color: #555555;
+
+    font-size: 6.7pt;
+    font-weight: 500;
+}
+
+.invoice-total-row strong {
+    color: #111111;
+
+    font-size: 6.8pt;
+    font-weight: 750;
+
+    text-align: right;
+
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Final amount */
+
+.invoice-final-amount {
+    min-height: 9mm;
+
+    margin: 1mm 0;
+
+    background: #eeeeee;
+
+    border-top: 0.25mm solid #b7b7b7;
+    border-bottom: 0.25mm solid #b7b7b7;
+}
+
+.invoice-final-amount span,
+.invoice-final-amount strong {
+    color: #111111;
+
+    font-size: 7.5pt;
+    font-weight: 800;
+}
+
+
+/* Received */
+
+.invoice-received {
+    background: #ffffff;
+}
+
+
+/* Balance */
+
+.invoice-balance {
+    min-height: 9mm;
+
+    margin-top: 1mm;
+
+    background: #111111;
+}
+
+.invoice-balance span,
+.invoice-balance strong {
+    color: #ffffff;
+
+    font-size: 7.5pt;
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   17. SIGNATURES
+   ============================================================ */
+
+.invoice-signatures {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15mm;
+
+    min-height: 29mm;
+
+    padding: 4mm 6mm;
+}
+
+.invoice-signature {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    min-width: 0;
+}
+
+.invoice-signature-space {
+    flex: 1;
+
+    min-height: 13mm;
+}
+
+.invoice-signature-name {
+    display: block;
+
+    padding-top: 1.5mm;
+
+    border-top: 0.25mm solid #555555;
+
+    color: #111111;
+
+    font-size: 7pt;
+    font-weight: 750;
+
+    line-height: 1.25;
+}
+
+.invoice-signature-label {
+    display: block;
+
+    margin-top: 0.8mm;
+
+    color: #666666;
+
+    font-size: 5.5pt;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+}
+
+.invoice-signature-business {
+    text-align: right;
+}
+
+
+/* ============================================================
+   18. TABLET / SMALL SCREEN PREVIEW
+
+   This only affects browser preview.
+   Actual printing stays A4.
+   ============================================================ */
+
+@media screen and (max-width: 900px) {
+
+    .invoice-preview {
+        overflow-x: auto;
+
+        padding: 20px;
+    }
+
+    .invoice-page {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* ============================================================
+   19. MOBILE TOOLBAR
+   ============================================================ */
+
+@media screen and (max-width: 600px) {
+
+    .invoice-toolbar-inner {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr)
+            auto;
+
+        gap: 8px;
+
+        width: calc(100% - 20px);
+
+        min-height: 58px;
+    }
+
+    .invoice-toolbar-button {
+        min-height: 36px;
+
+        padding: 0 11px;
+
+        font-size: 10px;
+    }
+
+    .invoice-toolbar-button-secondary span:last-child {
+        display: none;
+    }
+
+    .invoice-toolbar-title strong {
+        font-size: 11px;
+    }
+
+    .invoice-toolbar-title span {
+        font-size: 8px;
+    }
+
+    .invoice-preview {
+        padding: 12px 10px 40px;
+    }
+
+}
+
+
+/* ============================================================
+   20. PRINT
+   ============================================================ */
+/* ============================================================
+   PRINT — A4 PORTRAIT WITH SPACE ON ALL SIDES
+   ============================================================ */
+
+@page {
+    size: A4 portrait;
+
+    /* Physical printer/PDF margin */
+    margin: 8mm;
+}
+
+
+@media print {
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #ffffff !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+
+        overflow: visible !important;
+
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+
+    /* --------------------------------------------------------
+       DO NOT PRINT TOOLBAR / STATES
+       -------------------------------------------------------- */
+
+    .invoice-toolbar,
+    .invoice-state {
+        display: none !important;
+    }
+
+
+    /* --------------------------------------------------------
+       REMOVE PREVIEW SPACING
+       @page controls the actual paper margin
+       -------------------------------------------------------- */
+
+    .invoice-app,
+    .invoice-preview {
+        display: block !important;
+
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #ffffff !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* --------------------------------------------------------
+       PRINTABLE INVOICE
+
+       A4 = 210mm × 297mm
+       @page gives 8mm space on each side.
+
+       Available width:
+       210mm - 16mm = 194mm
+       -------------------------------------------------------- */
+
+    .invoice-page {
+        width: 100% !important;
+
+        min-height: calc(297mm - 16mm) !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #ffffff !important;
+
+        border: 0.3mm solid #cfcfcf !important;
+
+        box-shadow: none !important;
+
+        overflow: visible !important;
+    }
+
+
+    /* --------------------------------------------------------
+       PRESERVE BACKGROUNDS
+       -------------------------------------------------------- */
+
+    .invoice-title,
+    .invoice-items-table th,
+    .invoice-items-table tfoot th,
+    .invoice-items-table tfoot td,
+    .invoice-final-amount,
+    .invoice-balance {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+
+    /* --------------------------------------------------------
+       MULTI-PAGE TABLE
+       -------------------------------------------------------- */
+
+    .invoice-items-table thead {
+        display: table-header-group;
+    }
+
+    .invoice-items-table tfoot {
+        display: table-row-group;
+    }
+
+    .invoice-items-table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* --------------------------------------------------------
+       KEEP IMPORTANT SECTIONS TOGETHER
+       -------------------------------------------------------- */
+
+    .invoice-title,
+    .invoice-business,
+    .invoice-document-type,
+    .invoice-party-grid,
+    .invoice-financial-section,
+    .invoice-signatures {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+
+    /* --------------------------------------------------------
+       LINKS
+       -------------------------------------------------------- */
+
+    a {
+        color: inherit !important;
+        text-decoration: none !important;
+    }
+
+}
+
+
+
+/* ============================================================
+   21. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .invoice-loader {
+        animation-duration: 1.5s;
+    }
+
+    .invoice-toolbar-button {
+        transition: none;
+    }
+
+}
+
+
+
+/* ============================================================
+   OM MARUTI DIAMOND
+   INVOICE TOOLBAR — WHATSAPP SHARE SUPPORT
+   Add at END of existing invoice.css
+   ============================================================ */
+
+.invoice-toolbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.invoice-toolbar-actions .invoice-toolbar-button {
+    flex: 0 0 auto;
+}
+
+#shareInvoiceWhatsappButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 0 15px;
+
+    border: 1px solid #128c4a;
+    border-radius: 9px;
+
+    background: #128c4a;
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease;
+}
+
+#shareInvoiceWhatsappButton:hover:not(:disabled) {
+    background: #0d713b;
+    border-color: #0d713b;
+}
+
+#shareInvoiceWhatsappButton:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+#shareInvoiceWhatsappButton:focus-visible {
+    outline: 3px solid rgba(18, 140, 74, 0.3);
+    outline-offset: 2px;
+}
+
+@media screen and (max-width: 600px) {
+    .invoice-toolbar-inner {
+        grid-template-columns:
+            auto
+            minmax(0, 1fr)
+            auto;
+        gap: 8px;
+    }
+
+    .invoice-toolbar-actions {
+        gap: 6px;
+    }
+
+    #shareInvoiceWhatsappButton {
+        min-height: 36px;
+        max-width: 135px;
+        padding: 6px 9px;
+        font-size: 9px;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media print {
+    .invoice-toolbar-actions,
+    #shareInvoiceWhatsappButton {
+        display: none !important;
+    }
+}
+

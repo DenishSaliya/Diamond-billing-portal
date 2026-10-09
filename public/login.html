@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC PAGE SETTINGS
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND secure billing portal"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+    <!-- =====================================================
+         PAGE TITLE
+    ====================================================== -->
+
+    <title>
+        Login | OM MARUTI DIAMOND
+    </title>
+
+
+    <!-- =====================================================
+         STYLES
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         APPLICATION
+    ====================================================== -->
+
+    <main class="login-page">
+
+
+        <!-- =================================================
+             LEFT BRAND SECTION
+        ================================================== -->
+
+        <section
+            class="login-brand"
+            aria-label="OM MARUTI DIAMOND"
+        >
+
+            <div class="brand-content">
+
+                <div class="login-logo">
+                    <img
+                        src="/assets/images/om-maruti-logo1.png"
+                        alt="OM MARUTI DIAMOND Logo"
+                        class="login-logo-image"
+                    >
+                </div>
+
+
+                <div class="brand-text">
+
+                    <p class="brand-eyebrow">
+                        Billing Portal
+                    </p>
+
+                    <h1 class="brand-title">
+                        OM MARUTI
+                        <br>
+                        DIAMOND
+                    </h1>
+
+                    <p class="brand-description">
+                        Manage customers, invoices and payments
+                        from one secure workspace.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <p class="brand-footer">
+                OM MARUTI DIAMOND
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LOGIN SECTION
+        ================================================== -->
+
+        <section class="login-section">
+
+            <div class="login-container">
+
+
+                <!-- =========================================
+                     LOGIN HEADER
+                ========================================== -->
+
+                <header class="login-header">
+
+                    <p class="login-label">
+                        ADMIN PORTAL
+                    </p>
+
+                    <h2 class="login-title">
+                        Welcome back
+                    </h2>
+
+                    <p class="login-subtitle">
+                        Sign in to continue to your billing dashboard.
+                    </p>
+
+                </header>
+
+
+
+                <!-- =========================================
+                     LOGIN FORM
+                ========================================== -->
+
+                <form
+                    id="loginForm"
+                    class="login-form"
+                    novalidate
+                >
+
+
+                    <!-- =====================================
+                         EMAIL
+                    ====================================== -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                        >
+                            Email address
+                        </label>
+
+
+                        <div class="input-wrapper">
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+
+                                class="form-input"
+
+                                placeholder="admin@example.com"
+
+                                autocomplete="username"
+
+                                inputmode="email"
+
+                                maxlength="254"
+
+                                spellcheck="false"
+
+                                autocapitalize="none"
+
+                                required
+
+                                aria-describedby="emailError"
+                            >
+
+                        </div>
+
+
+                        <p
+                            id="emailError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></p>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         PASSWORD
+                    ====================================== -->
+
+                    <div class="form-group">
+
+                        <label
+                            for="password"
+                            class="form-label"
+                        >
+                            Password
+                        </label>
+
+
+                        <div class="input-wrapper password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+
+                                class="form-input password-input"
+
+                                placeholder="Enter your password"
+
+                                autocomplete="current-password"
+
+                                maxlength="128"
+
+                                required
+
+                                aria-describedby="passwordError"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+
+                                class="password-toggle"
+
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <p
+                            id="passwordError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></p>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         GENERAL LOGIN ERROR
+                    ====================================== -->
+
+                    <div
+                        id="loginMessage"
+                        class="login-message"
+                        role="alert"
+                        aria-live="assertive"
+                        hidden
+                    ></div>
+
+
+
+                    <!-- =====================================
+                         SUBMIT BUTTON
+                    ====================================== -->
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                        class="login-button"
+                    >
+
+                        <span
+                            id="loginButtonText"
+                            class="login-button-text"
+                        >
+                            Sign in
+                        </span>
+
+
+                        <span
+                            id="loginSpinner"
+                            class="login-spinner"
+                            aria-hidden="true"
+                            hidden
+                        ></span>
+
+                    </button>
+
+
+                </form>
+
+
+
+                <!-- =========================================
+                     SECURITY MESSAGE
+                ========================================== -->
+
+                <div class="security-notice">
+
+                    <span
+                        class="security-icon"
+                        aria-hidden="true"
+                    >
+                        ●
+                    </span>
+
+                    <p>
+                        Authorized access only.
+                        Your session is protected using Firebase Authentication.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="/js/pages/login.js"
+    ></script>
+
+
+</body>
+
+</html>

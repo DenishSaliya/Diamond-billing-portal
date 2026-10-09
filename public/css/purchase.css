@@ -1,0 +1,2244 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   PURCHASE DETAIL PAGE
+   File: css/purchase.css
+
+   Used by:
+   purchase.html
+
+   IMPORTANT:
+   This stylesheet intentionally supports the sale-* structural
+   class names already used inside purchase.html.
+
+   The HTML reuses the same visual architecture as sale.html,
+   while all Purchase-specific behavior remains Buy-side only.
+   ============================================================ */
+
+
+/* ============================================================
+   01. PAGE
+   ============================================================ */
+
+.sale-page {
+    width: 100%;
+    max-width: 1600px;
+
+    margin: 0 auto;
+
+    padding:
+        32px
+        34px
+        70px;
+}
+
+
+/* Purchase content */
+
+#purchaseContent {
+    width: 100%;
+}
+
+
+/* ============================================================
+   02. LOADING / ERROR STATE
+   ============================================================ */
+
+.sale-state-card {
+    width: 100%;
+
+    padding: 48px 32px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 8px 28px rgba(0, 0, 0, 0.025);
+
+    text-align: center;
+}
+
+
+.sale-state-card strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #000000;
+
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1.3;
+}
+
+
+.sale-state-card p {
+    max-width: 520px;
+
+    margin:
+        0
+        auto
+        20px;
+
+    color: #737373;
+
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+
+.sale-state-card .button {
+    margin-top: 4px;
+}
+
+
+/* ============================================================
+   03. PAGE HEADING
+   ============================================================ */
+
+.sale-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 32px;
+
+    margin-bottom: 28px;
+}
+
+
+.sale-heading-copy {
+    min-width: 0;
+}
+
+
+.sale-back {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 22px;
+
+    color: #555555;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    text-decoration: none;
+
+    transition:
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+
+.sale-back:hover {
+    color: #000000;
+}
+
+
+.sale-back span {
+    font-size: 14px;
+}
+
+
+.sale-heading .eyebrow {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #737373;
+
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-title-row {
+    display: flex;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+.sale-title-row h1 {
+    margin: 0;
+
+    color: #000000;
+
+    font-size: clamp(30px, 3vw, 44px);
+    font-weight: 800;
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+
+.sale-heading-copy > p {
+    max-width: 720px;
+
+    margin:
+        11px
+        0
+        0;
+
+    color: #666666;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+.sale-heading-actions {
+    display: flex;
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    gap: 10px;
+}
+
+
+/* ============================================================
+   04. STATUS BADGE
+   ============================================================ */
+
+#purchaseStatus {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+
+    padding:
+        5px
+        10px;
+
+    color: #222222;
+    background: #f4f4f4;
+
+    border: 1px solid #dddddd;
+    border-radius: 999px;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.055em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+/* Common status classes in case JS adds them */
+
+#purchaseStatus.paid,
+#purchaseStatus.status-paid,
+.status-badge.paid,
+.status-badge.status-paid {
+    color: #111111;
+    background: #eeeeee;
+    border-color: #d4d4d4;
+}
+
+
+#purchaseStatus.pending,
+#purchaseStatus.status-pending,
+.status-badge.pending,
+.status-badge.status-pending {
+    color: #111111;
+    background: #ffffff;
+    border-color: #bfbfbf;
+}
+
+
+#purchaseStatus.partially-paid,
+#purchaseStatus.partially_paid,
+#purchaseStatus.status-partially-paid,
+.status-badge.partially-paid,
+.status-badge.partially_paid {
+    color: #111111;
+    background: #f5f5f5;
+    border-color: #cccccc;
+}
+
+
+#purchaseStatus.overdue,
+#purchaseStatus.status-overdue,
+.status-badge.overdue,
+.status-badge.status-overdue {
+    color: #ffffff;
+    background: #000000;
+    border-color: #000000;
+}
+
+
+#purchaseStatus.draft,
+#purchaseStatus.status-draft,
+.status-badge.draft {
+    color: #666666;
+    background: #fafafa;
+    border-color: #dddddd;
+}
+
+
+#purchaseStatus.cancelled,
+#purchaseStatus.status-cancelled,
+.status-badge.cancelled {
+    color: #777777;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #ffffff,
+            #ffffff 4px,
+            #f3f3f3 4px,
+            #f3f3f3 8px
+        );
+
+    border-color: #d5d5d5;
+}
+
+
+/* ============================================================
+   05. SUMMARY GRID
+   ============================================================ */
+
+.sale-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+.sale-summary-card {
+    min-width: 0;
+    min-height: 122px;
+
+    padding:
+        22px
+        22px
+        20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e6e6e6;
+    border-radius: 14px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.02),
+        0 7px 22px rgba(0, 0, 0, 0.022);
+}
+
+
+.sale-summary-card > span {
+    display: block;
+
+    margin-bottom: 26px;
+
+    color: #666666;
+
+    font-size: 9px;
+    font-weight: 850;
+
+    letter-spacing: 0.105em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-summary-card > strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #000000;
+
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 800;
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Payable card */
+
+.sale-summary-card:nth-child(3) {
+    background: #000000;
+    border-color: #000000;
+}
+
+
+.sale-summary-card:nth-child(3) > span {
+    color: #bdbdbd;
+}
+
+
+.sale-summary-card:nth-child(3) > strong {
+    color: #ffffff;
+}
+
+
+/* Due date card */
+
+.sale-summary-card:nth-child(4) > strong {
+    font-size: 20px;
+    letter-spacing: -0.02em;
+}
+
+
+/* ============================================================
+   06. SHARED PURCHASE CARDS
+   ============================================================ */
+
+.sale-card {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.018),
+        0 8px 26px rgba(0, 0, 0, 0.02);
+}
+
+
+.sale-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    min-height: 78px;
+
+    padding:
+        18px
+        22px;
+
+    border-bottom: 1px solid #e8e8e8;
+}
+
+
+.sale-card-header > div {
+    min-width: 0;
+}
+
+
+.sale-section-number {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-card-header h2 {
+    margin: 0;
+
+    color: #000000;
+
+    font-size: 18px;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* ============================================================
+   07. PURCHASE / SUPPLIER DETAIL GRID
+   ============================================================ */
+
+.sale-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ============================================================
+   08. DETAIL LIST
+   ============================================================ */
+
+.sale-details-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.sale-details-list > div {
+    min-width: 0;
+
+    padding:
+        18px
+        22px;
+
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+
+.sale-details-list > div:nth-child(2n) {
+    border-right: 0;
+}
+
+
+.sale-details-list > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+}
+
+
+.sale-details-list dt {
+    margin-bottom: 6px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-details-list dd {
+    margin: 0;
+
+    overflow-wrap: anywhere;
+
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.5;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.sale-detail-wide {
+    grid-column: 1 / -1;
+
+    border-right: 0 !important;
+}
+
+
+/* ============================================================
+   09. SUPPLIER BLOCK
+   ============================================================ */
+
+.sale-party-name {
+    display: flex;
+    align-items: center;
+
+    min-height: 72px;
+
+    padding:
+        18px
+        22px;
+
+    border-bottom: 1px solid #ededed;
+}
+
+
+.sale-party-name strong {
+    display: block;
+
+    color: #000000;
+
+    font-size: 21px;
+    font-weight: 750;
+    line-height: 1.25;
+
+    letter-spacing: -0.03em;
+}
+
+
+/* ============================================================
+   10. ITEMS TABLE
+   ============================================================ */
+
+.sale-detail-grid + .sale-card {
+    margin-bottom: 18px;
+}
+
+
+.sale-items-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.sale-items-table {
+    width: 100%;
+    min-width: 1320px;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+
+.sale-items-table th,
+.sale-items-table td {
+    padding:
+        13px
+        12px;
+
+    border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    vertical-align: top;
+
+    text-align: left;
+}
+
+
+.sale-items-table th:last-child,
+.sale-items-table td:last-child {
+    border-right: 0;
+}
+
+
+.sale-items-table thead th {
+    position: relative;
+
+    background: #fafafa;
+
+    color: #606060;
+
+    font-size: 8px;
+    font-weight: 850;
+    line-height: 1.25;
+
+    letter-spacing: 0.055em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.sale-items-table tbody td {
+    color: #222222;
+
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+
+.sale-items-table tbody tr:hover {
+    background: #fcfcfc;
+}
+
+
+.sale-items-table tbody tr:last-child td {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+.sale-items-table tfoot th {
+    background: #f8f8f8;
+
+    color: #000000;
+
+    font-size: 10px;
+    font-weight: 750;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.sale-items-table tfoot th:not(:first-child) {
+    text-align: right;
+}
+
+
+.sale-items-total-label {
+    text-align: right !important;
+
+    color: #555555 !important;
+
+    font-size: 8px !important;
+    font-weight: 850 !important;
+
+    letter-spacing: 0.08em !important;
+
+    text-transform: uppercase;
+}
+
+
+/* Numerical table columns */
+
+.sale-items-table th:nth-child(1),
+.sale-items-table td:nth-child(1) {
+    width: 42px;
+
+    text-align: center;
+}
+
+
+.sale-items-table th:nth-child(6),
+.sale-items-table td:nth-child(6),
+.sale-items-table th:nth-child(7),
+.sale-items-table td:nth-child(7),
+.sale-items-table th:nth-child(8),
+.sale-items-table td:nth-child(8),
+.sale-items-table th:nth-child(9),
+.sale-items-table td:nth-child(9),
+.sale-items-table th:nth-child(10),
+.sale-items-table td:nth-child(10),
+.sale-items-table th:nth-child(11),
+.sale-items-table td:nth-child(11),
+.sale-items-table th:nth-child(12),
+.sale-items-table td:nth-child(12),
+.sale-items-table th:nth-child(13),
+.sale-items-table td:nth-child(13) {
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.sale-items-table th:nth-child(2) {
+    min-width: 100px;
+}
+
+
+.sale-items-table th:nth-child(3) {
+    min-width: 180px;
+}
+
+
+.sale-items-table th:nth-child(4) {
+    min-width: 140px;
+}
+
+
+.sale-items-table th:nth-child(5) {
+    min-width: 80px;
+}
+
+
+.sale-items-table th:nth-child(8) {
+    min-width: 100px;
+}
+
+
+.sale-items-table th:nth-child(10),
+.sale-items-table th:nth-child(12),
+.sale-items-table th:nth-child(13) {
+    min-width: 105px;
+}
+
+
+/* ============================================================
+   11. NOTES + TOTALS
+   ============================================================ */
+
+.sale-bottom-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(360px, 0.72fr);
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* Notes */
+
+.sale-note-block {
+    padding:
+        20px
+        22px;
+}
+
+
+.sale-note-block + .sale-note-block {
+    border-top: 1px solid #ededed;
+}
+
+
+.sale-note-block > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-note-block p {
+    margin: 0;
+
+    color: #333333;
+
+    font-size: 11px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   12. TOTAL CARD
+   ============================================================ */
+
+.sale-total-card {
+    align-self: start;
+}
+
+
+.sale-total-list {
+    margin: 0;
+    padding: 0;
+}
+
+
+.sale-total-list > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        13px
+        20px;
+
+    border-bottom: 1px solid #ededed;
+}
+
+
+.sale-total-list dt,
+.sale-total-list dd {
+    margin: 0;
+}
+
+
+.sale-total-list dt {
+    color: #666666;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+.sale-total-list dd {
+    color: #111111;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: right;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.sale-total-list .sale-total-grand {
+    padding:
+        17px
+        20px;
+
+    background: #000000;
+
+    border-bottom-color: #000000;
+}
+
+
+.sale-total-list .sale-total-grand dt {
+    color: #cfcfcf;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.07em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-total-list .sale-total-grand dd {
+    color: #ffffff;
+
+    font-size: 19px;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+}
+
+
+#purchasePaidDetail {
+    color: #222222;
+}
+
+
+#purchaseBalanceDetail {
+    color: #000000;
+
+    font-weight: 800;
+}
+
+
+/* Amount in words */
+
+.sale-amount-words {
+    padding:
+        18px
+        20px;
+
+    background: #fafafa;
+}
+
+
+.sale-amount-words > span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-amount-words > strong {
+    display: block;
+
+    color: #111111;
+
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   13. PAYMENT HISTORY
+   ============================================================ */
+
+.sale-payment-empty {
+    padding:
+        44px
+        24px;
+
+    color: #777777;
+
+    font-size: 11px;
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+.sale-payments-table-wrap {
+    width: 100%;
+
+    overflow-x: auto;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.sale-payments-table {
+    width: 100%;
+    min-width: 760px;
+
+    border-collapse: collapse;
+}
+
+
+.sale-payments-table th,
+.sale-payments-table td {
+    padding:
+        14px
+        18px;
+
+    border-bottom: 1px solid #ededed;
+
+    text-align: left;
+}
+
+
+.sale-payments-table th {
+    background: #fafafa;
+
+    color: #666666;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.075em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+
+.sale-payments-table td {
+    color: #333333;
+
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+
+.sale-payments-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+.sale-payments-table tbody tr:hover {
+    background: #fafafa;
+}
+
+
+.sale-payments-table th:last-child,
+.sale-payments-table td:last-child {
+    text-align: right;
+}
+
+
+.sale-payments-table td:last-child {
+    color: #000000;
+
+    font-weight: 750;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* purchase.js may generate this class */
+
+.sale-payment-amount {
+    color: #000000 !important;
+
+    font-weight: 750 !important;
+
+    text-align: right !important;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   14. RECORD PAYMENT MODAL
+   ============================================================ */
+
+#paymentModal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.46);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+#paymentModal[hidden] {
+    display: none !important;
+}
+
+
+#paymentModal .modal-card {
+    width: min(620px, 100%);
+    max-height: min(820px, calc(100vh - 48px));
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #dcdcdc;
+    border-radius: 16px;
+
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.22);
+}
+
+
+#paymentModal .modal-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding:
+        20px
+        22px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+#paymentModal .modal-header .eyebrow {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+#paymentModal .modal-header h2 {
+    margin: 0;
+
+    color: #000000;
+
+    font-size: 21px;
+    font-weight: 750;
+
+    letter-spacing: -0.03em;
+}
+
+
+#paymentModal .modal-body {
+    padding:
+        22px;
+}
+
+
+/* ============================================================
+   15. PAYMENT MODAL SUMMARY
+   ============================================================ */
+
+.sale-payment-modal-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    margin-bottom: 22px;
+
+    overflow: hidden;
+
+    background: #e4e4e4;
+
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+
+    gap: 1px;
+}
+
+
+.sale-payment-modal-summary > div {
+    min-width: 0;
+
+    padding:
+        16px
+        18px;
+
+    background: #ffffff;
+}
+
+
+.sale-payment-modal-summary span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #777777;
+
+    font-size: 8px;
+    font-weight: 850;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+
+.sale-payment-modal-summary strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: #000000;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: -0.025em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   16. PAYMENT FORM
+   ============================================================ */
+
+#paymentForm {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        18px
+        16px;
+}
+
+
+.purchase-field {
+    min-width: 0;
+}
+
+
+.purchase-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #222222;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+
+.purchase-field label span {
+    color: #888888;
+
+    font-size: 9px;
+    font-weight: 500;
+}
+
+
+.purchase-field input,
+.purchase-field select,
+.purchase-field textarea {
+    width: 100%;
+
+    min-height: 43px;
+
+    padding:
+        10px
+        12px;
+
+    color: #111111;
+    background: #ffffff;
+
+    border: 1px solid #d7d7d7;
+    border-radius: 9px;
+
+    outline: none;
+
+    font: inherit;
+    font-size: 12px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.purchase-field textarea {
+    min-height: 94px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+.purchase-field input:hover,
+.purchase-field select:hover,
+.purchase-field textarea:hover {
+    border-color: #bdbdbd;
+}
+
+
+.purchase-field input:focus,
+.purchase-field select:focus,
+.purchase-field textarea:focus {
+    border-color: #000000;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.07);
+}
+
+
+.purchase-field input::placeholder,
+.purchase-field textarea::placeholder {
+    color: #9a9a9a;
+}
+
+
+/* Note gets full width */
+
+#paymentForm .purchase-field:has(#paymentNote) {
+    grid-column: 1 / -1;
+}
+
+
+/* ============================================================
+   17. MONEY INPUT
+   ============================================================ */
+
+.purchase-money-input {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 43px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #d7d7d7;
+    border-radius: 9px;
+
+    transition:
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+
+.purchase-money-input:focus-within {
+    border-color: #000000;
+
+    box-shadow:
+        0 0 0 3px rgba(0, 0, 0, 0.07);
+}
+
+
+.purchase-money-input > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    align-self: stretch;
+
+    flex: 0 0 42px;
+
+    color: #555555;
+    background: #fafafa;
+
+    border-right: 1px solid #e5e5e5;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.purchase-money-input input {
+    min-width: 0;
+
+    border: 0 !important;
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   18. FORM ERRORS / MESSAGE
+   ============================================================ */
+
+.field-error {
+    display: block;
+
+    min-height: 14px;
+
+    margin:
+        5px
+        0
+        0;
+
+    color: #222222;
+
+    font-size: 9px;
+    font-weight: 650;
+    line-height: 1.4;
+}
+
+
+.field-error:empty {
+    min-height: 0;
+    margin-top: 0;
+}
+
+
+.purchase-form-message {
+    grid-column: 1 / -1;
+
+    margin: 0;
+
+    padding:
+        11px
+        13px;
+
+    color: #222222;
+    background: #f7f7f7;
+
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+
+.purchase-form-message[hidden] {
+    display: none !important;
+}
+
+
+.purchase-form-message.error,
+.purchase-form-message.is-error {
+    color: #000000;
+
+    background: #f4f4f4;
+
+    border-color: #bdbdbd;
+}
+
+
+.purchase-form-message.success,
+.purchase-form-message.is-success {
+    color: #000000;
+
+    background: #fafafa;
+
+    border-color: #cccccc;
+}
+
+
+/* ============================================================
+   19. MODAL ACTIONS
+   ============================================================ */
+
+#paymentModal .modal-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 4px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #ededed;
+}
+
+
+#paymentModal .modal-actions .button {
+    min-width: 128px;
+}
+
+
+/* ============================================================
+   20. PAYMENT SPINNER
+   ============================================================ */
+
+#savePaymentSpinner:not([hidden]) {
+    display: inline-block;
+
+    width: 13px;
+    height: 13px;
+
+    margin-left: 7px;
+
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+
+    vertical-align: -2px;
+
+    animation:
+        purchase-payment-spin
+        0.7s
+        linear
+        infinite;
+}
+
+
+@keyframes purchase-payment-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   21. DISABLED STATES
+   ============================================================ */
+
+#recordPaymentButton:disabled,
+#paymentHistoryAddButton:disabled,
+#printInvoiceButton:disabled,
+#headingPrintInvoiceButton:disabled,
+#savePaymentButton:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.48;
+}
+
+
+/* ============================================================
+   22. SCROLLBAR POLISH
+   ============================================================ */
+
+.sale-items-table-wrap,
+.sale-payments-table-wrap,
+#paymentModal .modal-card {
+    scrollbar-width: thin;
+    scrollbar-color: #bdbdbd transparent;
+}
+
+
+.sale-items-table-wrap::-webkit-scrollbar,
+.sale-payments-table-wrap::-webkit-scrollbar,
+#paymentModal .modal-card::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+
+.sale-items-table-wrap::-webkit-scrollbar-thumb,
+.sale-payments-table-wrap::-webkit-scrollbar-thumb,
+#paymentModal .modal-card::-webkit-scrollbar-thumb {
+    background: #bdbdbd;
+
+    border-radius: 999px;
+}
+
+
+/* ============================================================
+   23. TABLET
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .sale-page {
+        padding-inline: 26px;
+    }
+
+
+    .sale-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .sale-bottom-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(330px, 0.8fr);
+    }
+
+}
+
+
+/* ============================================================
+   24. SMALL TABLET
+   ============================================================ */
+
+@media (max-width: 960px) {
+
+    .sale-page {
+        padding:
+            26px
+            20px
+            100px;
+    }
+
+
+    .sale-heading {
+        align-items: flex-start;
+    }
+
+
+    .sale-heading-actions {
+        flex-direction: column;
+
+        width: 160px;
+    }
+
+
+    .sale-heading-actions .button {
+        width: 100%;
+    }
+
+
+    .sale-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sale-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sale-details-list > div:nth-last-child(-n + 2) {
+        border-bottom: 1px solid #ededed;
+    }
+
+
+    .sale-details-list > div:last-child {
+        border-bottom: 0;
+    }
+
+}
+
+
+/* ============================================================
+   25. MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    .sale-page {
+        padding:
+            20px
+            14px
+            calc(112px + env(safe-area-inset-bottom));
+    }
+
+
+    /* ----------------------------------------
+       Heading
+       ---------------------------------------- */
+
+    .sale-heading {
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 18px;
+
+        margin-bottom: 20px;
+    }
+
+
+    .sale-back {
+        margin-bottom: 17px;
+    }
+
+
+    .sale-title-row {
+        align-items: flex-start;
+
+        gap: 9px;
+    }
+
+
+    .sale-title-row h1 {
+        max-width: 100%;
+
+        font-size: 29px;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    .sale-heading-copy > p {
+        font-size: 11px;
+    }
+
+
+    .sale-heading-actions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        width: 100%;
+
+        gap: 8px;
+    }
+
+
+    .sale-heading-actions .button {
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    /* ----------------------------------------
+       Summary
+       ---------------------------------------- */
+
+    .sale-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+
+        margin-bottom: 14px;
+    }
+
+
+    .sale-summary-card {
+        min-height: 110px;
+
+        padding:
+            17px
+            15px;
+    }
+
+
+    .sale-summary-card > span {
+        margin-bottom: 22px;
+
+        font-size: 8px;
+    }
+
+
+    .sale-summary-card > strong {
+        font-size: 20px;
+    }
+
+
+    .sale-summary-card:nth-child(4) > strong {
+        font-size: 15px;
+    }
+
+
+    /* ----------------------------------------
+       Main grids
+       ---------------------------------------- */
+
+    .sale-detail-grid,
+    .sale-bottom-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .sale-detail-grid + .sale-card {
+        margin-bottom: 12px;
+    }
+
+
+    /* ----------------------------------------
+       Cards
+       ---------------------------------------- */
+
+    .sale-card {
+        border-radius: 12px;
+    }
+
+
+    .sale-card-header {
+        align-items: flex-start;
+
+        min-height: 0;
+
+        padding:
+            16px
+            16px;
+
+        gap: 12px;
+    }
+
+
+    .sale-card-header h2 {
+        font-size: 17px;
+    }
+
+
+    .sale-card-header .button {
+        flex: 0 0 auto;
+
+        min-height: 36px;
+
+        padding-inline: 11px;
+
+        font-size: 9px;
+    }
+
+
+    /* ----------------------------------------
+       Detail list
+       ---------------------------------------- */
+
+    .sale-details-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sale-details-list > div,
+    .sale-details-list > div:nth-child(2n),
+    .sale-details-list > div:nth-last-child(-n + 2) {
+        padding:
+            14px
+            16px;
+
+        border-right: 0;
+        border-bottom: 1px solid #ededed;
+    }
+
+
+    .sale-details-list > div:last-child {
+        border-bottom: 0;
+    }
+
+
+    .sale-detail-wide {
+        grid-column: auto;
+    }
+
+
+    .sale-party-name {
+        min-height: 0;
+
+        padding:
+            16px;
+    }
+
+
+    .sale-party-name strong {
+        font-size: 19px;
+    }
+
+
+    /* ----------------------------------------
+       Item table
+       ---------------------------------------- */
+
+    .sale-items-table {
+        min-width: 1220px;
+    }
+
+
+    .sale-items-table th,
+    .sale-items-table td {
+        padding:
+            11px
+            10px;
+    }
+
+
+    /* ----------------------------------------
+       Notes
+       ---------------------------------------- */
+
+    .sale-note-block {
+        padding:
+            17px
+            16px;
+    }
+
+
+    /* ----------------------------------------
+       Total
+       ---------------------------------------- */
+
+    .sale-total-list > div {
+        padding:
+            12px
+            16px;
+    }
+
+
+    .sale-total-list .sale-total-grand {
+        padding:
+            16px;
+    }
+
+
+    .sale-amount-words {
+        padding:
+            16px;
+    }
+
+
+    /* ----------------------------------------
+       Payment history
+       ---------------------------------------- */
+
+    .sale-payments-table {
+        min-width: 690px;
+    }
+
+
+    .sale-payments-table th,
+    .sale-payments-table td {
+        padding:
+            12px
+            14px;
+    }
+
+
+    .sale-payment-empty {
+        padding:
+            34px
+            18px;
+    }
+
+
+    /* ----------------------------------------
+       Modal
+       ---------------------------------------- */
+
+    #paymentModal {
+        align-items: flex-end;
+
+        padding: 0;
+    }
+
+
+    #paymentModal .modal-card {
+        width: 100%;
+        max-height:
+            calc(
+                92vh -
+                env(safe-area-inset-bottom)
+            );
+
+        border-right: 0;
+        border-bottom: 0;
+        border-left: 0;
+
+        border-radius:
+            18px
+            18px
+            0
+            0;
+    }
+
+
+    #paymentModal .modal-header {
+        padding:
+            17px
+            16px;
+    }
+
+
+    #paymentModal .modal-body {
+        padding:
+            18px
+            16px
+            calc(18px + env(safe-area-inset-bottom));
+    }
+
+
+    .sale-payment-modal-summary {
+        margin-bottom: 18px;
+    }
+
+
+    .sale-payment-modal-summary > div {
+        padding:
+            14px;
+    }
+
+
+    .sale-payment-modal-summary strong {
+        font-size: 16px;
+    }
+
+
+    #paymentForm {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+
+    #paymentForm .purchase-field:has(#paymentNote) {
+        grid-column: auto;
+    }
+
+
+    .purchase-form-message,
+    #paymentModal .modal-actions {
+        grid-column: auto;
+    }
+
+
+    #paymentModal .modal-actions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
+
+
+    #paymentModal .modal-actions .button {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+
+/* ============================================================
+   26. VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 430px) {
+
+    .sale-page {
+        padding-inline: 12px;
+    }
+
+
+    .sale-summary-grid {
+        gap: 8px;
+    }
+
+
+    .sale-summary-card {
+        min-height: 104px;
+
+        padding:
+            15px
+            13px;
+    }
+
+
+    .sale-summary-card > span {
+        margin-bottom: 19px;
+
+        font-size: 7.5px;
+    }
+
+
+    .sale-summary-card > strong {
+        font-size: 18px;
+    }
+
+
+    .sale-summary-card:nth-child(4) > strong {
+        font-size: 14px;
+    }
+
+
+    .sale-card-header {
+        padding:
+            14px;
+    }
+
+
+    .sale-card-header h2 {
+        font-size: 16px;
+    }
+
+
+    .sale-card-header .button {
+        padding-inline: 9px;
+
+        font-size: 8px;
+    }
+
+
+    .sale-payment-modal-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .sale-payment-modal-summary > div + div {
+        border-top: 1px solid #e5e5e5;
+    }
+
+}
+
+
+/* ============================================================
+   27. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .sale-back,
+    .purchase-field input,
+    .purchase-field select,
+    .purchase-field textarea,
+    .purchase-money-input {
+        transition: none;
+    }
+
+
+    #savePaymentSpinner:not([hidden]) {
+        animation-duration: 1.4s;
+    }
+
+}
+
+
+/* ============================================================
+   28. PRINT SAFETY
+
+   purchase.html Print Invoice navigates to
+   purchase-invoice.html, so this page itself is not the
+   printable invoice. This only prevents accidental portal
+   navigation from appearing if browser print is invoked here.
+   ============================================================ */
+
+@media print {
+
+    .sidebar,
+    .topbar,
+    .mobile-bottom-nav,
+    .sidebar-overlay,
+    .sale-heading-actions,
+    #paymentModal,
+    #paymentHistoryAddButton {
+        display: none !important;
+    }
+
+
+    .app-main {
+        margin: 0 !important;
+    }
+
+
+    .sale-page {
+        max-width: none;
+
+        padding: 0;
+    }
+
+
+    .sale-card,
+    .sale-summary-card {
+        break-inside: avoid;
+
+        box-shadow: none;
+    }
+
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

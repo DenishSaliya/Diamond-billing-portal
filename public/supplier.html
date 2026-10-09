@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND supplier account."
+    >
+
+    <title>Supplier | OM MARUTI DIAMOND</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/components.css">
+
+    <!-- Supplier detail -->
+    <link rel="stylesheet" href="/css/supplier.css">
+
+    <!-- Always last -->
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+                <strong>OM MARUTI</strong>
+                <span>DIAMOND</span>
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">○</span>
+                <span>Customers</span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↗</span>
+                <span>Sell</span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">◇</span>
+                <span>Suppliers</span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">↙</span>
+                <span>Buy</span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">□</span>
+                <span>Profile</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">↪</span>
+                <span>Sign out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- Global Search -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers, Sell or Buy
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div id="globalSearchResultsContent"></div>
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="backToSuppliersButton"
+                >
+                    ← Suppliers
+                </button>
+
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="newPurchaseButton"
+                >
+                    + New Buy
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content">
+
+
+            <!-- =================================================
+                 LOADING
+                 ================================================= -->
+
+            <section
+                class="supplier-account-loading"
+                id="supplierLoadingState"
+            >
+
+                <span
+                    class="spinner"
+                    aria-hidden="true"
+                ></span>
+
+                <span>
+                    Loading supplier account...
+                </span>
+
+            </section>
+
+
+            <!-- =================================================
+                 ERROR
+                 ================================================= -->
+
+            <section
+                class="empty-state"
+                id="supplierErrorState"
+                hidden
+            >
+
+                <strong id="supplierErrorTitle">
+                    Supplier not found
+                </strong>
+
+                <span id="supplierErrorMessage">
+                    This supplier account could not be loaded.
+                </span>
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="supplierErrorBackButton"
+                >
+                    Back to Suppliers
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUPPLIER ACCOUNT
+                 ================================================= -->
+
+            <div
+                class="supplier-account-page"
+                id="supplierContent"
+                hidden
+            >
+
+
+                <!-- =============================================
+                     BACK
+                     ============================================= -->
+
+                <div class="supplier-back-row">
+
+                    <a
+                        href="/suppliers.html"
+                        class="supplier-back-link"
+                    >
+                        ← Back to Suppliers
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     PROFILE HEADER
+                     ============================================= -->
+
+                <section class="supplier-profile-header">
+
+
+                    <div class="supplier-profile-main">
+
+
+                        <div
+                            class="supplier-profile-avatar"
+                            id="supplierAvatar"
+                            aria-hidden="true"
+                        >
+                            S
+                        </div>
+
+
+                        <div class="supplier-profile-title">
+
+                            <span class="eyebrow">
+                                SUPPLIER ACCOUNT
+                            </span>
+
+                            <h1 id="supplierName">
+                                Supplier
+                            </h1>
+
+
+                            <div class="supplier-profile-contact">
+
+                                <span id="supplierMobile">
+                                    —
+                                </span>
+
+                                <span
+                                    class="supplier-contact-separator"
+                                    aria-hidden="true"
+                                >
+                                    •
+                                </span>
+
+                                <span id="supplierEmail">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="supplier-profile-actions">
+
+
+                        <span
+                            class="status-badge"
+                            id="supplierStatusBadge"
+                            data-status="active"
+                        >
+                            Active
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="editSupplierButton"
+                        >
+                            Edit Supplier
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="headerNewPurchaseButton"
+                        >
+                            + New Buy
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     SUPPLIER DETAILS STRIP
+                     ============================================= -->
+
+                <section
+                    class="supplier-details-strip"
+                    aria-label="Supplier details"
+                >
+
+
+                    <div class="supplier-detail">
+
+                        <span class="supplier-detail-label">
+                            GSTIN
+                        </span>
+
+                        <strong id="supplierDetailGstin">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="supplier-detail">
+
+                        <span class="supplier-detail-label">
+                            PAN
+                        </span>
+
+                        <strong id="supplierDetailPan">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div class="supplier-detail">
+
+                        <span class="supplier-detail-label">
+                            STATUS
+                        </span>
+
+                        <strong id="supplierDetailStatus">
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                    <div class="supplier-detail supplier-address-detail">
+
+                        <span class="supplier-detail-label">
+                            ADDRESS
+                        </span>
+
+                        <strong id="supplierDetailAddress">
+                            —
+                        </strong>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     FINANCIAL SUMMARY
+                     ============================================= -->
+
+                <section
+                    class="supplier-account-summary"
+                    aria-label="Supplier financial summary"
+                >
+
+
+                    <!-- Total Buy -->
+
+                    <article class="supplier-account-card">
+
+                        <span class="supplier-account-label">
+                            TOTAL BUY
+                        </span>
+
+                        <strong
+                            class="supplier-account-value"
+                            id="supplierTotalBuyValue"
+                        >
+                            ₹0.00
+                        </strong>
+
+                        <span
+                            class="supplier-account-meta"
+                            id="supplierTotalBuyMeta"
+                        >
+                            0 completed purchases
+                        </span>
+
+                    </article>
+
+
+                    <!-- Paid -->
+
+                    <article class="supplier-account-card">
+
+                        <span class="supplier-account-label">
+                            PAID
+                        </span>
+
+                        <strong
+                            class="supplier-account-value"
+                            id="supplierPaidValue"
+                        >
+                            ₹0.00
+                        </strong>
+
+                        <span
+                            class="supplier-account-meta"
+                            id="supplierPaidMeta"
+                        >
+                            0 recorded payments
+                        </span>
+
+                    </article>
+
+
+                    <!-- Payable -->
+
+                    <article
+                        class="
+                            supplier-account-card
+                            supplier-account-card-primary
+                        "
+                    >
+
+                        <span class="supplier-account-label">
+                            PAYABLE
+                        </span>
+
+                        <strong
+                            class="supplier-account-value"
+                            id="supplierPayableValue"
+                        >
+                            ₹0.00
+                        </strong>
+
+                        <span
+                            class="supplier-account-meta"
+                            id="supplierPayableMeta"
+                        >
+                            0 open purchases
+                        </span>
+
+                    </article>
+
+
+                    <!-- Overdue -->
+
+                    <article class="supplier-account-card">
+
+                        <span class="supplier-account-label">
+                            OVERDUE
+                        </span>
+
+                        <strong
+                            class="supplier-account-value"
+                            id="supplierOverdueValue"
+                        >
+                            ₹0.00
+                        </strong>
+
+                        <span
+                            class="supplier-account-meta"
+                            id="supplierOverdueMeta"
+                        >
+                            0 overdue purchases
+                        </span>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =============================================
+                     QUICK ACTIONS
+                     ============================================= -->
+
+                <section
+                    class="supplier-quick-actions"
+                    aria-label="Supplier actions"
+                >
+
+
+                    <button
+                        type="button"
+                        class="supplier-quick-action"
+                        id="quickNewPurchaseButton"
+                    >
+
+                        <span
+                            class="supplier-quick-action-icon"
+                            aria-hidden="true"
+                        >
+                            +
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                New Buy
+                            </strong>
+
+                            <small>
+                                Create purchase
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="supplier-quick-action"
+                        id="quickRecordPaymentButton"
+                    >
+
+                        <span
+                            class="supplier-quick-action-icon"
+                            aria-hidden="true"
+                        >
+                            ₹
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Record Payment
+                            </strong>
+
+                            <small>
+                                Pay supplier balance
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="supplier-quick-action"
+                        id="quickEditSupplierButton"
+                    >
+
+                        <span
+                            class="supplier-quick-action-icon"
+                            aria-hidden="true"
+                        >
+                            ✎
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Edit Supplier
+                            </strong>
+
+                            <small>
+                                Update supplier details
+                            </small>
+
+                        </span>
+
+                    </button>
+
+                </section>
+
+
+                <!-- =============================================
+                     ACCOUNT POSITION
+                     ============================================= -->
+
+                <section class="supplier-account-section">
+
+                    <div class="supplier-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                ACCOUNT POSITION
+                            </span>
+
+                            <h2>
+                                Current Balance
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="supplier-statement-summary">
+
+
+                        <div>
+
+                            <span>
+                                Amount Payable
+                            </span>
+
+                            <strong id="supplierPositionPayable">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Open Purchases
+                            </span>
+
+                            <strong id="supplierOpenPurchases">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Overdue Purchases
+                            </span>
+
+                            <strong id="supplierOverduePurchases">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Last Buy
+                            </span>
+
+                            <strong id="supplierLastPurchaseDate">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     PURCHASE HISTORY
+                     ============================================= -->
+
+                <section class="supplier-account-section">
+
+                    <div class="supplier-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                BUY HISTORY
+                            </span>
+
+                            <h2>
+                                Purchases
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="supplier-section-count"
+                            id="supplierPurchaseCount"
+                        >
+                            0 purchases
+                        </span>
+
+                    </div>
+
+
+                    <!-- Desktop Table -->
+
+                    <div class="table-wrapper">
+
+                        <table class="supplier-account-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        Purchase
+                                    </th>
+
+                                    <th scope="col">
+                                        Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Supplier Bill
+                                    </th>
+
+                                    <th scope="col">
+                                        Type
+                                    </th>
+
+                                    <th scope="col">
+                                        Total
+                                    </th>
+
+                                    <th scope="col">
+                                        Paid
+                                    </th>
+
+                                    <th scope="col">
+                                        Payable
+                                    </th>
+
+                                    <th scope="col">
+                                        Due Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Status
+                                    </th>
+
+                                    <th scope="col">
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="supplierPurchasesTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Mobile -->
+
+                    <div
+                        class="supplier-history-mobile"
+                        id="supplierPurchasesMobileList"
+                    >
+                    </div>
+
+
+                    <!-- Empty -->
+
+                    <div
+                        class="empty-state"
+                        id="supplierPurchasesEmptyState"
+                        hidden
+                    >
+
+                        <strong>
+                            No Buy purchases yet
+                        </strong>
+
+                        <span>
+                            Create the first Buy transaction
+                            for this supplier.
+                        </span>
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="purchaseHistoryNewButton"
+                        >
+                            + New Buy
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     PAYMENT HISTORY
+                     ============================================= -->
+
+                <section class="supplier-account-section">
+
+                    <div class="supplier-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PAYMENT HISTORY
+                            </span>
+
+                            <h2>
+                                Payments
+                            </h2>
+
+                        </div>
+
+
+                        <span
+                            class="supplier-section-count"
+                            id="supplierPaymentCount"
+                        >
+                            0 payments
+                        </span>
+
+                    </div>
+
+
+                    <!-- Desktop Table -->
+
+                    <div class="table-wrapper">
+
+                        <table class="supplier-account-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th scope="col">
+                                        Date
+                                    </th>
+
+                                    <th scope="col">
+                                        Purchase
+                                    </th>
+
+                                    <th scope="col">
+                                        Method
+                                    </th>
+
+                                    <th scope="col">
+                                        Reference
+                                    </th>
+
+                                    <th scope="col">
+                                        Amount
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="supplierPaymentsTableBody">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- Mobile -->
+
+                    <div
+                        class="supplier-history-mobile"
+                        id="supplierPaymentsMobileList"
+                    >
+                    </div>
+
+
+                    <!-- Empty -->
+
+                    <div
+                        class="empty-state"
+                        id="supplierPaymentsEmptyState"
+                        hidden
+                    >
+
+                        <strong>
+                            No payments yet
+                        </strong>
+
+                        <span>
+                            Purchase payments recorded for this
+                            supplier will appear here.
+                        </span>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     FULL PROFILE DETAILS
+                     ============================================= -->
+
+                <section class="supplier-account-section">
+
+                    <div class="supplier-section-header">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                PROFILE
+                            </span>
+
+                            <h2>
+                                Supplier Details
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="supplier-details-strip">
+
+
+                        <div class="supplier-detail">
+
+                            <span class="supplier-detail-label">
+                                SUPPLIER NAME
+                            </span>
+
+                            <strong id="supplierDetailName">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="supplier-detail">
+
+                            <span class="supplier-detail-label">
+                                MOBILE
+                            </span>
+
+                            <strong id="supplierDetailMobile">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="supplier-detail">
+
+                            <span class="supplier-detail-label">
+                                EMAIL
+                            </span>
+
+                            <strong id="supplierDetailEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="supplier-detail">
+
+                            <span class="supplier-detail-label">
+                                SUPPLIER SINCE
+                            </span>
+
+                            <strong id="supplierCreatedAt">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Hidden compatibility value used by JS if needed -->
+
+                <span
+                    id="supplierLastPaymentDate"
+                    hidden
+                >
+                    —
+                </span>
+
+
+            </div>
+            <!-- /supplierContent -->
+
+
+        </div>
+        <!-- /page-content -->
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     SIDEBAR OVERLAY
+     ========================================================= -->
+
+<div
+    class="sidebar-overlay"
+    id="sidebarOverlay"
+    hidden
+></div>
+
+
+<!-- =========================================================
+     EDIT SUPPLIER MODAL
+     ========================================================= -->
+
+<div
+    class="modal-backdrop"
+    id="editSupplierModal"
+    hidden
+    role="presentation"
+>
+
+    <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="editSupplierModalTitle"
+    >
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    SUPPLIER PROFILE
+                </span>
+
+                <h2 id="editSupplierModalTitle">
+                    Edit Supplier
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="icon-button"
+                id="closeEditSupplierModalButton"
+                aria-label="Close edit supplier"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form
+            id="editSupplierForm"
+            novalidate
+        >
+
+
+            <!-- Name -->
+
+            <div class="form-field">
+
+                <label for="editSupplierName">
+                    Supplier Name
+                    <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="editSupplierName"
+                    maxlength="160"
+                    autocomplete="organization"
+                    required
+                >
+
+                <span
+                    class="form-error"
+                    id="editSupplierNameError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Mobile -->
+
+            <div class="form-field">
+
+                <label for="editSupplierMobile">
+                    Mobile
+                </label>
+
+                <input
+                    type="tel"
+                    id="editSupplierMobile"
+                    maxlength="30"
+                    autocomplete="tel"
+                >
+
+                <span
+                    class="form-error"
+                    id="editSupplierMobileError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="form-field">
+
+                <label for="editSupplierEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="editSupplierEmail"
+                    maxlength="180"
+                    autocomplete="email"
+                >
+
+                <span
+                    class="form-error"
+                    id="editSupplierEmailError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- GSTIN -->
+
+            <div class="form-field">
+
+                <label for="editSupplierGstin">
+                    GSTIN
+                </label>
+
+                <input
+                    type="text"
+                    id="editSupplierGstin"
+                    maxlength="15"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <span
+                    class="form-error"
+                    id="editSupplierGstinError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- PAN -->
+
+            <div class="form-field">
+
+                <label for="editSupplierPan">
+                    PAN
+                </label>
+
+                <input
+                    type="text"
+                    id="editSupplierPan"
+                    maxlength="10"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <span
+                    class="form-error"
+                    id="editSupplierPanError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Address -->
+
+            <div class="form-field">
+
+                <label for="editSupplierAddress">
+                    Address
+                </label>
+
+                <textarea
+                    id="editSupplierAddress"
+                    rows="4"
+                    maxlength="500"
+                    autocomplete="street-address"
+                ></textarea>
+
+                <span
+                    class="form-error"
+                    id="editSupplierAddressError"
+                    hidden
+                ></span>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <div class="form-field">
+
+                <label for="editSupplierStatus">
+                    Account Status
+                </label>
+
+                <select id="editSupplierStatus">
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="inline-message"
+                id="editSupplierFormMessage"
+                hidden
+                role="status"
+                aria-live="polite"
+            ></div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelEditSupplierButton"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="button button-primary"
+                    id="saveSupplierChangesButton"
+                >
+
+                    <span id="saveSupplierChangesButtonText">
+                        Save Changes
+                    </span>
+
+                    <span
+                        class="spinner spinner-light"
+                        id="saveSupplierChangesSpinner"
+                        hidden
+                        aria-hidden="true"
+                    ></span>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAV
+     Exact shared mobile navigation
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- Customers -->
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+
+    </a>
+
+
+    <!-- Center Create -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="Create new Buy"
+    >
+        +
+    </button>
+
+
+    <!-- Suppliers -->
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item active"
+        aria-current="page"
+    >
+
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+
+    </a>
+
+
+    <!-- Profile -->
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     PAGE SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/supplier.js"
+></script>
+
+
+</body>
+</html>

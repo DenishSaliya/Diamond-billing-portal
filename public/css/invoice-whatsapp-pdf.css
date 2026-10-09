@@ -1,0 +1,712 @@
+
+/* ============================================================
+   OM MARUTI DIAMOND
+   WHATSAPP INVOICE PDF — SELL AND BUY
+   A4 PORTRAIT | BLACK / WHITE / GOLD
+   ============================================================ */
+
+/*
+   This stylesheet applies ONLY to the temporary PDF clone.
+
+   Required clone:
+   <div id="invoicePage" class="invoice-page omd-pdf-export">
+
+   Load this file AFTER invoice.css.
+*/
+
+#invoicePage.omd-pdf-export {
+    --pdf-ink: #17212c;
+    --pdf-muted: #596574;
+    --pdf-line: #d9dfe6;
+    --pdf-gold: #a77b2c;
+    --pdf-soft: #faf7f0;
+
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    box-sizing: border-box !important;
+
+    width: 794px !important;
+    min-width: 794px !important;
+    max-width: 794px !important;
+
+    min-height: 1122px !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 28px 28px 30px !important;
+
+    background: #ffffff !important;
+    color: var(--pdf-ink) !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    overflow: visible !important;
+    transform: none !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    letter-spacing: normal !important;
+}
+
+#invoicePage.omd-pdf-export *,
+#invoicePage.omd-pdf-export *::before,
+#invoicePage.omd-pdf-export *::after {
+    box-sizing: border-box !important;
+}
+
+#invoicePage.omd-pdf-export [hidden] {
+    display: none !important;
+}
+
+#invoicePage.omd-pdf-export button,
+#invoicePage.omd-pdf-export .invoice-toolbar,
+#invoicePage.omd-pdf-export .no-print {
+    display: none !important;
+}
+
+/* ============================================================
+   1. DOCUMENT TITLE
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    min-height: 0 !important;
+    margin: 0 0 18px !important;
+    padding: 0 0 12px !important;
+
+    background: #ffffff !important;
+
+    border: none !important;
+    border-bottom: 2px solid var(--pdf-gold) !important;
+
+    text-align: left !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-title h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+
+    letter-spacing: 2px !important;
+    color: var(--pdf-ink) !important;
+}
+
+/* ============================================================
+   2. BUSINESS HEADER
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-business {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 24px !important;
+
+    min-height: 0 !important;
+    margin: 0 0 16px !important;
+    padding: 0 !important;
+
+    border: none !important;
+    background: #ffffff !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-business-information {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-eyebrow {
+    display: block !important;
+
+    margin: 0 0 5px !important;
+
+    color: var(--pdf-gold) !important;
+
+    font-size: 9px !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-business-information h2,
+#invoicePage.omd-pdf-export #invoiceBusinessName {
+    margin: 0 0 5px !important;
+
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+
+    color: var(--pdf-ink) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-business-address,
+#invoicePage.omd-pdf-export .invoice-business-contact,
+#invoicePage.omd-pdf-export .invoice-business-gstin {
+    margin-top: 3px !important;
+
+    color: var(--pdf-muted) !important;
+
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-business-contact {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px 12px !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    flex: 0 0 78px !important;
+
+    width: 78px !important;
+    height: 78px !important;
+
+    margin: 0 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-logo-image {
+    display: block !important;
+
+    width: 74px !important;
+    height: 74px !important;
+
+    max-width: 74px !important;
+    max-height: 74px !important;
+
+    object-fit: contain !important;
+}
+
+/* ============================================================
+   3. DOCUMENT TYPE
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-document-type {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    min-height: 0 !important;
+
+    margin: 0 0 16px !important;
+    padding: 8px 12px !important;
+
+    background: var(--pdf-soft) !important;
+
+    border: none !important;
+    border-top: 1px solid #e9dfc9 !important;
+    border-bottom: 1px solid #e9dfc9 !important;
+
+    text-align: center !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-document-type span {
+    color: var(--pdf-ink) !important;
+
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+
+    letter-spacing: 1.5px !important;
+}
+
+/* ============================================================
+   4. CUSTOMER / SUPPLIER / INVOICE DETAILS
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-party-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr) !important;
+
+    gap: 26px !important;
+
+    min-height: 0 !important;
+
+    margin: 0 0 18px !important;
+    padding: 0 0 18px !important;
+
+    border: none !important;
+    border-bottom: 1px solid var(--pdf-line) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-customer,
+#invoicePage.omd-pdf-export .invoice-metadata {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-customer h3 {
+    margin: 0 0 7px !important;
+
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+
+    color: var(--pdf-ink) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-customer-address {
+    margin: 0 0 7px !important;
+
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+
+    color: var(--pdf-muted) !important;
+    overflow-wrap: anywhere !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-customer-details,
+#invoicePage.omd-pdf-export .invoice-metadata-list {
+    display: grid !important;
+    gap: 5px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#invoicePage.omd-pdf-export
+:is(.invoice-customer-details, .invoice-metadata-list) > div {
+    display: grid !important;
+
+    grid-template-columns:
+        100px
+        minmax(0, 1fr) !important;
+
+    gap: 8px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#invoicePage.omd-pdf-export
+:is(.invoice-customer-details, .invoice-metadata-list) dt {
+    margin: 0 !important;
+
+    font-size: 9px !important;
+    line-height: 1.4 !important;
+
+    color: var(--pdf-muted) !important;
+}
+
+#invoicePage.omd-pdf-export
+:is(.invoice-customer-details, .invoice-metadata-list) dd {
+    min-width: 0 !important;
+    margin: 0 !important;
+
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+
+    text-align: right !important;
+    overflow-wrap: anywhere !important;
+
+    color: var(--pdf-ink) !important;
+}
+
+/* ============================================================
+   5. DIAMOND ITEMS TABLE
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-items-section {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 0 18px !important;
+    padding: 0 !important;
+
+    overflow: visible !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-items-table {
+    display: table !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    margin: 0 !important;
+
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+
+    table-layout: fixed !important;
+    background: #ffffff !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-sr {
+    width: 3% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-material {
+    width: 9% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-description {
+    width: 8% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-remarks {
+    width: 6% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-hsn {
+    width: 5% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-pcs {
+    width: 4% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-carat {
+    width: 6% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-rate {
+    width: 9% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-discount {
+    width: 5% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-amount {
+    width: 12% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-tax {
+    width: 5% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-tax-amount {
+    width: 11% !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table col.invoice-col-total {
+    width: 17% !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-items-table thead {
+    display: table-header-group !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-items-table th,
+#invoicePage.omd-pdf-export .invoice-items-table td {
+    padding: 8px 3px !important;
+
+    border: 1px solid var(--pdf-line) !important;
+
+    vertical-align: middle !important;
+
+    font-size: 8px !important;
+    line-height: 1.35 !important;
+
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-items-table thead th {
+    background: var(--pdf-ink) !important;
+    color: #ffffff !important;
+
+    font-size: 7px !important;
+    font-weight: 800 !important;
+
+    text-align: center !important;
+    text-transform: uppercase !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table tbody tr:nth-child(even) {
+    background: #f7f9fb !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-items-table tfoot th,
+#invoicePage.omd-pdf-export .invoice-items-table tfoot td {
+    background: var(--pdf-soft) !important;
+
+    font-weight: 800 !important;
+
+    border-top: 2px solid var(--pdf-gold) !important;
+}
+
+#invoicePage.omd-pdf-export
+.invoice-items-table .invoice-number {
+    text-align: right !important;
+    font-variant-numeric: tabular-nums !important;
+}
+
+/* ============================================================
+   6. AMOUNT IN WORDS / NOTES
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-financial-section {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        285px !important;
+
+    gap: 22px !important;
+
+    align-items: start !important;
+
+    margin: 0 0 28px !important;
+    padding: 0 !important;
+
+    border: none !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-financial-information {
+    min-width: 0 !important;
+    padding: 0 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-amount-words {
+    min-height: 0 !important;
+    padding: 12px 0 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-amount-words p,
+#invoicePage.omd-pdf-export #invoiceAmountWords {
+    margin: 6px 0 0 !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    line-height: 1.6 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-notes,
+#invoicePage.omd-pdf-export .invoice-declaration {
+    margin-top: 14px !important;
+    padding-top: 10px !important;
+
+    border-top: 1px solid var(--pdf-line) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-notes p,
+#invoicePage.omd-pdf-export .invoice-declaration p {
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+
+    color: var(--pdf-muted) !important;
+}
+
+/* ============================================================
+   7. TOTALS / PAID / BALANCE
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-totals {
+    width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 1px solid var(--pdf-line) !important;
+    background: #ffffff !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-total-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    gap: 10px !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 9px 11px !important;
+
+    border: none !important;
+    border-bottom: 1px solid var(--pdf-line) !important;
+
+    background: #ffffff !important;
+    color: var(--pdf-ink) !important;
+
+    font-size: 10px !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-total-row:last-child {
+    border-bottom: none !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-total-row span {
+    font-size: 10px !important;
+    color: var(--pdf-muted) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-total-row strong {
+    font-size: 10px !important;
+    font-weight: 800 !important;
+
+    white-space: nowrap !important;
+    font-variant-numeric: tabular-nums !important;
+
+    color: var(--pdf-ink) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-final-amount {
+    background: var(--pdf-soft) !important;
+    border-top: 1px solid var(--pdf-gold) !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-final-amount span,
+#invoicePage.omd-pdf-export .invoice-final-amount strong {
+    color: var(--pdf-ink) !important;
+    font-weight: 800 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-final-amount strong {
+    font-size: 13px !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-balance {
+    background: var(--pdf-ink) !important;
+    color: #ffffff !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-balance span,
+#invoicePage.omd-pdf-export .invoice-balance strong {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-balance strong {
+    font-size: 12px !important;
+}
+
+/* ============================================================
+   8. SIGNATURES
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-signatures {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+
+    gap: 36px !important;
+
+    width: 100% !important;
+    min-height: 0 !important;
+
+    margin: auto 0 0 !important;
+    padding: 24px 0 0 !important;
+
+    border: none !important;
+    background: #ffffff !important;
+
+    break-inside: avoid !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-signature {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+
+    width: 46% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: left !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-signature-business {
+    text-align: right !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-signature-space {
+    flex: none !important;
+
+    height: 40px !important;
+    min-height: 40px !important;
+
+    margin: 0 0 8px !important;
+
+    border: none !important;
+    border-bottom: 1px solid #6c7785 !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-signature-name {
+    display: block !important;
+
+    margin: 0 0 3px !important;
+    padding: 0 !important;
+
+    border: none !important;
+
+    font-size: 10px !important;
+    font-weight: 800 !important;
+
+    overflow-wrap: anywhere !important;
+}
+
+#invoicePage.omd-pdf-export .invoice-signature-label {
+    display: block !important;
+
+    margin: 0 !important;
+
+    color: var(--pdf-muted) !important;
+
+    font-size: 8px !important;
+    font-weight: 700 !important;
+
+    letter-spacing: 0.6px !important;
+    text-transform: uppercase !important;
+}
+
+/* ============================================================
+   9. PDF PAGE BREAKS
+   ============================================================ */
+
+#invoicePage.omd-pdf-export .invoice-items-table tr,
+#invoicePage.omd-pdf-export .invoice-total-row,
+#invoicePage.omd-pdf-export .invoice-signatures {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+}
+
+#invoicePage.omd-pdf-export img {
+    max-width: 100% !important;
+}

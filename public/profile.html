@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#000000">
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND business profile and account settings."
+    >
+
+    <title>
+        Profile | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- =====================================================
+         PROFILE
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/profile.css"
+    >
+
+
+    <!-- Must remain last -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ○
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+                <span>
+                    Sell
+                </span>
+            </a>
+
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <span>
+                    Suppliers
+                </span>
+            </a>
+
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+                <span aria-hidden="true">
+                    ↙
+                </span>
+
+                <span>
+                    Buy
+                </span>
+            </a>
+
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+                <span aria-hidden="true">
+                    □
+                </span>
+
+                <span>
+                    Profile
+                </span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+                <span aria-hidden="true">
+                    ↪
+                </span>
+
+                <span>
+                    Sign out
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <!-- Left -->
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GLOBAL SEARCH
+                 ================================================= -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <!-- Right -->
+
+            <div class="topbar-actions">
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="editProfileButton"
+                >
+                    Edit Profile
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content profile-page">
+
+
+            <!-- =================================================
+                 LOADING
+                 ================================================= -->
+
+            <section
+                class="profile-state"
+                id="profileLoadingState"
+                aria-live="polite"
+            >
+
+                <div
+                    class="spinner"
+                    aria-hidden="true"
+                ></div>
+
+                <strong>
+                    Loading profile
+                </strong>
+
+                <span>
+                    Please wait while your business profile is loaded.
+                </span>
+
+            </section>
+
+
+            <!-- =================================================
+                 ERROR
+                 ================================================= -->
+
+            <section
+                class="profile-state profile-error-state"
+                id="profileErrorState"
+                hidden
+                aria-live="polite"
+            >
+
+                <div
+                    class="profile-state-icon"
+                    aria-hidden="true"
+                >
+                    !
+                </div>
+
+                <strong>
+                    Unable to load profile
+                </strong>
+
+                <span id="profileErrorMessage">
+                    The business profile could not be loaded.
+                </span>
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="retryProfileButton"
+                >
+                    Try Again
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE CONTENT
+                 ================================================= -->
+
+            <div
+                id="profileContent"
+                hidden
+            >
+
+
+                <!-- =============================================
+                     PAGE HEADING
+                     ============================================= -->
+
+                <section class="page-heading profile-page-heading">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            BUSINESS PROFILE
+                        </span>
+
+                        <h1>
+                            Profile
+                        </h1>
+
+                        <p>
+                            Manage business identity, tax details,
+                            contact information and payment details.
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-heading-actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="headingEditProfileButton"
+                        >
+                            Edit Profile
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     PROFILE HERO
+                     ============================================= -->
+
+                <section class="profile-hero-card">
+
+
+                    <div class="profile-business-main">
+
+
+                        <!-- Logo -->
+
+                        <div class="profile-logo-wrap">
+
+                            <img
+                                id="profileBusinessLogo"
+                                class="profile-business-logo"
+                                src="https://i.ibb.co/Tq73qTts/om-maruti-logo.png"
+                                alt="OM MARUTI DIAMOND logo"
+                                decoding="async"
+                            >
+
+                            <div
+                                class="profile-logo-placeholder"
+                                id="profileLogoPlaceholder"
+                                hidden
+                            >
+                                OM
+                            </div>
+
+                        </div>
+
+
+                        <!-- Identity -->
+
+                        <div class="profile-business-copy">
+
+                            <span class="profile-business-label">
+                                BUSINESS ACCOUNT
+                            </span>
+
+                            <h2 id="profileBusinessName">
+                                OM MARUTI DIAMOND
+                            </h2>
+
+                            <p id="profileBusinessAddress">
+                                —
+                            </p>
+
+
+                            <div class="profile-business-contact">
+
+                                <span id="profileBusinessMobile">
+                                    —
+                                </span>
+
+                                <span id="profileBusinessEmail">
+                                    —
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Status -->
+
+                    <div class="profile-account-status">
+
+                        <span>
+                            ACCOUNT
+                        </span>
+
+                        <strong>
+                            Owner
+                        </strong>
+
+                        <small>
+                            Secure business administrator
+                        </small>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     SUMMARY
+                     ============================================= -->
+
+                <section class="profile-summary-grid">
+
+
+                    <article class="profile-summary-card">
+
+                        <span>
+                            GSTIN
+                        </span>
+
+                        <strong id="profileSummaryGstin">
+                            —
+                        </strong>
+
+                        <small>
+                            Goods & Services Tax
+                        </small>
+
+                    </article>
+
+
+                    <article class="profile-summary-card">
+
+                        <span>
+                            PAN
+                        </span>
+
+                        <strong id="profileSummaryPan">
+                            —
+                        </strong>
+
+                        <small>
+                            Permanent Account Number
+                        </small>
+
+                    </article>
+
+
+                    <article class="profile-summary-card">
+
+                        <span>
+                            STATE
+                        </span>
+
+                        <strong id="profileSummaryState">
+                            —
+                        </strong>
+
+                        <small id="profileSummaryStateCode">
+                            State code —
+                        </small>
+
+                    </article>
+
+
+                    <article class="profile-summary-card profile-summary-dark">
+
+                        <span>
+                            ACCOUNT TYPE
+                        </span>
+
+                        <strong>
+                            Owner
+                        </strong>
+
+                        <small>
+                            Full business access
+                        </small>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =============================================
+                     MAIN GRID
+                     ============================================= -->
+
+                <div class="profile-content-grid">
+
+
+                    <!-- =========================================
+                         BUSINESS INFORMATION
+                         ========================================= -->
+
+                    <section class="profile-card">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    01
+                                </span>
+
+                                <h2>
+                                    Business Information
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="profile-detail-list">
+
+                            <div>
+
+                                <dt>
+                                    Business Name
+                                </dt>
+
+                                <dd id="profileDetailBusinessName">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Owner Name
+                                </dt>
+
+                                <dd id="profileOwnerName">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Mobile
+                                </dt>
+
+                                <dd id="profileDetailMobile">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Email
+                                </dt>
+
+                                <dd id="profileDetailEmail">
+                                    —
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         TAX INFORMATION
+                         ========================================= -->
+
+                    <section class="profile-card">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    02
+                                </span>
+
+                                <h2>
+                                    Tax & Legal
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="profile-detail-list">
+
+                            <div>
+
+                                <dt>
+                                    GSTIN
+                                </dt>
+
+                                <dd id="profileGstin">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    PAN
+                                </dt>
+
+                                <dd id="profilePan">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    State
+                                </dt>
+
+                                <dd id="profileState">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    State Code
+                                </dt>
+
+                                <dd id="profileStateCode">
+                                    —
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         ADDRESS
+                         ========================================= -->
+
+                    <section class="profile-card profile-card-wide">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    03
+                                </span>
+
+                                <h2>
+                                    Business Address
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div class="profile-address-block">
+
+                            <strong id="profileAddressBusinessName">
+                                OM MARUTI DIAMOND
+                            </strong>
+
+                            <p id="profileAddress">
+                                —
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         BANK DETAILS
+                         ========================================= -->
+
+                    <section class="profile-card profile-card-wide">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    04
+                                </span>
+
+                                <h2>
+                                    Bank & Payment Details
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="profile-detail-list profile-bank-list">
+
+                            <div>
+
+                                <dt>
+                                    Bank Name
+                                </dt>
+
+                                <dd id="profileBankName">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Account Holder
+                                </dt>
+
+                                <dd id="profileAccountHolder">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Account Number
+                                </dt>
+
+                                <dd id="profileAccountNumber">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    IFSC
+                                </dt>
+
+                                <dd id="profileIfsc">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Branch
+                                </dt>
+
+                                <dd id="profileBankBranch">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    UPI ID
+                                </dt>
+
+                                <dd id="profileUpiId">
+                                    —
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         INVOICE INFORMATION
+                         ========================================= -->
+
+                    <section class="profile-card profile-card-wide">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    05
+                                </span>
+
+                                <h2>
+                                    Invoice Information
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <div class="profile-invoice-note">
+
+                            <strong>
+                                Historical invoice protection
+                            </strong>
+
+                            <p>
+                                Profile changes apply to future Sell and Buy
+                                transactions. Existing invoices continue using
+                                the business information saved with that
+                                transaction.
+                            </p>
+
+                        </div>
+
+
+                        <dl class="profile-detail-list profile-invoice-list">
+
+                            <div>
+
+                                <dt>
+                                    Sell Prefix
+                                </dt>
+
+                                <dd id="profileSalePrefix">
+                                    OMD-S
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Buy Prefix
+                                </dt>
+
+                                <dd id="profilePurchasePrefix">
+                                    OMD-B
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         ACCOUNT / SESSION
+                         ========================================= -->
+
+                    <section class="profile-card profile-card-wide">
+
+                        <header class="profile-card-header">
+
+                            <div>
+
+                                <span class="profile-section-number">
+                                    06
+                                </span>
+
+                                <h2>
+                                    Account & Security
+                                </h2>
+
+                            </div>
+
+                        </header>
+
+
+                        <dl class="profile-detail-list">
+
+                            <div>
+
+                                <dt>
+                                    Signed In As
+                                </dt>
+
+                                <dd id="profileAuthEmail">
+                                    —
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Role
+                                </dt>
+
+                                <dd>
+                                    Owner
+                                </dd>
+
+                            </div>
+
+                        </dl>
+
+
+                        <div class="profile-security-actions">
+
+                            <button
+                                type="button"
+                                class="button button-secondary"
+                                id="profileSignOutButton"
+                            >
+                                Sign Out
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+        hidden
+    ></div>
+
+
+    <!-- =====================================================
+         MOBILE BOTTOM NAV
+         Exact shared portal navigation
+         ===================================================== -->
+
+    <nav
+        class="mobile-bottom-nav"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="/index.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ⌂
+            </span>
+
+            <span>
+                Home
+            </span>
+
+        </a>
+
+
+        <a
+            href="/customers.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ○
+            </span>
+
+            <span>
+                Customers
+            </span>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="mobile-nav-create"
+            id="mobileNewTransactionButton"
+            aria-label="Create new transaction"
+        >
+            +
+        </button>
+
+
+        <a
+            href="/suppliers.html"
+            class="mobile-nav-item"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                ◇
+            </span>
+
+            <span>
+                Suppliers
+            </span>
+
+        </a>
+
+
+        <a
+            href="/profile.html"
+            class="mobile-nav-item active"
+            aria-current="page"
+        >
+
+            <span
+                class="mobile-nav-icon"
+                aria-hidden="true"
+            >
+                □
+            </span>
+
+            <span>
+                Profile
+            </span>
+
+        </a>
+
+    </nav>
+
+
+    <!-- =====================================================
+         EDIT PROFILE MODAL
+         ===================================================== -->
+
+    <div
+        class="modal-backdrop"
+        id="profileModal"
+        hidden
+    >
+
+        <section
+            class="modal-card profile-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="profileModalTitle"
+        >
+
+
+            <!-- Header -->
+
+            <header class="modal-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        BUSINESS PROFILE
+                    </span>
+
+                    <h2 id="profileModalTitle">
+                        Edit Profile
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="closeProfileModalButton"
+                    aria-label="Close profile editor"
+                >
+                    ×
+                </button>
+
+            </header>
+
+
+            <!-- Form -->
+
+            <form
+                id="profileForm"
+                novalidate
+            >
+
+                <div class="modal-body profile-form-body">
+
+
+                    <!-- =========================================
+                         BUSINESS
+                         ========================================= -->
+
+                    <section class="profile-form-section">
+
+                        <header>
+
+                            <span>
+                                01
+                            </span>
+
+                            <h3>
+                                Business
+                            </h3>
+
+                        </header>
+
+
+                        <div class="profile-form-grid">
+
+
+                            <div class="profile-field profile-field-wide">
+
+                                <label for="businessName">
+                                    Business Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="businessName"
+                                    maxlength="120"
+                                    autocomplete="organization"
+                                    required
+                                >
+
+                                <p
+                                    class="field-error"
+                                    id="businessNameError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="ownerName">
+                                    Owner Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="ownerName"
+                                    maxlength="120"
+                                    autocomplete="name"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="businessMobile">
+                                    Mobile
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="businessMobile"
+                                    maxlength="20"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field profile-field-wide">
+
+                                <label for="businessEmail">
+                                    Email
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="businessEmail"
+                                    maxlength="160"
+                                    autocomplete="email"
+                                >
+
+                                <p
+                                    class="field-error"
+                                    id="businessEmailError"
+                                ></p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         TAX
+                         ========================================= -->
+
+                    <section class="profile-form-section">
+
+                        <header>
+
+                            <span>
+                                02
+                            </span>
+
+                            <h3>
+                                Tax & Legal
+                            </h3>
+
+                        </header>
+
+
+                        <div class="profile-form-grid">
+
+
+                            <div class="profile-field">
+
+                                <label for="businessGstin">
+                                    GSTIN
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="businessGstin"
+                                    maxlength="15"
+                                    autocapitalize="characters"
+                                    spellcheck="false"
+                                >
+
+                                <p
+                                    class="field-error"
+                                    id="businessGstinError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="businessPan">
+                                    PAN
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="businessPan"
+                                    maxlength="10"
+                                    autocapitalize="characters"
+                                    spellcheck="false"
+                                >
+
+                                <p
+                                    class="field-error"
+                                    id="businessPanError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="businessState">
+                                    State
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="businessState"
+                                    maxlength="80"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="businessStateCode">
+                                    State Code
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="businessStateCode"
+                                    maxlength="2"
+                                    inputmode="numeric"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         ADDRESS
+                         ========================================= -->
+
+                    <section class="profile-form-section">
+
+                        <header>
+
+                            <span>
+                                03
+                            </span>
+
+                            <h3>
+                                Address
+                            </h3>
+
+                        </header>
+
+
+                        <div class="profile-form-grid">
+
+                            <div class="profile-field profile-field-wide">
+
+                                <label for="businessAddress">
+                                    Business Address
+                                </label>
+
+                                <textarea
+                                    id="businessAddress"
+                                    rows="4"
+                                    maxlength="500"
+                                    autocomplete="street-address"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         BANK
+                         ========================================= -->
+
+                    <section class="profile-form-section">
+
+                        <header>
+
+                            <span>
+                                04
+                            </span>
+
+                            <h3>
+                                Bank & Payment
+                            </h3>
+
+                        </header>
+
+
+                        <div class="profile-form-grid">
+
+
+                            <div class="profile-field">
+
+                                <label for="bankName">
+                                    Bank Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="bankName"
+                                    maxlength="120"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="accountHolder">
+                                    Account Holder
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="accountHolder"
+                                    maxlength="120"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="accountNumber">
+                                    Account Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="accountNumber"
+                                    maxlength="34"
+                                    inputmode="numeric"
+                                    spellcheck="false"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="bankIfsc">
+                                    IFSC
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="bankIfsc"
+                                    maxlength="11"
+                                    autocapitalize="characters"
+                                    spellcheck="false"
+                                >
+
+                                <p
+                                    class="field-error"
+                                    id="bankIfscError"
+                                ></p>
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="bankBranch">
+                                    Branch
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="bankBranch"
+                                    maxlength="120"
+                                >
+
+                            </div>
+
+
+                            <div class="profile-field">
+
+                                <label for="upiId">
+                                    UPI ID
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="upiId"
+                                    maxlength="120"
+                                    spellcheck="false"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =========================================
+                         LOGO
+                         ========================================= -->
+
+                    <section class="profile-form-section">
+
+                        <header>
+
+                            <span>
+                                05
+                            </span>
+
+                            <h3>
+                                Branding
+                            </h3>
+
+                        </header>
+
+
+                        <div class="profile-form-grid">
+
+                            <div class="profile-field profile-field-wide">
+
+                                <label for="logoUrl">
+                                    Logo URL
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="logoUrl"
+                                    maxlength="500"
+                                    placeholder="https://..."
+                                >
+
+                                <p class="profile-field-help">
+                                    Used on future invoices and purchase documents.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- Message -->
+
+                    <p
+                        class="profile-form-message"
+                        id="profileFormMessage"
+                        hidden
+                        aria-live="polite"
+                    ></p>
+
+                </div>
+
+
+                <!-- Footer -->
+
+                <footer class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="cancelProfileButton"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="saveProfileButton"
+                    >
+
+                        <span id="saveProfileButtonText">
+                            Save Profile
+                        </span>
+
+                        <span
+                            class="button-spinner"
+                            id="saveProfileSpinner"
+                            hidden
+                            aria-hidden="true"
+                        ></span>
+
+                    </button>
+
+                </footer>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         MOBILE CREATE MENU
+         ===================================================== -->
+
+    <div
+        class="profile-create-menu"
+        id="mobileCreateMenu"
+        hidden
+    >
+
+        <button
+            type="button"
+            id="mobileCreateSellButton"
+        >
+            <span>
+                ↗
+            </span>
+
+            <div>
+                <strong>
+                    New Sell
+                </strong>
+
+                <small>
+                    Create customer invoice
+                </small>
+            </div>
+        </button>
+
+
+        <button
+            type="button"
+            id="mobileCreateBuyButton"
+        >
+            <span>
+                ↙
+            </span>
+
+            <div>
+                <strong>
+                    New Buy
+                </strong>
+
+                <small>
+                    Create supplier purchase
+                </small>
+            </div>
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================================================
+     SCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/profile.js"
+></script>
+
+</body>
+
+</html>

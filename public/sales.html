@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow, noarchive"
+    >
+
+    <meta
+        name="description"
+        content="OM MARUTI DIAMOND sales, invoices and customer receivables."
+    >
+
+    <title>
+        Sell | OM MARUTI DIAMOND
+    </title>
+
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+
+    <!-- =====================================================
+         SHARED DESIGN SYSTEM
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/layout.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/components.css"
+    >
+
+
+    <!-- =====================================================
+         SALES PAGE
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="/css/sales.css"
+    >
+
+
+    <!--
+        IMPORTANT:
+        responsive.css remains last.
+    -->
+
+    <link
+        rel="stylesheet"
+        href="/css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+        aria-label="Main navigation"
+    >
+
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-brand-icon">
+                <img
+                    src="/assets/images/om-maruti-logo.png"
+                    alt="OM MARUTI DIAMOND"
+                    class="sidebar-brand-logo"
+                >
+            </div>
+
+            <div>
+
+                <strong>
+                    OM MARUTI
+                </strong>
+
+                <span>
+                    DIAMOND
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav
+            class="sidebar-nav"
+            aria-label="Business navigation"
+        >
+
+
+            <!-- Dashboard -->
+
+            <a
+                href="/index.html"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- Customers -->
+
+            <a
+                href="/customers.html"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ○
+                </span>
+
+                <span>
+                    Customers
+                </span>
+
+            </a>
+
+
+            <!-- Sell -->
+
+            <a
+                href="/sales.html"
+                class="sidebar-nav-link active"
+                aria-current="page"
+            >
+
+                <span aria-hidden="true">
+                    ↗
+                </span>
+
+                <span>
+                    Sell
+                </span>
+
+            </a>
+
+
+            <!-- Suppliers -->
+
+            <a
+                href="/suppliers.html"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ◇
+                </span>
+
+                <span>
+                    Suppliers
+                </span>
+
+            </a>
+
+
+            <!-- Buy -->
+
+            <a
+                href="/purchases.html"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    ↙
+                </span>
+
+                <span>
+                    Buy
+                </span>
+
+            </a>
+
+
+            <!-- Profile -->
+
+            <a
+                href="/profile.html"
+                class="sidebar-nav-link"
+            >
+
+                <span aria-hidden="true">
+                    □
+                </span>
+
+                <span>
+                    Profile
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar footer -->
+
+        <div class="sidebar-footer">
+
+            <button
+                type="button"
+                class="sidebar-nav-link sidebar-logout"
+                id="logoutButton"
+            >
+
+                <span aria-hidden="true">
+                    ↪
+                </span>
+
+                <span>
+                    Sign out
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="app-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="topbar">
+
+
+            <!-- Left -->
+
+            <div class="topbar-left">
+
+                <button
+                    type="button"
+                    class="icon-button mobile-menu-button"
+                    id="mobileMenuButton"
+                    aria-label="Open navigation"
+                    aria-controls="sidebar"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+
+                <div class="current-date-block">
+
+                    <span class="eyebrow">
+                        TODAY
+                    </span>
+
+                    <time id="currentDate">
+                        —
+                    </time>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GLOBAL SEARCH
+                 ================================================= -->
+
+            <div class="global-search">
+
+                <label
+                    class="sr-only"
+                    for="globalSearchInput"
+                >
+                    Search customers, suppliers,
+                    sales and purchases
+                </label>
+
+                <input
+                    type="search"
+                    id="globalSearchInput"
+                    placeholder="Search customers, suppliers, Sell or Buy..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+                <div
+                    class="search-results"
+                    id="globalSearchResults"
+                    hidden
+                >
+
+                    <div
+                        id="globalSearchResultsContent"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 TOPBAR ACTIONS
+                 ================================================= -->
+
+            <div class="topbar-actions">
+
+                <label
+                    class="sr-only"
+                    for="billingDateFilter"
+                >
+                    Billing date range
+                </label>
+
+                <select
+                    id="billingDateFilter"
+                    aria-label="Billing date range"
+                >
+
+                    <option
+                        value="today"
+                        selected
+                    >
+                        Today
+                    </option>
+
+                    <option value="yesterday">
+                        Yesterday
+                    </option>
+
+                    <option value="7days">
+                        7 Days
+                    </option>
+
+                    <option value="30days">
+                        30 Days
+                    </option>
+
+                    <option value="all">
+                        All Time
+                    </option>
+
+                    <option value="custom">
+                        Custom Date
+                    </option>
+
+                </select>
+
+
+                <a
+                    href="/new-sale.html"
+                    class="button button-primary"
+                >
+                    + New Sell
+                </a>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             CUSTOM DATE PANEL
+             ================================================= -->
+
+        <section
+            class="custom-date-panel"
+            id="customDatePanel"
+            hidden
+            aria-label="Custom billing date range"
+        >
+
+            <div class="form-field">
+
+                <label for="customStartDate">
+                    From
+                </label>
+
+                <input
+                    type="date"
+                    id="customStartDate"
+                >
+
+            </div>
+
+
+            <div class="form-field">
+
+                <label for="customEndDate">
+                    To
+                </label>
+
+                <input
+                    type="date"
+                    id="customEndDate"
+                >
+
+            </div>
+
+
+            <button
+                type="button"
+                class="button button-primary"
+                id="applyCustomDateButton"
+            >
+                Apply
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="page-content sales-page">
+
+
+            <!-- =================================================
+                 PAGE HEADING
+                 ================================================= -->
+
+            <section class="page-heading sales-page-heading">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        SELL
+                    </span>
+
+                    <h1>
+                        Sales
+                    </h1>
+
+                    <p>
+                        Manage invoices, customer receipts
+                        and outstanding receivables.
+                    </p>
+
+                </div>
+
+
+                <div class="page-heading-actions">
+
+                    <a
+                        href="/new-sale.html"
+                        class="button button-primary"
+                    >
+                        + New Sell
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY
+                 ================================================= -->
+
+            <section
+                class="sales-summary-grid"
+                aria-label="Sales summary"
+            >
+
+
+                <!-- Total Sell -->
+
+                <article class="sales-summary-card">
+
+                    <span class="summary-label">
+                        Total Sell
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryTotalSell"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Selected period
+                    </small>
+
+                </article>
+
+
+                <!-- Received -->
+
+                <article class="sales-summary-card">
+
+                    <span class="summary-label">
+                        Received
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryReceived"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Selected period
+                    </small>
+
+                </article>
+
+
+                <!-- Receivable -->
+
+                <article class="sales-summary-card">
+
+                    <span class="summary-label">
+                        Receivable
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryReceivable"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Current outstanding
+                    </small>
+
+                </article>
+
+
+                <!-- Overdue -->
+
+                <article class="sales-summary-card">
+
+                    <span class="summary-label">
+                        Overdue
+                    </span>
+
+                    <strong
+                        class="summary-value"
+                        id="summaryOverdue"
+                    >
+                        ₹0.00
+                    </strong>
+
+                    <small class="summary-meta">
+                        Current overdue
+                    </small>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SALES PANEL
+                 ================================================= -->
+
+            <section class="panel sales-panel">
+
+
+                <!-- =============================================
+                     PANEL HEADER
+                     ============================================= -->
+
+                <div class="panel-header sales-panel-header">
+
+
+                    <div>
+
+                        <span class="eyebrow">
+                            INVOICES
+                        </span>
+
+                        <h2>
+                            Sell Invoices
+                        </h2>
+
+                        <p
+                            class="sales-result-count"
+                            id="salesResultCount"
+                        >
+                            Loading invoices...
+                        </p>
+
+                    </div>
+
+
+                    <!-- Filters -->
+
+                    <div class="sales-filters">
+
+
+                        <!-- Search -->
+
+                        <div class="sales-search-field">
+
+                            <label
+                                class="sr-only"
+                                for="salesSearchInput"
+                            >
+                                Search invoices
+                            </label>
+
+                            <input
+                                type="search"
+                                id="salesSearchInput"
+                                placeholder="Search invoice or customer..."
+                                autocomplete="off"
+                                spellcheck="false"
+                            >
+
+                        </div>
+
+
+                        <!-- Sale type -->
+
+                        <div class="sales-filter-field">
+
+                            <label
+                                class="sr-only"
+                                for="salesTypeFilter"
+                            >
+                                Sale type
+                            </label>
+
+                            <select
+                                id="salesTypeFilter"
+                                aria-label="Sale type"
+                            >
+
+                                <option value="all">
+                                    All Types
+                                </option>
+
+                                <option value="cash">
+                                    Cash
+                                </option>
+
+                                <option value="credit">
+                                    Credit
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Status -->
+
+                        <div class="sales-filter-field">
+
+                            <label
+                                class="sr-only"
+                                for="salesStatusFilter"
+                            >
+                                Payment status
+                            </label>
+
+                            <select
+                                id="salesStatusFilter"
+                                aria-label="Payment status"
+                            >
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="paid">
+                                    Paid
+                                </option>
+
+                                <option value="partially_paid">
+                                    Partially Paid
+                                </option>
+
+                                <option value="pending">
+                                    Unpaid
+                                </option>
+
+                                <option value="overdue">
+                                    Overdue
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =============================================
+                     LOADING
+                     ============================================= -->
+
+                <div
+                    class="sales-state"
+                    id="salesLoadingState"
+                    aria-live="polite"
+                >
+
+                    <div
+                        class="spinner"
+                        aria-hidden="true"
+                    ></div>
+
+                    <strong>
+                        Loading Sell invoices
+                    </strong>
+
+                    <span>
+                        Please wait while your sales are loaded.
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     ERROR
+                     ============================================= -->
+
+                <div
+                    class="sales-state sales-error-state"
+                    id="salesErrorState"
+                    hidden
+                >
+
+                    <div
+                        class="sales-state-icon"
+                        aria-hidden="true"
+                    >
+                        !
+                    </div>
+
+                    <strong>
+                        Unable to load sales
+                    </strong>
+
+                    <span id="salesErrorMessage">
+                        Please try again.
+                    </span>
+
+                </div>
+
+
+                <!-- =============================================
+                     EMPTY
+                     ============================================= -->
+
+                <div
+                    class="sales-state sales-empty-state"
+                    id="salesEmptyState"
+                    hidden
+                >
+
+                    <div
+                        class="sales-state-icon"
+                        aria-hidden="true"
+                    >
+                        ↗
+                    </div>
+
+                    <strong>
+                        No Sell invoices found
+                    </strong>
+
+                    <span>
+                        Create your first Sell invoice to get started.
+                    </span>
+
+                    <a
+                        href="/new-sale.html"
+                        class="button button-primary"
+                    >
+                        + New Sell
+                    </a>
+
+                </div>
+
+
+                <!-- =============================================
+                     DESKTOP / TABLET TABLE
+                     ============================================= -->
+
+                <div
+                    class="table-wrapper sales-table-wrapper"
+                    id="salesTableWrapper"
+                    hidden
+                >
+
+                    <table class="sales-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Invoice
+                                </th>
+
+                                <th>
+                                    Customer
+                                </th>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th class="table-money">
+                                    Total
+                                </th>
+
+                                <th class="table-money">
+                                    Received
+                                </th>
+
+                                <th class="table-money">
+                                    Balance
+                                </th>
+
+                                <th>
+                                    Due Date
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th
+                                    class="table-actions"
+                                    aria-label="Actions"
+                                >
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="salesTableBody">
+                        </tbody>
+
+
+                    </table>
+
+                </div>
+
+
+                <!-- =============================================
+                     MOBILE LIST
+                     ============================================= -->
+
+                <div
+                    class="sales-mobile-list"
+                    id="salesMobileList"
+                    hidden
+                >
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     MOBILE BOTTOM NAVIGATION
+
+     IMPORTANT:
+     Same shared navigation structure as sale.html.
+     ========================================================= -->
+
+<nav
+    class="mobile-bottom-nav"
+    aria-label="Mobile navigation"
+>
+
+
+    <!-- Home -->
+
+    <a
+        href="/index.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ⌂
+        </span>
+
+        <span>
+            Home
+        </span>
+
+    </a>
+
+
+    <!-- Customers -->
+
+    <a
+        href="/customers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ○
+        </span>
+
+        <span>
+            Customers
+        </span>
+
+    </a>
+
+
+    <!-- Center create -->
+
+    <button
+        type="button"
+        class="mobile-nav-create"
+        id="mobileNewTransactionButton"
+        aria-label="Create new"
+    >
+        +
+    </button>
+
+
+    <!-- Suppliers -->
+
+    <a
+        href="/suppliers.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            ◇
+        </span>
+
+        <span>
+            Suppliers
+        </span>
+
+    </a>
+
+
+    <!-- Profile -->
+
+    <a
+        href="/profile.html"
+        class="mobile-nav-item"
+    >
+
+        <span aria-hidden="true">
+            □
+        </span>
+
+        <span>
+            Profile
+        </span>
+
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     PAGE JAVASCRIPT
+     ========================================================= -->
+
+<script
+    type="module"
+    src="/js/pages/sales.js"
+></script>
+
+
+</body>
+
+</html>

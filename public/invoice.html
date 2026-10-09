@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+    <link rel="icon" type="image/png" href="/assets/images/om-maruti-logo1.png">
+
+    <link rel="apple-touch-icon" href="/assets/images/om-maruti-logo.png1">
+    
+    <title>Invoice | OM MARUTI DIAMOND</title>
+
+
+    <!--
+        IMPORTANT:
+        This invoice page intentionally does NOT load:
+
+        variables.css
+        global.css
+        layout.css
+        components.css
+        responsive.css
+        sale.css
+
+        The invoice gets ONE dedicated stylesheet only.
+    -->
+
+    <link
+        rel="stylesheet"
+        href="/css/invoice.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/css/invoice-whatsapp-pdf.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         INVOICE APPLICATION
+         ===================================================== -->
+
+    <main
+        class="invoice-app"
+        id="invoiceApp"
+    >
+
+
+        <!-- =================================================
+             TOOLBAR
+             Hidden automatically while printing.
+             ================================================= -->
+
+        <div class="invoice-toolbar">
+
+            <div class="invoice-toolbar-inner">
+
+                <button
+                    type="button"
+                    class="invoice-toolbar-button invoice-toolbar-button-secondary"
+                    id="backButton"
+                >
+                    <span aria-hidden="true">←</span>
+                    <span>Back</span>
+                </button>
+
+
+                <div class="invoice-toolbar-title">
+
+                    <strong id="toolbarInvoiceNumber">
+                        Invoice
+                    </strong>
+
+                    <span>
+                        A4 Portrait Preview
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="invoice-toolbar-button invoice-toolbar-button-primary"
+                    id="printButton"
+                >
+                    <span>Print Invoice</span>
+                </button>
+
+                <button
+                    type="button"
+                    id="shareInvoiceWhatsappButton"
+                    class="invoice-toolbar-button invoice-toolbar-button-primary"
+                    disabled
+                >
+                    Share PDF on WhatsApp
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             LOADING STATE
+             ================================================= -->
+
+        <section
+            class="invoice-state invoice-loading-state"
+            id="invoiceLoadingState"
+            aria-live="polite"
+        >
+
+            <div
+                class="invoice-loader"
+                aria-hidden="true"
+            ></div>
+
+            <strong>
+                Loading invoice
+            </strong>
+
+            <span>
+                Preparing your invoice...
+            </span>
+
+        </section>
+
+
+        <!-- =================================================
+             ERROR STATE
+             ================================================= -->
+
+        <section
+            class="invoice-state invoice-error-state"
+            id="invoiceErrorState"
+            hidden
+            aria-live="assertive"
+        >
+
+            <div
+                class="invoice-error-icon"
+                aria-hidden="true"
+            >
+                !
+            </div>
+
+            <strong id="invoiceErrorTitle">
+                Unable to load invoice
+            </strong>
+
+            <span id="invoiceErrorMessage">
+                The requested invoice could not be loaded.
+            </span>
+
+
+            <button
+                type="button"
+                class="invoice-state-button"
+                id="errorBackButton"
+            >
+                Back to Sell
+            </button>
+
+        </section>
+
+
+        <!-- =================================================
+             A4 PREVIEW AREA
+             ================================================= -->
+
+        <section
+            class="invoice-preview"
+            id="invoiceContent"
+            hidden
+        >
+
+
+            <!-- =============================================
+                 ACTUAL PRINT DOCUMENT
+
+                 IMPORTANT:
+                 Everything inside this element is part
+                 of the printable invoice.
+                 ============================================= -->
+
+            <article
+                class="invoice-page"
+                id="invoicePage"
+            >
+
+
+                <!-- =========================================
+                     DOCUMENT TITLE
+                     ========================================= -->
+
+                <header class="invoice-title">
+
+                    <h1>
+                        INVOICE
+                    </h1>
+
+                </header>
+
+
+                <!-- =========================================
+                     BUSINESS HEADER
+                     ========================================= -->
+
+                <section class="invoice-business">
+
+
+                    <div class="invoice-business-information">
+
+                        <span class="invoice-eyebrow">
+                            Seller
+                        </span>
+
+
+                        <h2 id="invoiceBusinessName">
+                            OM MARUTI DIAMOND
+                        </h2>
+
+
+                        <p
+                            class="invoice-business-address"
+                            id="invoiceBusinessAddress"
+                        ></p>
+
+
+                        <div class="invoice-business-contact">
+
+                            <span id="invoiceBusinessMobile"></span>
+
+                            <span id="invoiceBusinessEmail"></span>
+
+                        </div>
+
+
+                        <div
+                            class="invoice-business-gstin"
+                            id="invoiceBusinessGstinRow"
+                            hidden
+                        >
+                            <span>
+                                GSTIN
+                            </span>
+
+                            <strong id="invoiceBusinessGstin"></strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- LOGO -->
+
+                    <div class="invoice-logo">
+
+                        <img
+                            id="invoiceBusinessLogo"
+                            class="invoice-logo-image"
+                            src="https://i.ibb.co/Tq73qTts/om-maruti-logo.png"
+                            alt="OM MARUTI DIAMOND logo"
+                            decoding="async"
+                        >
+
+
+                        <div
+                            class="invoice-logo-placeholder"
+                            id="invoiceLogoPlaceholder"
+                            hidden
+                            aria-hidden="true"
+                        >
+                            OM
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =========================================
+                     DOCUMENT TYPE
+                     ========================================= -->
+
+                <div class="invoice-document-type">
+
+                    <span>
+                        MATERIAL SALE
+                    </span>
+
+                </div>
+
+
+                <!-- =========================================
+                     CUSTOMER + INVOICE INFORMATION
+                     ========================================= -->
+
+                <section class="invoice-party-grid">
+
+
+                    <!-- CUSTOMER -->
+
+                    <div class="invoice-customer">
+
+                        <span class="invoice-eyebrow">
+                            Bill To
+                        </span>
+
+
+                        <h3 id="invoiceCustomerName">
+                            —
+                        </h3>
+
+
+                        <p
+                            class="invoice-customer-address"
+                            id="invoiceCustomerAddress"
+                        >
+                            —
+                        </p>
+
+
+                        <dl class="invoice-customer-details">
+
+
+                            <div
+                                id="invoiceCustomerMobileRow"
+                                hidden
+                            >
+                                <dt>
+                                    Mobile
+                                </dt>
+
+                                <dd id="invoiceCustomerMobile">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div
+                                id="invoiceCustomerEmailRow"
+                                hidden
+                            >
+                                <dt>
+                                    Email
+                                </dt>
+
+                                <dd id="invoiceCustomerEmail">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div
+                                id="invoiceCustomerGstinRow"
+                                hidden
+                            >
+                                <dt>
+                                    GSTIN
+                                </dt>
+
+                                <dd id="invoiceCustomerGstin">
+                                    —
+                                </dd>
+                            </div>
+
+
+                        </dl>
+
+                    </div>
+
+
+                    <!-- INVOICE METADATA -->
+
+                    <div class="invoice-metadata">
+
+                        <span class="invoice-eyebrow">
+                            Invoice Details
+                        </span>
+
+
+                        <dl class="invoice-metadata-list">
+
+
+                            <div>
+                                <dt>
+                                    Invoice No.
+                                </dt>
+
+                                <dd id="invoiceNumber">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Invoice Date
+                                </dt>
+
+                                <dd id="invoiceDate">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div>
+                                <dt>
+                                    Sale Type
+                                </dt>
+
+                                <dd id="invoiceSaleType">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div
+                                id="invoiceDueDateRow"
+                                hidden
+                            >
+                                <dt>
+                                    Due Date
+                                </dt>
+
+                                <dd id="invoiceDueDate">
+                                    —
+                                </dd>
+                            </div>
+
+
+                            <div
+                                id="invoiceBrokerRow"
+                                hidden
+                            >
+                                <dt>
+                                    Broker
+                                </dt>
+
+                                <dd id="invoiceBroker">
+                                    —
+                                </dd>
+                            </div>
+
+
+                        </dl>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =========================================
+                     LINE ITEMS
+                     ========================================= -->
+
+                <section class="invoice-items-section">
+
+
+                    <table class="invoice-items-table">
+
+
+                        <!--
+                            Column order:
+
+                            1  Sr
+                            2  Material
+                            3  Description
+                            4  Remarks
+                            5  HSN
+                            6  Pcs
+                            7  Carat
+                            8  Rate
+                            9  Disc %
+                            10 Amount
+                            11 Tax %
+                            12 Tax Amt.
+                            13 Total
+                        -->
+
+                        <colgroup>
+
+                            <col class="invoice-col-sr">
+
+                            <col class="invoice-col-material">
+
+                            <col class="invoice-col-description">
+
+                            <col class="invoice-col-remarks">
+
+                            <col class="invoice-col-hsn">
+
+                            <col class="invoice-col-pcs">
+
+                            <col class="invoice-col-carat">
+
+                            <col class="invoice-col-rate">
+
+                            <col class="invoice-col-discount">
+
+                            <col class="invoice-col-amount">
+
+                            <col class="invoice-col-tax">
+
+                            <col class="invoice-col-tax-amount">
+
+                            <col class="invoice-col-total">
+
+                        </colgroup>
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Sr.
+                                </th>
+
+                                <th scope="col">
+                                    Material
+                                </th>
+
+                                <th scope="col">
+                                    Description
+                                </th>
+
+                                <th scope="col">
+                                    Remarks
+                                </th>
+
+                                <th scope="col">
+                                    HSN
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Pcs
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Carat
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Rate
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Disc %
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Amount
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Tax %
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Tax Amt.
+                                </th>
+
+                                <th
+                                    scope="col"
+                                    class="invoice-number"
+                                >
+                                    Total
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="invoiceItemsBody">
+
+                            <!--
+                                invoice.js will create rows here.
+                            -->
+
+                        </tbody>
+
+
+                        <tfoot>
+
+                            <tr>
+
+                                <th
+                                    colspan="5"
+                                    class="invoice-table-total-label"
+                                    scope="row"
+                                >
+                                    TOTAL
+                                </th>
+
+
+                                <td
+                                    class="invoice-number"
+                                    id="invoiceTotalPieces"
+                                >
+                                    0
+                                </td>
+
+
+                                <td
+                                    class="invoice-number"
+                                    id="invoiceTotalCarat"
+                                >
+                                    0.00
+                                </td>
+
+
+                                <td></td>
+
+                                <td></td>
+
+
+                                <td
+                                    class="invoice-number"
+                                    id="invoiceSubtotalTable"
+                                >
+                                    ₹0.00
+                                </td>
+
+
+                                <td></td>
+
+
+                                <td
+                                    class="invoice-number"
+                                    id="invoiceTaxTable"
+                                >
+                                    ₹0.00
+                                </td>
+
+
+                                <td
+                                    class="invoice-number"
+                                    id="invoiceLineTotalTable"
+                                >
+                                    ₹0.00
+                                </td>
+
+                            </tr>
+
+                        </tfoot>
+
+
+                    </table>
+
+
+                </section>
+
+
+                <!-- =========================================
+                     AMOUNT IN WORDS + TOTALS
+                     ========================================= -->
+
+                <section class="invoice-financial-section">
+
+
+                    <!-- LEFT -->
+
+                    <div class="invoice-financial-information">
+
+
+                        <!-- AMOUNT IN WORDS -->
+
+                        <div class="invoice-amount-words">
+
+                            <span class="invoice-eyebrow">
+                                Amount In Words
+                            </span>
+
+                            <p id="invoiceAmountWords">
+                                —
+                            </p>
+
+                        </div>
+
+
+                        <!-- NOTES -->
+
+                        <div
+                            class="invoice-notes"
+                            id="invoiceNotesSection"
+                            hidden
+                        >
+
+                            <span class="invoice-eyebrow">
+                                Notes
+                            </span>
+
+                            <p id="invoiceNotes"></p>
+
+                        </div>
+
+
+                        <!-- DECLARATION -->
+
+                        <div
+                            class="invoice-declaration"
+                            id="invoiceDeclarationSection"
+                            hidden
+                        >
+
+                            <span class="invoice-eyebrow">
+                                Declaration
+                            </span>
+
+                            <p id="invoiceDeclaration"></p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- RIGHT TOTALS -->
+
+                    <div class="invoice-totals">
+
+
+                        <div class="invoice-total-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="invoiceSubtotal">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            class="invoice-total-row"
+                            id="invoiceDiscountRow"
+                            hidden
+                        >
+
+                            <span>
+                                Discount
+                            </span>
+
+                            <strong id="invoiceDiscount">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div class="invoice-total-row">
+
+                            <span>
+                                Tax
+                            </span>
+
+                            <strong id="invoiceTax">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            class="invoice-total-row"
+                            id="invoiceChargesRow"
+                            hidden
+                        >
+
+                            <span>
+                                Other Charges
+                            </span>
+
+                            <strong id="invoiceCharges">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <div
+                            class="invoice-total-row"
+                            id="invoiceRoundOffRow"
+                            hidden
+                        >
+
+                            <span>
+                                Round Off
+                            </span>
+
+                            <strong id="invoiceRoundOff">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <!-- FINAL AMOUNT -->
+
+                        <div
+                            class="
+                                invoice-total-row
+                                invoice-final-amount
+                            "
+                        >
+
+                            <span>
+                                Final Amount
+                            </span>
+
+                            <strong id="invoiceGrandTotal">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <!-- RECEIVED -->
+
+                        <div
+                            class="
+                                invoice-total-row
+                                invoice-received
+                            "
+                        >
+
+                            <span>
+                                Received
+                            </span>
+
+                            <strong id="invoiceReceived">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                        <!-- BALANCE -->
+
+                        <div
+                            class="
+                                invoice-total-row
+                                invoice-balance
+                            "
+                        >
+
+                            <span>
+                                Balance
+                            </span>
+
+                            <strong id="invoiceBalance">
+                                ₹0.00
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =========================================
+                     SIGNATURES
+                     ========================================= -->
+
+                <footer class="invoice-signatures">
+
+
+                    <!-- CUSTOMER SIGNATURE -->
+
+                    <div class="invoice-signature">
+
+                        <div
+                            class="invoice-signature-space"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <strong
+                            class="invoice-signature-name"
+                            id="invoiceCustomerSignatureName"
+                        >
+                            Customer
+                        </strong>
+
+
+                        <span class="invoice-signature-label">
+                            Customer Signature
+                        </span>
+
+                    </div>
+
+
+                    <!-- BUSINESS SIGNATURE -->
+
+                    <div
+                        class="
+                            invoice-signature
+                            invoice-signature-business
+                        "
+                    >
+
+                        <div
+                            class="invoice-signature-space"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <strong
+                            class="invoice-signature-name"
+                            id="invoiceBusinessSignature"
+                        >
+                            OM MARUTI DIAMOND
+                        </strong>
+
+
+                        <span class="invoice-signature-label">
+                            Authorized Signature
+                        </span>
+
+                    </div>
+
+
+                </footer>
+
+
+            </article>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         We will build this file after invoice.css.
+         ===================================================== -->
+
+    <script
+        type="module"
+        src="/js/pages/invoice.js"
+    ></script>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    ></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2245 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   SUPPLIERS PAGE
+   FINAL UPDATED SUPPLIER-SPECIFIC STYLES
+
+   File:
+   css/suppliers.css
+
+   CSS load order:
+   variables.css
+   global.css
+   layout.css
+   components.css
+   suppliers.css
+   responsive.css
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.page-content {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    margin-bottom: var(--space-6);
+}
+
+
+.page-heading > div {
+    min-width: 0;
+}
+
+
+.page-heading .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+
+.page-heading h1 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+
+.page-heading p {
+    max-width: 700px;
+
+    margin:
+        var(--space-3)
+        0
+        0;
+
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   SUMMARY GRID
+   ============================================================ */
+
+.dashboard-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-4);
+
+    width: 100%;
+
+    margin-bottom: var(--space-6);
+}
+
+
+/* ============================================================
+   SUMMARY CARDS
+   ============================================================ */
+
+.dashboard-summary-grid .summary-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 154px;
+
+    padding: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+}
+
+
+.dashboard-summary-grid .summary-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+   SUMMARY LABEL
+   ============================================================ */
+
+.dashboard-summary-grid .summary-label {
+    display: block;
+
+    margin-bottom: auto;
+    padding-bottom: var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.7rem;
+    font-weight: 750;
+    line-height: 1.3;
+
+    letter-spacing: 0.085em;
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   SUMMARY VALUE
+   ============================================================ */
+
+.dashboard-summary-grid .summary-value {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   SUMMARY META
+   ============================================================ */
+
+.dashboard-summary-grid .summary-meta {
+    display: block;
+
+    margin-top: var(--space-3);
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.78rem;
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PAYABLE CARD
+   Third summary card
+   ============================================================ */
+
+.dashboard-summary-grid
+.summary-card:nth-child(3) {
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+.dashboard-summary-grid
+.summary-card:nth-child(3)
+.summary-label {
+    color: var(--gray-300);
+}
+
+
+.dashboard-summary-grid
+.summary-card:nth-child(3)
+.summary-value {
+    color: var(--white);
+}
+
+
+.dashboard-summary-grid
+.summary-card:nth-child(3)
+.summary-meta {
+    color: var(--gray-400);
+}
+
+
+/* ============================================================
+   OVERDUE CARD
+   ============================================================ */
+
+.dashboard-summary-grid
+.summary-card:nth-child(4) {
+    border-color: var(--gray-400);
+}
+
+
+/* ============================================================
+   DIRECTORY PANEL
+   ============================================================ */
+
+.page-content > .panel {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ============================================================
+   PANEL HEADER
+   ============================================================ */
+
+.page-content > .panel > .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-5)
+        var(--space-5)
+        var(--space-4);
+}
+
+
+.page-content > .panel > .panel-header .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+
+.page-content > .panel > .panel-header h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+
+/* ============================================================
+   SUPPLIER TOOLBAR
+   ============================================================ */
+
+.supplier-toolbar {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(180px, 220px);
+
+    align-items: end;
+
+    gap: var(--space-3);
+
+    padding:
+        0
+        var(--space-5)
+        var(--space-5);
+}
+
+
+.supplier-toolbar .form-field {
+    min-width: 0;
+
+    margin: 0;
+}
+
+
+.supplier-search-field {
+    width: 100%;
+}
+
+
+.supplier-toolbar input,
+.supplier-toolbar select {
+    width: 100%;
+
+    min-height: var(--control-height);
+
+    margin: 0;
+}
+
+
+/* ============================================================
+   SUPPLIER SEARCH
+   ============================================================ */
+
+#supplierSearchInput {
+    width: 100%;
+
+    padding-inline: var(--space-4);
+
+    background: var(--surface-primary);
+}
+
+
+/* ============================================================
+   SUPPLIER STATUS FILTER
+   ============================================================ */
+
+#supplierStatusFilter {
+    width: 100%;
+
+    cursor: pointer;
+
+    background-color: var(--surface-primary);
+}
+
+
+/* ============================================================
+   DESKTOP TABLE
+   ============================================================ */
+
+.page-content .table-wrapper {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    overscroll-behavior-inline: contain;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.page-content .table-wrapper table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    background: var(--surface-primary);
+}
+
+
+/* ============================================================
+   TABLE HEADER
+   ============================================================ */
+
+.page-content .table-wrapper thead {
+    background: var(--surface-secondary);
+}
+
+
+.page-content .table-wrapper th {
+    height: 48px;
+
+    padding:
+        0
+        var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.68rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.075em;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+/* ============================================================
+   TABLE BODY
+   ============================================================ */
+
+.page-content .table-wrapper td {
+    min-height: 64px;
+
+    padding:
+        var(--space-4)
+        var(--space-4);
+
+    color: var(--text-primary);
+
+    font-size: 0.84rem;
+    line-height: 1.45;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+.page-content .table-wrapper tbody tr {
+    background: var(--surface-primary);
+
+    transition:
+        background-color
+        var(--motion-fast);
+}
+
+
+.page-content .table-wrapper tbody tr:hover {
+    background: var(--surface-secondary);
+}
+
+
+.page-content .table-wrapper tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================================================
+   SUPPLIER TABLE IDENTITY
+   ============================================================ */
+
+.supplier-cell {
+    min-width: 210px;
+}
+
+
+.supplier-identity {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-width: 0;
+}
+
+
+.supplier-avatar {
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--white);
+
+    background: var(--gray-950);
+
+    border-radius: 50%;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: 0.02em;
+}
+
+
+.supplier-identity-content {
+    min-width: 0;
+}
+
+
+.supplier-name {
+    display: block;
+
+    max-width: 220px;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.86rem;
+    font-weight: 700;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supplier-secondary {
+    display: block;
+
+    max-width: 220px;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.72rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MONEY
+   ============================================================ */
+
+.supplier-money {
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+
+.supplier-payable {
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.supplier-status {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 28px;
+
+    padding:
+        5px
+        10px;
+
+    color: var(--text-secondary);
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.68rem;
+    font-weight: 750;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+.supplier-status-active {
+    color: var(--gray-950);
+
+    border-color: var(--gray-400);
+}
+
+
+.supplier-status-inactive {
+    color: var(--text-tertiary);
+
+    background: var(--surface-secondary);
+}
+
+
+.supplier-status-overdue {
+    color: var(--white);
+
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+/* ============================================================
+   ACTION BUTTON
+   ============================================================ */
+
+.supplier-action-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding:
+        6px
+        12px;
+
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast),
+        transform var(--motion-fast);
+}
+
+
+.supplier-action-link:hover {
+    color: var(--white);
+
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   MOBILE SUPPLIER LIST
+
+   IMPORTANT:
+   The JavaScript renders both:
+   - desktop table
+   - mobile cards
+
+   Therefore mobile cards MUST be hidden on desktop.
+   ============================================================ */
+
+.supplier-mobile-list {
+    display: none;
+}
+
+
+/* ============================================================
+   MOBILE SUPPLIER CARD BASE
+
+   These styles exist outside the media query so the generated
+   elements have predictable styling, but the container remains
+   hidden on desktop.
+   ============================================================ */
+
+.supplier-mobile-card {
+    width: 100%;
+
+    min-width: 0;
+
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    text-decoration: none;
+}
+
+
+.supplier-mobile-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: var(--space-3);
+}
+
+
+.supplier-mobile-identity {
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-width: 0;
+}
+
+
+.supplier-mobile-name {
+    min-width: 0;
+}
+
+
+.supplier-mobile-name strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.9rem;
+    font-weight: 750;
+    line-height: 1.3;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supplier-mobile-name span {
+    display: block;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.72rem;
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supplier-mobile-card-body {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: var(--space-4);
+
+    margin-top: var(--space-4);
+
+    padding-top: var(--space-4);
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+.supplier-mobile-value {
+    min-width: 0;
+}
+
+
+.supplier-mobile-value span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.62rem;
+    font-weight: 750;
+    line-height: 1.3;
+
+    letter-spacing: 0.065em;
+
+    text-transform: uppercase;
+}
+
+
+.supplier-mobile-value strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.35;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+.supplier-mobile-value-payable strong {
+    font-weight: 800;
+}
+
+
+.supplier-mobile-card-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-3);
+
+    margin-top: var(--space-4);
+
+    padding-top: var(--space-4);
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+.supplier-mobile-gstin {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.7rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supplier-mobile-action {
+    flex: 0 0 auto;
+
+    color: var(--text-primary);
+
+    font-size: 0.72rem;
+    font-weight: 750;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+#suppliersEmptyState {
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+}
+
+
+#suppliersEmptyState strong {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.95rem;
+}
+
+
+#suppliersEmptyState span {
+    display: block;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   SUPPLIER LOADING STATE
+   ============================================================ */
+
+.supplier-loading-state {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    min-height: 120px;
+
+    padding:
+        var(--space-7)
+        var(--space-5);
+
+    color: var(--text-tertiary);
+
+    font-size: 0.78rem;
+}
+
+
+.supplier-loading-state[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   ADD SUPPLIER MODAL
+   ============================================================ */
+
+#addSupplierModal {
+    padding:
+        max(
+            var(--space-4),
+            env(safe-area-inset-top)
+        )
+        var(--space-4)
+        max(
+            var(--space-4),
+            env(safe-area-inset-bottom)
+        );
+}
+
+
+#addSupplierModal[hidden] {
+    display: none !important;
+}
+
+
+#addSupplierModal .modal {
+    width:
+        min(
+            100%,
+            620px
+        );
+
+    max-height:
+        min(
+            88vh,
+            800px
+        );
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* ============================================================
+   ADD SUPPLIER FORM
+   ============================================================ */
+
+#addSupplierForm {
+    display: grid;
+
+    gap: var(--space-4);
+
+    padding: var(--space-5);
+}
+
+
+#addSupplierForm .form-field {
+    margin: 0;
+}
+
+
+#addSupplierForm label {
+    display: inline-block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+
+#addSupplierForm input,
+#addSupplierForm textarea {
+    width: 100%;
+}
+
+
+#addSupplierForm textarea {
+    min-height: 105px;
+
+    resize: vertical;
+}
+
+
+#supplierGstin,
+#supplierPan {
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   FORM ERRORS
+
+   suppliers.html uses:
+   class="form-error"
+   ============================================================ */
+
+.form-error {
+    display: block;
+
+    margin-top: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-size: 0.7rem;
+    line-height: 1.4;
+}
+
+
+.form-error:empty {
+    display: none;
+}
+
+
+.form-error[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   FORM MESSAGE
+
+   suppliers.html uses:
+   id="addSupplierFormMessage"
+   ============================================================ */
+
+#addSupplierFormMessage {
+    padding: var(--space-3);
+
+    color: var(--text-primary);
+
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+
+#addSupplierFormMessage[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   MODAL ACTIONS
+   ============================================================ */
+
+#addSupplierModal .modal-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    padding-top: var(--space-2);
+}
+
+
+#addSupplierModal .modal-actions .button {
+    min-width: 120px;
+}
+
+
+/* ============================================================
+   SAVE BUTTON
+   ============================================================ */
+
+#saveSupplierButton {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--space-2);
+}
+
+
+/* ============================================================
+   SAVE SPINNER
+   ============================================================ */
+
+#saveSupplierSpinner {
+    flex: 0 0 auto;
+
+    width: 15px;
+    height: 15px;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation:
+        supplier-spin
+        650ms
+        linear
+        infinite;
+}
+
+
+#saveSupplierSpinner[hidden] {
+    display: none !important;
+}
+
+
+@keyframes supplier-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   NO SEARCH RESULTS
+   ============================================================ */
+
+.supplier-no-results {
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+}
+
+
+.supplier-no-results strong {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+}
+
+
+.supplier-no-results span {
+    color: var(--text-tertiary);
+
+    font-size: 0.8rem;
+}
+
+
+/* ============================================================
+   LOADING TABLE ROW
+   ============================================================ */
+
+.supplier-loading-row td {
+    padding: var(--space-7) !important;
+
+    text-align: center;
+}
+
+
+.supplier-loading {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: var(--space-2);
+
+    color: var(--text-tertiary);
+
+    font-size: 0.78rem;
+}
+
+
+.supplier-loading::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    border:
+        2px
+        solid
+        var(--border-primary);
+
+    border-top-color: var(--gray-950);
+
+    border-radius: 50%;
+
+    animation:
+        supplier-spin
+        650ms
+        linear
+        infinite;
+}
+
+
+/* ============================================================
+   CUSTOM DATE PANEL
+   Small supplier-page alignment protection.
+   Main component styling remains shared.
+   ============================================================ */
+
+#customDatePanel {
+    width: 100%;
+}
+
+
+#customDatePanel[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .supplier-toolbar {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+
+    /* ========================================================
+       PAGE HEADING
+       ======================================================== */
+
+    .page-heading {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        margin-bottom: var(--space-5);
+    }
+
+
+    .page-heading h1 {
+        font-size: 2rem;
+    }
+
+
+    .page-heading p {
+        font-size: 0.82rem;
+    }
+
+
+    /* ========================================================
+       SUMMARY
+       Two cards per row
+       ======================================================== */
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-3);
+
+        margin-bottom: var(--space-5);
+    }
+
+
+    .dashboard-summary-grid .summary-card {
+        min-height: 132px;
+
+        padding: var(--space-4);
+    }
+
+
+    .dashboard-summary-grid .summary-label {
+        padding-bottom: var(--space-3);
+
+        font-size: 0.62rem;
+    }
+
+
+    .dashboard-summary-grid .summary-value {
+        font-size:
+            clamp(
+                1.25rem,
+                6.5vw,
+                1.7rem
+            );
+    }
+
+
+    .dashboard-summary-grid .summary-meta {
+        margin-top: var(--space-2);
+
+        font-size: 0.68rem;
+    }
+
+
+    /* ========================================================
+       PANEL HEADER
+       ======================================================== */
+
+    .page-content > .panel > .panel-header {
+        padding:
+            var(--space-4)
+            var(--space-4)
+            var(--space-3);
+    }
+
+
+    .page-content > .panel > .panel-header h2 {
+        font-size: 1.1rem;
+    }
+
+
+    /* ========================================================
+       TOOLBAR
+       ======================================================== */
+
+    .supplier-toolbar {
+        grid-template-columns:
+            minmax(0, 1fr);
+
+        gap: var(--space-3);
+
+        padding:
+            0
+            var(--space-4)
+            var(--space-4);
+    }
+
+
+    /* Prevent iPhone input zoom */
+
+    #supplierSearchInput,
+    #supplierStatusFilter,
+    #addSupplierForm input,
+    #addSupplierForm textarea {
+        font-size: 16px;
+    }
+
+
+    /* ========================================================
+       IMPORTANT:
+       HIDE DESKTOP TABLE ON MOBILE
+       ======================================================== */
+
+    .page-content .table-wrapper {
+        display: none;
+    }
+
+
+/* ============================================================
+   MOBILE SUPPLIER LIST
+   Exact match for suppliers.js generated markup
+   ============================================================ */
+
+.supplier-mobile-list {
+    display: none;
+}
+
+
+/* ============================================================
+   MOBILE CARD
+   ============================================================ */
+
+.supplier-mobile-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 16px;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    color: var(--text-primary);
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast),
+        transform var(--motion-fast);
+}
+
+
+.supplier-mobile-card:hover {
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.supplier-mobile-card:focus-visible {
+    outline: 2px solid var(--gray-950);
+    outline-offset: 2px;
+}
+
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+
+.supplier-mobile-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* ============================================================
+   SUPPLIER IDENTITY
+   ============================================================ */
+
+.supplier-mobile-identity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+}
+
+
+.supplier-mobile-card .supplier-avatar {
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: 50%;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+
+/* ============================================================
+   NAME + MOBILE
+
+   JS generates:
+   .supplier-mobile-title
+       strong = supplier name
+       span   = mobile
+   ============================================================ */
+
+.supplier-mobile-title {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 4px;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+}
+
+
+.supplier-mobile-title > strong {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.88rem;
+    font-weight: 750;
+    line-height: 1.25;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.supplier-mobile-title > span {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.3;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   STATUS BADGE
+   JS generates .supplier-status-badge
+   ============================================================ */
+
+.supplier-status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-height: 26px;
+
+    padding: 5px 9px;
+
+    color: var(--text-secondary);
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.64rem;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+.supplier-status-badge[data-status="active"] {
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border-color: var(--gray-300);
+}
+
+
+.supplier-status-badge[data-status="inactive"] {
+    color: var(--text-tertiary);
+
+    background: var(--surface-secondary);
+}
+
+
+.supplier-status-badge[data-status="payable"] {
+    color: var(--white);
+
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+.supplier-status-badge[data-status="overdue"] {
+    color: var(--white);
+
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+/* ============================================================
+   FINANCIAL GRID
+
+   JS generates:
+   .supplier-mobile-financials
+       .supplier-mobile-meta-item
+           .supplier-mobile-meta-label
+           .supplier-mobile-meta-value
+   ============================================================ */
+
+.supplier-mobile-financials {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px 14px;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding-top: 16px;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+/* ============================================================
+   META ITEM
+   ============================================================ */
+
+.supplier-mobile-meta-item {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 5px;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+.supplier-mobile-meta-label {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.61rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+.supplier-mobile-meta-value {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Payable emphasis */
+
+.supplier-mobile-payable
+.supplier-mobile-meta-value {
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   CARD FOOTER
+   ============================================================ */
+
+.supplier-mobile-card-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding-top: 14px;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+
+/* GSTIN is first span created by JS */
+
+.supplier-mobile-card-footer > span:first-child {
+    display: block;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.68rem;
+    font-weight: 500;
+    line-height: 1.3;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   VIEW ACCOUNT
+   ============================================================ */
+
+.supplier-mobile-view {
+    display: inline-flex;
+
+    align-items: center;
+
+    flex: 0 0 auto;
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 0.7rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    /* Hide desktop supplier table */
+
+    .page-content .table-wrapper {
+        display: none !important;
+    }
+
+
+    /* Show actual JS mobile list */
+
+    .supplier-mobile-list {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr);
+
+        gap: 12px;
+
+        width: 100%;
+
+        padding:
+            0
+            16px
+            16px;
+    }
+
+
+    .supplier-mobile-list:empty {
+        display: none;
+    }
+
+
+    /* Card */
+
+    .supplier-mobile-card {
+        display: block;
+
+        width: 100%;
+
+        padding: 16px;
+
+        border-radius: 14px;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+
+    .supplier-mobile-card:active {
+        transform: scale(0.995);
+    }
+
+
+    /* Header */
+
+    .supplier-mobile-card-header {
+        gap: 10px;
+    }
+
+
+    .supplier-mobile-identity {
+        gap: 11px;
+    }
+
+
+    /* Avatar */
+
+    .supplier-mobile-card
+    .supplier-avatar {
+        flex-basis: 38px;
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    /* Name */
+
+    .supplier-mobile-title {
+        gap: 3px;
+    }
+
+
+    .supplier-mobile-title > strong {
+        font-size: 0.84rem;
+    }
+
+
+    .supplier-mobile-title > span {
+        font-size: 0.68rem;
+    }
+
+
+    /* Status */
+
+    .supplier-mobile-card
+    .supplier-status-badge {
+        min-height: 24px;
+
+        padding:
+            4px
+            8px;
+
+        font-size: 0.61rem;
+    }
+
+
+    /* Financial information */
+
+    .supplier-mobile-financials {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap:
+            14px
+            12px;
+
+        margin-top: 14px;
+
+        padding-top: 14px;
+    }
+
+
+    .supplier-mobile-meta-item {
+        gap: 4px;
+    }
+
+
+    .supplier-mobile-meta-label {
+        font-size: 0.58rem;
+    }
+
+
+    .supplier-mobile-meta-value {
+        font-size: 0.76rem;
+    }
+
+
+    /* Footer */
+
+    .supplier-mobile-card-footer {
+        gap: 10px;
+
+        margin-top: 14px;
+
+        padding-top: 13px;
+    }
+
+
+    .supplier-mobile-card-footer
+    > span:first-child {
+        font-size: 0.65rem;
+    }
+
+
+    .supplier-mobile-view {
+        font-size: 0.67rem;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL PHONES
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .supplier-mobile-card {
+        padding: 14px;
+    }
+
+
+    .supplier-mobile-financials {
+        gap:
+            12px
+            10px;
+    }
+
+
+    .supplier-mobile-meta-value {
+        font-size: 0.72rem;
+    }
+
+
+    .supplier-mobile-card-footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .supplier-mobile-view {
+        align-self: flex-end;
+    }
+
+}
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+
+    .supplier-mobile-card-body {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .supplier-action-link {
+        min-height: 44px;
+    }
+
+
+    #supplierStatusFilter {
+        min-height: 44px;
+    }
+
+
+    .supplier-mobile-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .dashboard-summary-grid .summary-card,
+    .supplier-action-link,
+    .supplier-mobile-card {
+        transition: none;
+    }
+
+
+    #saveSupplierSpinner,
+    .supplier-loading::before {
+        animation-duration: 1.5s;
+    }
+
+}
+
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+
+    .supplier-toolbar,
+    #addSupplierButton,
+    #mobileAddSupplierButton,
+    #addSupplierModal,
+    .supplier-mobile-list {
+        display: none !important;
+    }
+
+
+    .dashboard-summary-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+
+    .page-content .table-wrapper {
+        display: block !important;
+
+        overflow: visible;
+    }
+
+
+    .page-content .table-wrapper table {
+        min-width: 0;
+    }
+
+
+    .supplier-action-link {
+        display: none;
+    }
+
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

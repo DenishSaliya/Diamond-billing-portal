@@ -1,0 +1,2068 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   SUPPLIER ACCOUNT PAGE
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.supplier-account-page {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* ============================================================
+   BACK LINK
+   ============================================================ */
+
+.supplier-back-row {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: var(--space-4);
+}
+
+.supplier-back-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    min-height: 38px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color var(--motion-fast),
+        transform var(--motion-fast);
+}
+
+.supplier-back-link:hover {
+    color: var(--text-primary);
+
+    transform: translateX(-2px);
+}
+
+
+/* ============================================================
+   SUPPLIER PROFILE HEADER
+   ============================================================ */
+
+.supplier-profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-5);
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+}
+
+
+/* ============================================================
+   SUPPLIER PROFILE MAIN
+   ============================================================ */
+
+.supplier-profile-main {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-4);
+
+    min-width: 0;
+}
+
+.supplier-profile-avatar {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 68px;
+
+    width: 68px;
+    height: 68px;
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: 0.02em;
+
+    user-select: none;
+}
+
+.supplier-profile-title {
+    min-width: 0;
+}
+
+.supplier-profile-title .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+.supplier-profile-title h1 {
+    max-width: 700px;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 800;
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.supplier-profile-contact {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: var(--space-2);
+
+    margin-top: var(--space-3);
+
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+.supplier-contact-separator {
+    color: var(--text-tertiary);
+}
+
+
+/* ============================================================
+   PROFILE ACTIONS
+   ============================================================ */
+
+.supplier-profile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    flex: 0 0 auto;
+}
+
+
+/* ============================================================
+   SUPPLIER DETAILS STRIP
+   ============================================================ */
+
+.supplier-details-strip {
+    display: grid;
+
+    grid-template-columns:
+        minmax(150px, 0.8fr)
+        minmax(120px, 0.6fr)
+        minmax(260px, 2fr);
+
+    gap: 0;
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.supplier-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: var(--space-2);
+
+    min-width: 0;
+    min-height: 88px;
+
+    padding:
+        var(--space-4)
+        var(--space-5);
+
+    border-right:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.supplier-detail:last-child {
+    border-right: 0;
+}
+
+.supplier-detail-label {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.08em;
+}
+
+.supplier-detail strong {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+
+    text-overflow: ellipsis;
+}
+
+.supplier-address-detail strong {
+    white-space: normal;
+}
+
+
+/* ============================================================
+   STATUS
+   ============================================================ */
+
+#supplierStatus {
+    width: fit-content;
+}
+
+
+/* ============================================================
+   FINANCIAL SUMMARY
+   ============================================================ */
+
+.supplier-account-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: var(--space-4);
+
+    width: 100%;
+
+    margin-bottom: var(--space-5);
+}
+
+.supplier-account-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 150px;
+
+    padding: var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+}
+
+.supplier-account-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+.supplier-account-label {
+    display: block;
+
+    margin-bottom: auto;
+    padding-bottom: var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.68rem;
+    font-weight: 750;
+    line-height: 1.25;
+
+    letter-spacing: 0.085em;
+}
+
+.supplier-account-value {
+    display: block;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+    font-weight: 800;
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.supplier-account-meta {
+    display: block;
+
+    margin-top: var(--space-3);
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.76rem;
+    line-height: 1.4;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PAYABLE EMPHASIS
+   ============================================================ */
+
+.supplier-account-card-primary {
+    background: var(--gray-950);
+    border-color: var(--gray-950);
+}
+
+.supplier-account-card-primary:hover {
+    border-color: var(--gray-950);
+}
+
+.supplier-account-card-primary
+.supplier-account-label {
+    color: var(--gray-300);
+}
+
+.supplier-account-card-primary
+.supplier-account-value {
+    color: var(--white);
+}
+
+.supplier-account-card-primary
+.supplier-account-meta {
+    color: var(--gray-400);
+}
+
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+
+.supplier-quick-actions {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: var(--space-3);
+
+    margin-bottom: var(--space-5);
+}
+
+.supplier-quick-action {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-3);
+
+    min-width: 0;
+    min-height: 74px;
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    color: var(--text-primary);
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    cursor: pointer;
+
+    text-align: left;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+}
+
+.supplier-quick-action:hover {
+    transform: translateY(-2px);
+
+    background: var(--surface-secondary);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+.supplier-quick-action-icon {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.supplier-quick-action > span:last-child {
+    min-width: 0;
+}
+
+.supplier-quick-action strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    font-size: 0.8rem;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.supplier-quick-action small {
+    display: block;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.7rem;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   ACCOUNT SECTION
+   ============================================================ */
+
+.supplier-account-section {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+/* ============================================================
+   TABS
+   ============================================================ */
+
+.supplier-tabs {
+    display: flex;
+    align-items: center;
+
+    gap: var(--space-1);
+
+    min-width: 0;
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    overflow-x: auto;
+
+    background: var(--surface-secondary);
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    scrollbar-width: none;
+}
+
+.supplier-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.supplier-tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-height: 38px;
+
+    padding:
+        8px
+        14px;
+
+    color: var(--text-secondary);
+    background: transparent;
+
+    border: 0;
+    border-radius: var(--radius-md);
+
+    cursor: pointer;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast),
+        background-color var(--motion-fast);
+}
+
+.supplier-tab:hover {
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+}
+
+.supplier-tab.active,
+.supplier-tab[aria-selected="true"] {
+    color: var(--white);
+    background: var(--gray-950);
+}
+
+
+/* ============================================================
+   TAB PANELS
+   ============================================================ */
+
+.supplier-tab-panel {
+    min-width: 0;
+}
+
+.supplier-tab-panel[hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   SECTION HEADER
+   ============================================================ */
+
+.supplier-section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-5)
+        var(--space-5)
+        var(--space-4);
+}
+
+.supplier-section-header .eyebrow {
+    display: block;
+
+    margin-bottom: var(--space-2);
+}
+
+.supplier-section-header h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1.25rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+}
+
+.supplier-section-count {
+    flex: 0 0 auto;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.74rem;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE WRAPPER
+   ============================================================ */
+
+.supplier-account-section .table-wrapper {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    overscroll-behavior-inline: contain;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================================================
+   ACCOUNT TABLE
+   ============================================================ */
+
+.supplier-account-table {
+    width: 100%;
+    min-width: 1000px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    background: var(--surface-primary);
+}
+
+.supplier-account-table thead {
+    background: var(--surface-secondary);
+}
+
+.supplier-account-table th {
+    height: 48px;
+
+    padding:
+        0
+        var(--space-4);
+
+    color: var(--text-secondary);
+
+    font-size: 0.66rem;
+    font-weight: 750;
+    line-height: 1.2;
+
+    letter-spacing: 0.075em;
+
+    text-align: left;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.supplier-account-table td {
+    min-height: 62px;
+
+    padding:
+        var(--space-4)
+        var(--space-4);
+
+    color: var(--text-primary);
+
+    font-size: 0.78rem;
+    line-height: 1.45;
+
+    vertical-align: middle;
+
+    border: 0;
+
+    border-bottom:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.supplier-account-table tbody tr {
+    transition:
+        background-color
+        var(--motion-fast);
+}
+
+.supplier-account-table tbody tr:hover {
+    background: var(--surface-secondary);
+}
+
+.supplier-account-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================================================
+   FINANCIAL TABLE CELLS
+   ============================================================ */
+
+.supplier-money-cell {
+    font-weight: 650;
+
+    font-variant-numeric: tabular-nums;
+
+    white-space: nowrap;
+}
+
+.supplier-balance-cell {
+    font-weight: 800;
+}
+
+.supplier-reference-cell {
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE ACTION
+   ============================================================ */
+
+.supplier-table-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+
+    padding:
+        6px
+        12px;
+
+    color: var(--text-primary);
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast);
+}
+
+.supplier-table-action:hover {
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+
+/* ============================================================
+   INVOICE STATUS
+   ============================================================ */
+
+.supplier-invoice-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 27px;
+
+    padding:
+        5px
+        9px;
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.64rem;
+    font-weight: 750;
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.supplier-invoice-status-paid {
+    color: var(--text-primary);
+
+    background: var(--surface-secondary);
+}
+
+.supplier-invoice-status-pending,
+.supplier-invoice-status-partially-paid {
+    color: var(--text-primary);
+
+    background: var(--surface-primary);
+
+    border-color: var(--gray-400);
+}
+
+.supplier-invoice-status-overdue {
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-color: var(--gray-950);
+}
+
+.supplier-invoice-status-draft {
+    color: var(--text-tertiary);
+
+    background: var(--surface-secondary);
+}
+
+
+/* ============================================================
+   EMPTY STATES
+   ============================================================ */
+
+.supplier-account-section .empty-state {
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.supplier-account-section .empty-state strong {
+    display: block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.9rem;
+}
+
+.supplier-account-section .empty-state span {
+    display: block;
+
+    max-width: 520px;
+
+    margin-inline: auto;
+
+    color: var(--text-tertiary);
+
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   STATEMENT SUMMARY
+   ============================================================ */
+
+.supplier-statement-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    margin:
+        0
+        var(--space-5)
+        var(--space-5);
+
+    overflow: hidden;
+
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    border-radius: var(--radius-lg);
+}
+
+.supplier-statement-summary > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+    min-width: 0;
+
+    padding: var(--space-4);
+
+    border-right:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+}
+
+.supplier-statement-summary > div:last-child {
+    border-right: 0;
+}
+
+.supplier-statement-summary span {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+.supplier-statement-summary strong {
+    overflow: hidden;
+
+    color: var(--text-primary);
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   SUPPLIER NOT FOUND
+   ============================================================ */
+
+.supplier-error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 620px;
+
+    margin:
+        var(--space-8)
+        auto;
+
+    padding:
+        var(--space-8)
+        var(--space-5);
+
+    text-align: center;
+
+    background: var(--surface-primary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow-sm);
+}
+
+.supplier-error-state[hidden] {
+    display: none !important;
+}
+
+.supplier-error-icon {
+    display: grid;
+    place-items: center;
+
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: var(--space-4);
+
+    color: var(--white);
+    background: var(--gray-950);
+
+    border-radius: 50%;
+
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.supplier-error-state h2 {
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.supplier-error-state p {
+    max-width: 440px;
+
+    margin:
+        var(--space-3)
+        0
+        var(--space-5);
+
+    color: var(--text-secondary);
+
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   RECORD RECEIPT MODAL
+   ============================================================ */
+
+#recordReceiptModal {
+    padding:
+        max(
+            var(--space-4),
+            env(safe-area-inset-top)
+        )
+        var(--space-4)
+        max(
+            var(--space-4),
+            env(safe-area-inset-bottom)
+        );
+}
+
+.supplier-receipt-modal {
+    width: min(100%, 580px);
+
+    max-height: min(90vh, 850px);
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+}
+
+
+/* ============================================================
+   RECEIPT FORM
+   ============================================================ */
+
+#recordReceiptForm {
+    display: grid;
+
+    gap: var(--space-4);
+
+    padding: var(--space-5);
+}
+
+#recordReceiptForm .form-field {
+    margin: 0;
+}
+
+#recordReceiptForm label {
+    display: inline-block;
+
+    margin-bottom: var(--space-2);
+
+    color: var(--text-primary);
+
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+#recordReceiptForm input,
+#recordReceiptForm select,
+#recordReceiptForm textarea {
+    width: 100%;
+}
+
+#recordReceiptForm textarea {
+    min-height: 92px;
+
+    resize: vertical;
+}
+
+
+/* ============================================================
+   RECEIPT SUPPLIER SUMMARY
+   ============================================================ */
+
+.receipt-supplier-summary {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--space-1);
+
+    padding: var(--space-4);
+
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-secondary);
+
+    border-radius: var(--radius-md);
+}
+
+.receipt-supplier-summary > span {
+    color: var(--text-tertiary);
+
+    font-size: 0.66rem;
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+}
+
+.receipt-supplier-summary > strong {
+    color: var(--text-primary);
+
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.receipt-supplier-summary small {
+    margin-top: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-size: 0.72rem;
+}
+
+.receipt-supplier-summary small strong {
+    color: var(--text-primary);
+
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   RECEIPT BALANCE PREVIEW
+   ============================================================ */
+
+.receipt-balance-preview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: var(--space-4);
+
+    padding:
+        var(--space-3)
+        var(--space-4);
+
+    background: var(--gray-950);
+
+    border-radius: var(--radius-md);
+}
+
+.receipt-balance-preview span {
+    color: var(--gray-300);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.receipt-balance-preview strong {
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: 800;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ============================================================
+   RECEIPT ERRORS / MESSAGE
+   ============================================================ */
+
+#recordReceiptForm .field-error {
+    display: block;
+
+    margin-top: var(--space-1);
+
+    color: var(--text-secondary);
+
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+#recordReceiptForm .field-error:empty {
+    display: none;
+}
+
+#receiptFormMessage {
+    padding: var(--space-3);
+
+    color: var(--text-primary);
+    background: var(--surface-secondary);
+
+    border:
+        var(--border-width)
+        solid
+        var(--border-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.76rem;
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   RECEIPT MODAL ACTIONS
+   ============================================================ */
+
+#recordReceiptModal .modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: var(--space-3);
+
+    padding-top: var(--space-2);
+}
+
+#recordReceiptModal .modal-actions .button {
+    min-width: 120px;
+}
+
+
+/* ============================================================
+   RECEIPT SPINNER
+   ============================================================ */
+
+#saveReceiptButton {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: var(--space-2);
+}
+
+#saveReceiptSpinner {
+    flex: 0 0 auto;
+
+    width: 15px;
+    height: 15px;
+
+    border:
+        2px
+        solid
+        currentColor;
+
+    border-right-color: transparent;
+
+    border-radius: 50%;
+
+    animation:
+        supplier-account-spin
+        650ms
+        linear
+        infinite;
+}
+
+@keyframes supplier-account-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   LOADING ROW
+   ============================================================ */
+
+.supplier-account-loading td {
+    padding: var(--space-7) !important;
+
+    color: var(--text-tertiary);
+
+    text-align: center;
+}
+
+.supplier-account-loading-content {
+    display: inline-flex;
+    align-items: center;
+
+    gap: var(--space-2);
+
+    font-size: 0.76rem;
+}
+
+.supplier-account-loading-content::before {
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    border:
+        2px
+        solid
+        var(--border-primary);
+
+    border-top-color: var(--gray-950);
+
+    border-radius: 50%;
+
+    animation:
+        supplier-account-spin
+        650ms
+        linear
+        infinite;
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+    .supplier-account-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .supplier-profile-header {
+        align-items: flex-start;
+    }
+
+    .supplier-profile-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .supplier-profile-actions .button {
+        width: 100%;
+    }
+
+    .supplier-details-strip {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .supplier-address-detail {
+        grid-column: 1 / -1;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .supplier-detail:nth-child(2) {
+        border-right: 0;
+    }
+
+    .supplier-address-detail {
+        border-right: 0;
+    }
+
+    .supplier-quick-actions {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 640px) {
+
+    .supplier-back-row {
+        margin-bottom: var(--space-3);
+    }
+
+
+    /* Profile */
+
+    .supplier-profile-header {
+        align-items: stretch;
+        flex-direction: column;
+
+        gap: var(--space-4);
+    }
+
+    .supplier-profile-main {
+        align-items: flex-start;
+    }
+
+    .supplier-profile-avatar {
+        flex-basis: 54px;
+
+        width: 54px;
+        height: 54px;
+
+        font-size: 0.82rem;
+    }
+
+    .supplier-profile-title h1 {
+        max-width: 100%;
+
+        font-size: 1.8rem;
+
+        white-space: normal;
+    }
+
+    .supplier-profile-contact {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .supplier-contact-separator {
+        display: none;
+    }
+
+
+    /* Profile actions */
+
+    .supplier-profile-actions {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-2);
+    }
+
+
+    /* Details */
+
+    .supplier-details-strip {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .supplier-detail,
+    .supplier-detail:nth-child(2),
+    .supplier-address-detail {
+        min-height: 74px;
+
+        padding: var(--space-4);
+
+        border-right: 0;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .supplier-detail:first-child {
+        border-top: 0;
+    }
+
+
+    /* Financial cards */
+
+    .supplier-account-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: var(--space-3);
+    }
+
+    .supplier-account-card {
+        min-height: 130px;
+
+        padding: var(--space-4);
+    }
+
+    .supplier-account-label {
+        padding-bottom: var(--space-3);
+
+        font-size: 0.61rem;
+    }
+
+    .supplier-account-value {
+        font-size:
+            clamp(
+                1.25rem,
+                6.5vw,
+                1.7rem
+            );
+    }
+
+    .supplier-account-meta {
+        margin-top: var(--space-2);
+
+        font-size: 0.66rem;
+    }
+
+
+    /* Quick actions */
+
+    .supplier-quick-actions {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .supplier-quick-action {
+        min-height: 66px;
+    }
+
+
+    /* Section */
+
+    .supplier-section-header {
+        align-items: flex-start;
+
+        padding:
+            var(--space-4)
+            var(--space-4)
+            var(--space-3);
+    }
+
+
+    /* Tables */
+
+    .supplier-account-table {
+        min-width: 900px;
+    }
+
+
+    /* Statement */
+
+    .supplier-statement-summary {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        margin:
+            0
+            var(--space-4)
+            var(--space-4);
+    }
+
+    .supplier-statement-summary > div:nth-child(2) {
+        border-right: 0;
+    }
+
+    .supplier-statement-summary > div:nth-child(n + 3) {
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+
+    /* Receipt modal */
+
+    #recordReceiptModal {
+        padding:
+            max(
+                8px,
+                env(safe-area-inset-top)
+            )
+            8px
+            max(
+                8px,
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    .supplier-receipt-modal {
+        width: 100%;
+
+        max-height:
+            calc(
+                100dvh -
+                16px -
+                env(safe-area-inset-top) -
+                env(safe-area-inset-bottom)
+            );
+    }
+
+    #recordReceiptForm {
+        padding: var(--space-4);
+    }
+
+    #recordReceiptForm input,
+    #recordReceiptForm select,
+    #recordReceiptForm textarea {
+        font-size: 16px;
+    }
+
+    #recordReceiptModal .modal-actions {
+        position: sticky;
+
+        bottom:
+            calc(
+                -1 *
+                var(--space-4)
+            );
+
+        z-index: 2;
+
+        margin:
+            var(--space-2)
+            calc(
+                -1 *
+                var(--space-4)
+            )
+            calc(
+                -1 *
+                var(--space-4)
+            );
+
+        padding:
+            var(--space-4)
+            var(--space-4)
+            calc(
+                var(--space-4) +
+                env(safe-area-inset-bottom)
+            );
+
+        background: var(--surface-primary);
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    #recordReceiptModal .modal-actions .button {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 350px) {
+
+    .supplier-account-summary {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .supplier-profile-actions {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .supplier-statement-summary {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+    .supplier-statement-summary > div {
+        border-right: 0;
+
+        border-top:
+            var(--border-width)
+            solid
+            var(--border-secondary);
+    }
+
+    .supplier-statement-summary > div:first-child {
+        border-top: 0;
+    }
+
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .supplier-tab,
+    .supplier-table-action,
+    .supplier-back-link {
+        min-height: 44px;
+    }
+
+    .supplier-quick-action {
+        min-height: 72px;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .supplier-back-link,
+    .supplier-account-card,
+    .supplier-quick-action,
+    .supplier-tab,
+    .supplier-table-action {
+        transition: none;
+    }
+
+    #saveReceiptSpinner,
+    .supplier-account-loading-content::before {
+        animation-duration: 1.5s;
+    }
+
+}
+
+
+/* ============================================================
+   PRINT / SUPPLIER STATEMENT
+   ============================================================ */
+
+@media print {
+
+    .supplier-back-row,
+    .supplier-profile-actions,
+    .supplier-quick-actions,
+    .supplier-tabs,
+    #recordReceiptModal {
+        display: none !important;
+    }
+
+    .supplier-profile-header {
+        margin-bottom: 16px;
+    }
+
+    .supplier-profile-avatar {
+        color: #000;
+        background: #fff;
+
+        border: 1px solid #000;
+    }
+
+    .supplier-details-strip,
+    .supplier-account-card,
+    .supplier-account-section,
+    .supplier-statement-summary {
+        box-shadow: none;
+    }
+
+    .supplier-account-summary {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .supplier-account-card-primary {
+        color: #000;
+        background: #fff;
+
+        border-color: #000;
+    }
+
+    .supplier-account-card-primary
+    .supplier-account-label,
+    .supplier-account-card-primary
+    .supplier-account-value,
+    .supplier-account-card-primary
+    .supplier-account-meta {
+        color: #000;
+    }
+
+    .supplier-account-section .table-wrapper {
+        overflow: visible;
+    }
+
+    .supplier-account-table {
+        min-width: 0;
+    }
+
+    .supplier-table-action {
+        display: none;
+    }
+
+}
+
+
+/* ============================================================
+   SUPPLIER HISTORY RESPONSIVE VISIBILITY
+   Desktop = table only
+   Mobile  = cards only
+   ============================================================ */
+
+.supplier-history-mobile {
+    display: none;
+}
+
+
+/* Desktop tables */
+
+.supplier-account-section .table-wrapper {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+/* ============================================================
+   MOBILE HISTORY
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    /* Hide desktop table */
+
+    .supplier-account-section .table-wrapper {
+        display: none;
+    }
+
+
+    /* Show mobile cards */
+
+    .supplier-history-mobile {
+        display: grid;
+        gap: 12px;
+    }
+
+
+    .supplier-history-mobile-card,
+    .supplier-payment-mobile-card {
+        width: 100%;
+        padding: 16px;
+        background: #ffffff;
+        border: 1px solid var(--border-color, #e5e5e5);
+        border-radius: 14px;
+        cursor: pointer;
+    }
+
+
+    .supplier-history-mobile-header,
+    .supplier-payment-mobile-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+
+    .supplier-history-mobile-header > div {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+
+    .supplier-history-mobile-header strong,
+    .supplier-payment-mobile-header strong {
+        font-size: 14px;
+        font-weight: 700;
+        color: #000000;
+    }
+
+
+    .supplier-history-mobile-header span,
+    .supplier-payment-mobile-header span {
+        font-size: 12px;
+        color: #737373;
+    }
+
+
+    .supplier-history-mobile-grid,
+    .supplier-payment-mobile-details {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid #eeeeee;
+    }
+
+
+    .supplier-history-mobile-value {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        min-width: 0;
+    }
+
+
+    .supplier-history-mobile-value > span {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #737373;
+    }
+
+
+    .supplier-history-mobile-value > strong {
+        font-size: 13px;
+        font-weight: 700;
+        color: #000000;
+        overflow-wrap: anywhere;
+    }
+
+
+    .supplier-history-mobile-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        margin-top: 14px;
+        padding-top: 14px;
+
+        border-top: 1px solid #eeeeee;
+
+        font-size: 12px;
+        color: #525252;
+    }
+
+
+    .supplier-history-mobile-footer span:last-child {
+        flex-shrink: 0;
+        font-weight: 700;
+        color: #000000;
+    }
+
+
+    .supplier-payment-mobile-card {
+        cursor: default;
+    }
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

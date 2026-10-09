@@ -1,0 +1,1868 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   PURCHASES / BUY PAGE
+   FULL ANIMATED VERSION
+
+   Animation language follows Customers page:
+   - subtle movement
+   - premium hover lift
+   - soft border/shadow transitions
+   - smooth loading spinner
+   - restrained entrance animation
+   - reduced-motion support
+
+   IMPORTANT:
+   - layout.css owns the shared shell
+   - components.css owns shared components
+   - responsive.css must load AFTER this file
+   - mobile bottom nav remains shared
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.purchases-page {
+    width: 100%;
+    min-width: 0;
+}
+
+
+.purchases-page [hidden] {
+    display: none !important;
+}
+
+
+/* ============================================================
+   PAGE HEADING
+   ============================================================ */
+
+.purchases-page-heading {
+    margin-bottom: 18px;
+
+    animation:
+        purchases-fade-up
+        420ms
+        ease-out
+        both;
+}
+
+
+.purchases-page-heading h1 {
+    margin-top: 6px;
+}
+
+
+.purchases-page-heading p {
+    max-width: 520px;
+
+    margin-top: 7px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   SUMMARY GRID
+   ============================================================ */
+
+.purchases-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+
+/* ============================================================
+   SUMMARY CARD
+   ============================================================ */
+
+.purchases-summary-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 120px;
+
+    padding: 15px 16px;
+
+    overflow: hidden;
+
+    background: var(--color-white);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 12px;
+
+    transform: translateY(0);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast),
+        background-color var(--motion-fast);
+
+    animation:
+        purchases-card-in
+        460ms
+        ease-out
+        both;
+}
+
+
+/* Stagger cards */
+
+.purchases-summary-card:nth-child(1) {
+    animation-delay: 40ms;
+}
+
+
+.purchases-summary-card:nth-child(2) {
+    animation-delay: 80ms;
+}
+
+
+.purchases-summary-card:nth-child(3) {
+    animation-delay: 120ms;
+}
+
+
+.purchases-summary-card:nth-child(4) {
+    animation-delay: 160ms;
+}
+
+
+/* Hover */
+
+.purchases-summary-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--gray-400);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+   SUMMARY LABEL
+   ============================================================ */
+
+.purchases-summary-card .summary-label {
+    color: var(--color-text-muted);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    transition:
+        color var(--motion-fast);
+}
+
+
+/* ============================================================
+   SUMMARY VALUE
+   ============================================================ */
+
+.purchases-summary-card .summary-value {
+    display: block;
+
+    max-width: 100%;
+
+    margin-top: auto;
+    padding-top: 17px;
+
+    overflow: hidden;
+
+    color: var(--color-black);
+
+    font-size:
+        clamp(
+            21px,
+            2vw,
+            28px
+        );
+
+    font-weight: 750;
+    line-height: 1;
+
+    letter-spacing: -0.035em;
+
+    font-variant-numeric: tabular-nums;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    transition:
+        transform var(--motion-fast),
+        color var(--motion-fast);
+}
+
+
+.purchases-summary-card:hover .summary-value {
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   SUMMARY META
+   ============================================================ */
+
+.purchases-summary-card .summary-meta {
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--color-text-subtle);
+
+    font-size: 9px;
+    line-height: 1.35;
+
+    transition:
+        color var(--motion-fast);
+}
+
+
+/* ============================================================
+   PAYABLE EMPHASIS
+
+   Third card = Payable.
+   Same premium dark-card idea used by Customers receivable.
+   ============================================================ */
+
+.purchases-summary-card:nth-child(3) {
+    background: var(--gray-950);
+    border-color: var(--gray-950);
+}
+
+
+.purchases-summary-card:nth-child(3) .summary-label {
+    color: var(--gray-300);
+}
+
+
+.purchases-summary-card:nth-child(3) .summary-value {
+    color: var(--white);
+}
+
+
+.purchases-summary-card:nth-child(3) .summary-meta {
+    color: var(--gray-400);
+}
+
+
+.purchases-summary-card:nth-child(3):hover {
+    border-color: var(--gray-800);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+/* ============================================================
+   OVERDUE CARD
+   ============================================================ */
+
+.purchases-summary-card:nth-child(4) {
+    border-color: var(--gray-400);
+}
+
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+
+.purchases-panel {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+
+    animation:
+        purchases-panel-in
+        500ms
+        180ms
+        ease-out
+        both;
+}
+
+
+/* ============================================================
+   PANEL HEADER
+   ============================================================ */
+
+.purchases-panel-header {
+    align-items: center;
+}
+
+
+.purchases-panel-header h2 {
+    margin-top: 5px;
+
+    font-size: var(--font-size-lg);
+}
+
+
+.purchases-result-count {
+    margin-top: 5px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+}
+
+
+/* ============================================================
+   FILTERS
+   ============================================================ */
+
+.purchases-filters {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+
+.purchases-search-field {
+    width: 250px;
+}
+
+
+.purchases-filter-field {
+    width: 128px;
+}
+
+
+.purchases-search-field input,
+.purchases-filter-field select {
+    min-height: 38px;
+
+    font-size: var(--font-size-xs);
+
+    transition:
+        border-color var(--motion-fast),
+        box-shadow var(--motion-fast),
+        background-color var(--motion-fast);
+}
+
+
+.purchases-search-field input {
+    padding-left: 13px;
+
+    background: var(--color-gray-50);
+}
+
+
+.purchases-search-field input::placeholder {
+    color: var(--color-text-subtle);
+}
+
+
+.purchases-search-field input:hover,
+.purchases-filter-field select:hover {
+    border-color: var(--gray-400);
+}
+
+
+.purchases-search-field input:focus,
+.purchases-filter-field select:focus {
+    background: var(--color-white);
+
+    border-color: var(--gray-950);
+}
+
+
+/* ============================================================
+   PAGE STATES
+   ============================================================ */
+
+.purchases-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    min-height: 320px;
+
+    padding: 32px 24px;
+
+    color: var(--color-text-muted);
+
+    text-align: center;
+
+    animation:
+        purchases-state-in
+        320ms
+        ease-out
+        both;
+}
+
+
+.purchases-state strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--color-black);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+
+.purchases-state > span {
+    max-width: 390px;
+
+    color: var(--color-text-muted);
+
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+}
+
+
+.purchases-state .button {
+    margin-top: 13px;
+}
+
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+
+.purchases-state .spinner {
+    width: 26px;
+    height: 26px;
+
+    margin-bottom: 7px;
+
+    border:
+        2px
+        solid
+        var(--color-gray-200);
+
+    border-top-color: var(--color-black);
+
+    border-radius: 50%;
+
+    animation:
+        purchases-spin
+        650ms
+        linear
+        infinite;
+}
+
+
+@keyframes purchases-spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ============================================================
+   STATE ICON
+   ============================================================ */
+
+.purchases-state-icon {
+    display: grid;
+    place-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 8px;
+
+    background: var(--color-gray-100);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-gray-300);
+
+    border-radius: 50%;
+
+    color: var(--color-black);
+
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+
+    transition:
+        transform var(--motion-fast),
+        background-color var(--motion-fast);
+}
+
+
+.purchases-state:hover .purchases-state-icon {
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   TABLE WRAPPER
+   ============================================================ */
+
+.purchases-table-wrapper {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    overscroll-behavior-inline: contain;
+
+    -webkit-overflow-scrolling: touch;
+
+    animation:
+        purchases-table-in
+        380ms
+        ease-out
+        both;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.purchases-table {
+    width: 100%;
+    min-width: 1060px;
+
+    margin: 0;
+
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* ============================================================
+   TABLE ROW ANIMATION
+   ============================================================ */
+
+.purchases-table tbody tr {
+    cursor: pointer;
+
+    background: var(--color-white);
+
+    transition:
+        background-color var(--motion-fast),
+        transform var(--motion-fast);
+
+    animation:
+        purchases-row-in
+        300ms
+        ease-out
+        both;
+}
+
+
+/*
+   A small stagger makes loaded rows feel polished
+   without making large tables slow.
+*/
+
+.purchases-table tbody tr:nth-child(1) {
+    animation-delay: 20ms;
+}
+
+
+.purchases-table tbody tr:nth-child(2) {
+    animation-delay: 40ms;
+}
+
+
+.purchases-table tbody tr:nth-child(3) {
+    animation-delay: 60ms;
+}
+
+
+.purchases-table tbody tr:nth-child(4) {
+    animation-delay: 80ms;
+}
+
+
+.purchases-table tbody tr:nth-child(5) {
+    animation-delay: 100ms;
+}
+
+
+.purchases-table tbody tr:nth-child(6) {
+    animation-delay: 120ms;
+}
+
+
+.purchases-table tbody tr:nth-child(7) {
+    animation-delay: 140ms;
+}
+
+
+.purchases-table tbody tr:nth-child(8) {
+    animation-delay: 160ms;
+}
+
+
+.purchases-table tbody tr:nth-child(n + 9) {
+    animation-delay: 180ms;
+}
+
+
+.purchases-table tbody tr:hover {
+    background: var(--color-gray-50);
+}
+
+
+.purchases-table tbody tr:focus-visible {
+    outline:
+        2px
+        solid
+        var(--color-black);
+
+    outline-offset: -2px;
+}
+
+
+/* ============================================================
+   TABLE CELLS
+   ============================================================ */
+
+.purchases-table th,
+.purchases-table td {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+
+.purchases-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+
+/* ============================================================
+   BILL NUMBER
+   ============================================================ */
+
+.purchases-table .bill-number,
+.purchases-table .invoice-number {
+    color: var(--color-black);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    transition:
+        color var(--motion-fast);
+}
+
+
+/* ============================================================
+   SUPPLIER
+   ============================================================ */
+
+.purchases-table .supplier-cell {
+    min-width: 190px;
+}
+
+
+.purchases-table .supplier-identity {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.purchases-table .supplier-avatar {
+    display: grid;
+    place-items: center;
+
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    overflow: hidden;
+
+    background: var(--color-gray-100);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 50%;
+
+    color: var(--color-black);
+
+    font-size: 10px;
+    font-weight: var(--font-weight-bold);
+
+    text-transform: uppercase;
+
+    transition:
+        transform var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast);
+}
+
+
+.purchases-table tbody tr:hover .supplier-avatar {
+    transform: translateY(-1px);
+
+    border-color: var(--gray-400);
+}
+
+
+.purchases-table .supplier-cell-content {
+    min-width: 0;
+}
+
+
+.purchases-table .supplier-cell-content strong {
+    display: block;
+
+    max-width: 180px;
+
+    overflow: hidden;
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.purchases-table .supplier-cell-content span {
+    display: block;
+
+    max-width: 180px;
+
+    margin-top: 3px;
+
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   PURCHASE TYPE BADGE
+   ============================================================ */
+
+.purchase-type-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 24px;
+
+    padding:
+        4px
+        8px;
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border-strong);
+
+    border-radius: var(--radius-pill);
+
+    color: var(--color-text-secondary);
+    background: var(--color-white);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        background-color var(--motion-fast);
+}
+
+
+.purchase-type-badge:hover {
+    transform: translateY(-1px);
+}
+
+
+.purchase-type-badge[data-type="cash"] {
+    background: var(--cash-bg);
+    color: var(--cash-text);
+
+    border-color: var(--cash-border);
+}
+
+
+.purchase-type-badge[data-type="credit"] {
+    background: var(--credit-bg);
+    color: var(--credit-text);
+
+    border-color: var(--credit-border);
+}
+
+
+/* ============================================================
+   STATUS BADGE
+   ============================================================ */
+
+.purchases-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 24px;
+
+    padding:
+        4px
+        8px;
+
+    border:
+        var(--border-width)
+        solid
+        var(--status-pending-border);
+
+    border-radius: var(--radius-pill);
+
+    background: var(--status-pending-bg);
+    color: var(--status-pending-text);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        background-color var(--motion-fast),
+        color var(--motion-fast);
+}
+
+
+.purchases-status-badge:hover {
+    transform: translateY(-1px);
+}
+
+
+.purchases-status-badge[data-status="draft"] {
+    background: var(--status-draft-bg);
+    color: var(--status-draft-text);
+
+    border-color: var(--status-draft-border);
+}
+
+
+.purchases-status-badge[data-status="unpaid"],
+.purchases-status-badge[data-status="pending"] {
+    background: var(--status-pending-bg);
+    color: var(--status-pending-text);
+
+    border-color: var(--status-pending-border);
+}
+
+
+.purchases-status-badge[data-status="partially_paid"],
+.purchases-status-badge[data-status="partial"] {
+    background: var(--status-partial-bg);
+    color: var(--status-partial-text);
+
+    border-color: var(--status-partial-border);
+}
+
+
+.purchases-status-badge[data-status="paid"] {
+    background: var(--status-paid-bg);
+    color: var(--status-paid-text);
+
+    border-color: var(--status-paid-border);
+}
+
+
+.purchases-status-badge[data-status="overdue"] {
+    background: var(--status-overdue-bg);
+    color: var(--status-overdue-text);
+
+    border-color: var(--status-overdue-border);
+}
+
+
+.purchases-status-badge[data-status="cancelled"] {
+    background: var(--status-cancelled-bg);
+    color: var(--status-cancelled-text);
+
+    border-color: var(--status-cancelled-border);
+}
+
+
+/* ============================================================
+   MONEY
+   ============================================================ */
+
+.purchases-table .table-money {
+    font-variant-numeric: tabular-nums;
+}
+
+
+.purchases-table td.table-money {
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   DUE DATE
+   ============================================================ */
+
+.purchases-due-date {
+    white-space: nowrap;
+
+    transition:
+        color var(--motion-fast);
+}
+
+
+.purchases-due-date.is-overdue {
+    color: var(--color-black);
+
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   TABLE OPEN BUTTON
+   ============================================================ */
+
+.purchases-open-button {
+    display: grid;
+    place-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    margin-left: auto;
+    padding: 0;
+
+    border:
+        var(--border-width)
+        solid
+        transparent;
+
+    border-radius: var(--radius-sm);
+
+    background: transparent;
+    color: var(--color-text-muted);
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: var(--font-size-sm);
+
+    transition:
+        transform var(--motion-fast),
+        background-color var(--motion-fast),
+        border-color var(--motion-fast),
+        color var(--motion-fast);
+}
+
+
+.purchases-open-button:hover {
+    transform: translateY(-1px);
+
+    background: var(--color-gray-100);
+    color: var(--color-black);
+
+    border-color: var(--color-border);
+}
+
+
+.purchases-open-button:active {
+    transform: translateY(0);
+}
+
+
+/* ============================================================
+   MOBILE LIST
+   ============================================================ */
+
+.purchases-mobile-list {
+    display: none;
+
+    padding: 12px;
+
+    background: var(--color-gray-50);
+}
+
+
+/* ============================================================
+   MOBILE PURCHASE CARD
+   ============================================================ */
+
+.purchases-mobile-card {
+    display: block;
+
+    padding: 14px;
+
+    background: var(--color-white);
+
+    border:
+        var(--border-width)
+        solid
+        var(--color-border);
+
+    border-radius: 12px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transform: translateY(0);
+
+    transition:
+        transform var(--motion-fast),
+        border-color var(--motion-fast),
+        background-color var(--motion-fast),
+        box-shadow var(--motion-fast);
+
+    animation:
+        purchases-mobile-card-in
+        360ms
+        ease-out
+        both;
+}
+
+
+.purchases-mobile-card:nth-child(1) {
+    animation-delay: 20ms;
+}
+
+
+.purchases-mobile-card:nth-child(2) {
+    animation-delay: 50ms;
+}
+
+
+.purchases-mobile-card:nth-child(3) {
+    animation-delay: 80ms;
+}
+
+
+.purchases-mobile-card:nth-child(4) {
+    animation-delay: 110ms;
+}
+
+
+.purchases-mobile-card:nth-child(5) {
+    animation-delay: 140ms;
+}
+
+
+.purchases-mobile-card:nth-child(n + 6) {
+    animation-delay: 160ms;
+}
+
+
+.purchases-mobile-card + .purchases-mobile-card {
+    margin-top: 9px;
+}
+
+
+.purchases-mobile-card:hover {
+    transform: translateY(-2px);
+
+    border-color: var(--color-border-strong);
+
+    box-shadow: var(--shadow-sm);
+}
+
+
+.purchases-mobile-card:active {
+    transform: scale(0.995);
+
+    background: var(--color-gray-50);
+}
+
+
+/* ============================================================
+   MOBILE CARD HEADER
+   ============================================================ */
+
+.purchases-mobile-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 12px;
+}
+
+
+.purchases-mobile-card-title {
+    min-width: 0;
+}
+
+
+.purchases-mobile-card-title .bill-number,
+.purchases-mobile-card-title .invoice-number {
+    display: block;
+
+    max-width: 190px;
+
+    overflow: hidden;
+
+    color: var(--color-black);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.purchases-mobile-card-title .supplier-name {
+    display: block;
+
+    max-width: 210px;
+
+    margin-top: 4px;
+
+    overflow: hidden;
+
+    color: var(--color-text-muted);
+
+    font-size: 10px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE META
+   ============================================================ */
+
+.purchases-mobile-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: 10px;
+}
+
+
+.purchases-mobile-date {
+    color: var(--color-text-muted);
+
+    font-size: 9px;
+    font-weight: var(--font-weight-medium);
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE VALUES
+   ============================================================ */
+
+.purchases-mobile-values {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    margin-top: 13px;
+    padding-top: 12px;
+
+    border-top:
+        var(--border-width)
+        solid
+        var(--color-divider);
+}
+
+
+.purchases-mobile-value {
+    min-width: 0;
+}
+
+
+.purchases-mobile-value span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: var(--color-text-muted);
+
+    font-size: 8px;
+    font-weight: var(--font-weight-bold);
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+}
+
+
+.purchases-mobile-value strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: var(--color-text);
+
+    font-size: 11px;
+    font-weight: var(--font-weight-semibold);
+
+    font-variant-numeric: tabular-nums;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   MOBILE FOOTER
+   ============================================================ */
+
+.purchases-mobile-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 13px;
+}
+
+
+.purchases-mobile-due {
+    min-width: 0;
+
+    color: var(--color-text-muted);
+
+    font-size: 9px;
+}
+
+
+.purchases-mobile-due strong {
+    color: var(--color-text);
+
+    font-weight: var(--font-weight-semibold);
+}
+
+
+.purchases-mobile-due.is-overdue,
+.purchases-mobile-due.is-overdue strong {
+    color: var(--color-black);
+
+    font-weight: var(--font-weight-bold);
+}
+
+
+/* ============================================================
+   ENTRANCE ANIMATIONS
+   ============================================================ */
+
+@keyframes purchases-fade-up {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes purchases-card-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes purchases-panel-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes purchases-state-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes purchases-table-in {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes purchases-row-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+@keyframes purchases-mobile-card-in {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .purchases-panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    .purchases-filters {
+        width: 100%;
+
+        justify-content: flex-start;
+    }
+
+
+    .purchases-search-field {
+        flex: 1;
+
+        width: auto;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .purchases-summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .purchases-filters {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            135px
+            145px;
+    }
+
+
+    .purchases-search-field,
+    .purchases-filter-field {
+        width: auto;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+
+   IMPORTANT:
+   Do NOT define .mobile-bottom-nav here.
+
+   responsive.css owns the exact shared bottom navigation.
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    .purchases-page-heading {
+        margin-bottom: 14px;
+    }
+
+
+    /*
+     * Mobile has the shared raised center + button,
+     * therefore hide duplicate heading action.
+     */
+
+    .purchases-page-heading
+    .page-heading-actions {
+        display: none;
+    }
+
+
+    /* ========================================================
+       SUMMARY
+       ======================================================== */
+
+    .purchases-summary-grid {
+        gap: 8px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .purchases-summary-card {
+        min-height: 100px;
+
+        padding: 12px;
+    }
+
+
+    .purchases-summary-card .summary-value {
+        padding-top: 13px;
+
+        font-size: 18px;
+    }
+
+
+    .purchases-summary-card .summary-meta {
+        margin-top: 5px;
+
+        font-size: 8px;
+    }
+
+
+    /* ========================================================
+       PANEL
+       ======================================================== */
+
+    .purchases-panel-header {
+        gap: 14px;
+
+        padding:
+            15px
+            14px;
+    }
+
+
+    .purchases-panel-header h2 {
+        font-size: var(--font-size-base);
+    }
+
+
+    /* ========================================================
+       FILTERS
+       ======================================================== */
+
+    .purchases-filters {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+    }
+
+
+    .purchases-search-field {
+        grid-column:
+            1 / -1;
+    }
+
+
+    /*
+     * Prevent mobile browser zoom.
+     */
+
+    .purchases-search-field input,
+    .purchases-filter-field select {
+        min-height: 44px;
+
+        font-size: 16px;
+    }
+
+
+    /* ========================================================
+       MOBILE CARDS
+       ======================================================== */
+
+    .purchases-table-wrapper {
+        display: none !important;
+    }
+
+
+    .purchases-mobile-list:not([hidden]) {
+        display: block;
+    }
+
+
+    /* ========================================================
+       STATE
+       ======================================================== */
+
+    .purchases-state {
+        min-height: 280px;
+
+        padding:
+            34px
+            20px;
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+
+    .purchases-summary-card {
+        min-height: 94px;
+    }
+
+
+    .purchases-summary-card .summary-value {
+        font-size: 16px;
+    }
+
+
+    .purchases-mobile-list {
+        padding: 9px;
+    }
+
+
+    .purchases-mobile-card {
+        padding: 13px;
+    }
+
+
+    .purchases-mobile-values {
+        gap: 5px;
+    }
+
+
+    .purchases-mobile-value strong {
+        font-size: 10px;
+    }
+
+}
+
+
+/* ============================================================
+   VERY SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 360px) {
+
+    .purchases-summary-grid {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+
+    .purchases-filters {
+        grid-template-columns:
+            minmax(0, 1fr);
+    }
+
+
+    .purchases-search-field {
+        grid-column: auto;
+    }
+
+
+    .purchases-mobile-values {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ============================================================
+   TOUCH DEVICES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /*
+     * Disable hover-only movement on touch devices.
+     */
+
+    .purchases-summary-card:hover,
+    .purchases-mobile-card:hover,
+    .purchase-type-badge:hover,
+    .purchases-status-badge:hover,
+    .purchases-open-button:hover,
+    .purchases-state:hover
+    .purchases-state-icon {
+        transform: none;
+    }
+
+
+    .purchases-open-button {
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .purchases-filter-field select {
+        min-height: 44px;
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+
+   Accessibility:
+   users requesting reduced motion should not receive
+   entrance / hover movement.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .purchases-page-heading,
+    .purchases-summary-card,
+    .purchases-panel,
+    .purchases-state,
+    .purchases-table-wrapper,
+    .purchases-table tbody tr,
+    .purchases-mobile-card {
+        animation: none !important;
+    }
+
+
+    .purchases-summary-card,
+    .purchases-summary-card .summary-value,
+    .purchases-search-field input,
+    .purchases-filter-field select,
+    .purchases-state-icon,
+    .purchases-table tbody tr,
+    .purchases-table .supplier-avatar,
+    .purchase-type-badge,
+    .purchases-status-badge,
+    .purchases-due-date,
+    .purchases-open-button,
+    .purchases-mobile-card {
+        transition: none !important;
+    }
+
+
+    /*
+     * Keep spinner functional but slower,
+     * matching the Customers accessibility approach.
+     */
+
+    .purchases-state .spinner {
+        animation-duration: 1.5s;
+    }
+
+}
+
+
+/* ============================================================
+   PRINT
+
+   Remove animations and interactive controls from print.
+   ============================================================ */
+
+@media print {
+
+    .purchases-page-heading,
+    .purchases-summary-card,
+    .purchases-panel,
+    .purchases-table-wrapper,
+    .purchases-table tbody tr {
+        animation: none !important;
+
+        transform: none !important;
+    }
+
+
+    .purchases-page-heading
+    .page-heading-actions,
+    .purchases-filters,
+    .purchases-open-button {
+        display: none !important;
+    }
+
+
+    .purchases-summary-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+
+    .purchases-summary-card {
+        box-shadow: none !important;
+    }
+
+
+    .purchases-mobile-list {
+        display: none !important;
+    }
+
+
+    .purchases-table-wrapper {
+        display: block !important;
+
+        overflow: visible;
+    }
+
+
+    .purchases-table {
+        width: 100%;
+        min-width: 0;
+    }
+
+}
+
+/* ==========================================
+   OM MARUTI DIAMOND — SIDEBAR LOGO
+   ========================================== */
+
+.sidebar-brand-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.sidebar-brand-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    padding: 3px;
+}

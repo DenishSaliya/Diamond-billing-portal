@@ -1,0 +1,707 @@
+/* ============================================================
+   OM MARUTI DIAMOND
+   DESIGN SYSTEM / VARIABLES
+
+   Final UI direction:
+   - Premium black & white
+   - Separate Sell / Buy workflows
+   - Responsive desktop + mobile
+   - Touch friendly
+   - Subtle motion
+   - Accessible focus states
+   - Safe-area support
+   ============================================================ */
+
+:root {
+
+    /* ========================================================
+       CORE COLORS
+       ======================================================== */
+
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    --color-gray-950: #0a0a0a;
+    --color-gray-900: #111111;
+    --color-gray-850: #171717;
+    --color-gray-800: #1f1f1f;
+    --color-gray-750: #262626;
+    --color-gray-700: #303030;
+
+    --color-gray-600: #525252;
+    --color-gray-500: #737373;
+    --color-gray-400: #a3a3a3;
+    --color-gray-300: #d4d4d4;
+    --color-gray-250: #dedede;
+    --color-gray-200: #e5e5e5;
+    --color-gray-150: #ededed;
+    --color-gray-100: #f5f5f5;
+    --color-gray-50: #fafafa;
+
+
+    /* ========================================================
+       SEMANTIC SURFACES
+       ======================================================== */
+
+    --color-page: var(--color-gray-50);
+
+    --color-surface: var(--color-white);
+
+    --color-surface-soft:
+        var(--color-gray-100);
+
+    --color-surface-strong:
+        var(--color-black);
+
+    --color-surface-hover:
+        #f7f7f7;
+
+
+    /* ========================================================
+       TEXT
+       ======================================================== */
+
+    --color-text:
+        var(--color-gray-950);
+
+    --color-text-secondary:
+        var(--color-gray-600);
+
+    --color-text-muted:
+        var(--color-gray-500);
+
+    --color-text-subtle:
+        var(--color-gray-400);
+
+    --color-text-inverse:
+        var(--color-white);
+
+
+    /* ========================================================
+       BORDERS
+       ======================================================== */
+
+    --color-border:
+        var(--color-gray-200);
+
+    --color-border-strong:
+        var(--color-gray-300);
+
+    --color-border-dark:
+        var(--color-gray-800);
+
+    --color-divider:
+        var(--color-gray-150);
+
+
+    /* ========================================================
+       PRIMARY ACTION
+       ======================================================== */
+
+    --color-primary:
+        var(--color-black);
+
+    --color-primary-hover:
+        var(--color-gray-800);
+
+    --color-primary-active:
+        var(--color-gray-700);
+
+    --color-on-primary:
+        var(--color-white);
+
+
+    /* ========================================================
+       STATUS COLORS
+
+       The application remains visually monochrome.
+
+       Statuses are distinguished using:
+       - text weight
+       - borders
+       - background intensity
+       - icons / labels
+
+       rather than relying on bright colors.
+       ======================================================== */
+
+    --status-draft-bg:
+        var(--color-gray-100);
+
+    --status-draft-text:
+        var(--color-gray-600);
+
+    --status-draft-border:
+        var(--color-gray-200);
+
+
+    --status-pending-bg:
+        var(--color-white);
+
+    --status-pending-text:
+        var(--color-gray-900);
+
+    --status-pending-border:
+        var(--color-gray-400);
+
+
+    --status-partial-bg:
+        var(--color-gray-100);
+
+    --status-partial-text:
+        var(--color-gray-950);
+
+    --status-partial-border:
+        var(--color-gray-500);
+
+
+    --status-paid-bg:
+        var(--color-gray-950);
+
+    --status-paid-text:
+        var(--color-white);
+
+    --status-paid-border:
+        var(--color-gray-950);
+
+
+    --status-overdue-bg:
+        var(--color-black);
+
+    --status-overdue-text:
+        var(--color-white);
+
+    --status-overdue-border:
+        var(--color-black);
+
+
+    --status-cancelled-bg:
+        var(--color-gray-200);
+
+    --status-cancelled-text:
+        var(--color-gray-600);
+
+    --status-cancelled-border:
+        var(--color-gray-300);
+
+
+    /* ========================================================
+       SELL / BUY TOKENS
+
+       Sell and Buy remain monochrome.
+
+       We use different visual treatments rather than assigning
+       unrelated brand colors.
+       ======================================================== */
+
+    --sell-bg:
+        var(--color-black);
+
+    --sell-text:
+        var(--color-white);
+
+    --sell-border:
+        var(--color-black);
+
+
+    --buy-bg:
+        var(--color-white);
+
+    --buy-text:
+        var(--color-black);
+
+    --buy-border:
+        var(--color-black);
+
+
+    /* ========================================================
+       CASH / CREDIT TOKENS
+       ======================================================== */
+
+    --cash-bg:
+        var(--color-gray-950);
+
+    --cash-text:
+        var(--color-white);
+
+    --cash-border:
+        var(--color-gray-950);
+
+
+    --credit-bg:
+        var(--color-white);
+
+    --credit-text:
+        var(--color-gray-950);
+
+    --credit-border:
+        var(--color-gray-400);
+
+
+    /* ========================================================
+       RECEIVABLE / PAYABLE
+       ======================================================== */
+
+    --receivable-bg:
+        var(--color-gray-950);
+
+    --receivable-text:
+        var(--color-white);
+
+
+    --payable-bg:
+        var(--color-white);
+
+    --payable-text:
+        var(--color-black);
+
+
+    /* ========================================================
+       FOCUS
+       ======================================================== */
+
+    --focus-color:
+        var(--color-black);
+
+    --focus-ring:
+        0 0 0 3px rgba(0, 0, 0, 0.14);
+
+    --focus-ring-inverse:
+        0 0 0 3px rgba(255, 255, 255, 0.32);
+
+
+    /* ========================================================
+       TYPOGRAPHY
+       ======================================================== */
+
+    --font-sans:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    --font-mono:
+        "SFMono-Regular",
+        Consolas,
+        "Liberation Mono",
+        Menlo,
+        monospace;
+
+
+    --font-size-2xs: 0.6875rem;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.0625rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-black: 800;
+
+
+    --line-height-tight: 1.15;
+    --line-height-snug: 1.3;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+
+    --letter-spacing-tight: -0.03em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.04em;
+    --letter-spacing-wider: 0.08em;
+    --letter-spacing-widest: 0.14em;
+
+
+    /* ========================================================
+       SPACING
+       ======================================================== */
+
+    --space-0: 0;
+
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-9: 2.25rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-14: 3.5rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+
+    /* ========================================================
+       BORDER RADIUS
+       ======================================================== */
+
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 18px;
+    --radius-2xl: 24px;
+
+    --radius-pill: 999px;
+
+    --radius-card:
+        var(--radius-lg);
+
+    --radius-control:
+        var(--radius-md);
+
+
+    /* ========================================================
+       BORDER WIDTH
+       ======================================================== */
+
+    --border-width: 1px;
+    --border-width-strong: 2px;
+
+
+    /* ========================================================
+       SHADOWS
+
+       Kept subtle because the product should feel clean and
+       professional rather than floating/card-heavy.
+       ======================================================== */
+
+    --shadow-xs:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+
+    --shadow-sm:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+    --shadow-md:
+        0 8px 24px rgba(0, 0, 0, 0.07);
+
+    --shadow-lg:
+        0 18px 50px rgba(0, 0, 0, 0.11);
+
+    --shadow-modal:
+        0 24px 80px rgba(0, 0, 0, 0.22);
+
+
+    /* ========================================================
+       CONTROLS
+       ======================================================== */
+
+    --control-height-sm: 36px;
+    --control-height: 42px;
+    --control-height-lg: 48px;
+
+    --control-padding-x:
+        var(--space-4);
+
+    --control-border:
+        var(--color-border-strong);
+
+    --control-background:
+        var(--color-white);
+
+    --control-text:
+        var(--color-text);
+
+    --control-placeholder:
+        var(--color-text-muted);
+
+
+    /* ========================================================
+       TABLES
+       ======================================================== */
+
+    --table-header-bg:
+        var(--color-gray-50);
+
+    --table-row-hover:
+        var(--color-gray-50);
+
+    --table-border:
+        var(--color-border);
+
+
+    /* ========================================================
+       SIDEBAR
+       ======================================================== */
+
+    --sidebar-width: 248px;
+
+    --sidebar-bg:
+        var(--color-black);
+
+    --sidebar-text:
+        var(--color-gray-300);
+
+    --sidebar-text-active:
+        var(--color-black);
+
+    --sidebar-active-bg:
+        var(--color-white);
+
+    --sidebar-hover-bg:
+        var(--color-gray-850);
+
+    --sidebar-border:
+        var(--color-gray-800);
+
+
+    /* ========================================================
+       TOP BAR
+       ======================================================== */
+
+    --topbar-height: 72px;
+
+    --topbar-bg:
+        rgba(255, 255, 255, 0.94);
+
+    --topbar-border:
+        var(--color-border);
+
+
+    /* ========================================================
+       PAGE LAYOUT
+       ======================================================== */
+
+    --page-max-width: 1600px;
+
+    --page-padding-desktop:
+        32px;
+
+    --page-padding-tablet:
+        24px;
+
+    --page-padding-mobile:
+        16px;
+
+
+    /* ========================================================
+       DASHBOARD
+       ======================================================== */
+
+    --dashboard-card-min-width:
+        220px;
+
+    --dashboard-chart-height:
+        300px;
+
+
+    /* ========================================================
+       MOBILE NAVIGATION
+       ======================================================== */
+
+    --mobile-nav-height: 68px;
+
+    --mobile-create-size: 58px;
+
+
+    /* ========================================================
+       DIAMOND / BILLING FORM
+       ======================================================== */
+
+    --line-item-min-width:
+        900px;
+
+    --invoice-paper-width:
+        210mm;
+
+    --invoice-paper-min-height:
+        297mm;
+
+
+    /* ========================================================
+       MOTION
+       ======================================================== */
+
+    --duration-fast: 120ms;
+    --duration-normal: 180ms;
+    --duration-slow: 280ms;
+
+    --ease-standard:
+        cubic-bezier(
+            0.2,
+            0,
+            0,
+            1
+        );
+
+    --ease-emphasized:
+        cubic-bezier(
+            0.2,
+            0.8,
+            0.2,
+            1
+        );
+
+    --transition-fast:
+        var(--duration-fast)
+        var(--ease-standard);
+
+    --transition-normal:
+        var(--duration-normal)
+        var(--ease-standard);
+
+    --transition-slow:
+        var(--duration-slow)
+        var(--ease-emphasized);
+
+
+    /* ========================================================
+       Z-INDEX
+       ======================================================== */
+
+    --z-base: 1;
+    --z-sticky: 100;
+    --z-sidebar: 300;
+    --z-mobile-nav: 400;
+    --z-dropdown: 500;
+    --z-overlay: 700;
+    --z-modal: 800;
+    --z-toast: 900;
+
+
+    /* ========================================================
+       SAFE AREAS
+
+       Important for app-like mobile use on devices with
+       notches / home indicators.
+       ======================================================== */
+
+    --safe-top:
+        env(safe-area-inset-top, 0px);
+
+    --safe-right:
+        env(safe-area-inset-right, 0px);
+
+    --safe-bottom:
+        env(safe-area-inset-bottom, 0px);
+
+    --safe-left:
+        env(safe-area-inset-left, 0px);
+}
+
+
+/* ============================================================
+   TABLET TOKENS
+   ============================================================ */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --sidebar-width: 232px;
+
+        --page-padding-desktop:
+            24px;
+
+        --dashboard-chart-height:
+            280px;
+    }
+}
+
+
+/* ============================================================
+   MOBILE TOKENS
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    :root {
+        --topbar-height: 64px;
+
+        --page-padding-desktop:
+            16px;
+
+        --page-padding-tablet:
+            16px;
+
+        --dashboard-chart-height:
+            240px;
+
+        --radius-card:
+            12px;
+
+        --control-height:
+            44px;
+
+        --control-height-lg:
+            48px;
+    }
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 380px) {
+
+    :root {
+        --page-padding-mobile:
+            12px;
+
+        --mobile-create-size:
+            54px;
+
+        --font-size-5xl:
+            2.5rem;
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    :root {
+        --duration-fast: 0ms;
+        --duration-normal: 0ms;
+        --duration-slow: 0ms;
+    }
+}
+
+
+/* ============================================================
+   PRINT TOKENS
+   ============================================================ */
+
+@media print {
+
+    :root {
+        --color-page:
+            #ffffff;
+
+        --color-surface:
+            #ffffff;
+
+        --color-text:
+            #000000;
+
+        --color-border:
+            #cfcfcf;
+
+        --shadow-xs: none;
+        --shadow-sm: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+        --shadow-modal: none;
+    }
+}
